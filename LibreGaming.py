@@ -7,7 +7,6 @@ found = subprocess.getoutput("./getPackageManager") # shell script to get the di
 #print (found)
 
 def installPkgs():
-    print("\t\t#### Found your Distro its using " + found + " as a Package Manager ####")
     if found == distro[0]:  #packages for Ubuntu and Ubuntu based distros
         print("\nNow installing Ubuntu Gaming Packages")
         Ubuntu = [
@@ -66,6 +65,7 @@ def parse_arguments():
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
     parser.add_argument('-p', '--proton', action='store_true', help='install ProtonGE only')
     parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages only')
+    parser.add_argument('-a', '--all', action='store_true', help='Install both ProtonGE and Gaming Packages')
     return parser.parse_args()
 
 def main():
@@ -74,10 +74,9 @@ def main():
         installProtonGE()
     if args.gaming:
         installPkgs()
-    
-    # if no arguments are given the whole program will run 
-    installPkgs()
-    installProtonGE()
+    if args.all:
+        installPkgs()
+        installProtonGE()
 
 if __name__ == "__main__":
     main()

@@ -14,6 +14,7 @@ To install and run the Python Script you need to enter these commands:
 ```
 git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/
 cd LibreGaming/
+chmod 744 getPackageManager
 python LibreGaming.py
 
 ```

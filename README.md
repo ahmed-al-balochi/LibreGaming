@@ -29,9 +29,18 @@ git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/
 cd LibreGaming/
 ```
 
+# Usage:
 * To run the LibreGaming Script enter this command:
 ```
 python3 LibreGaming.py
+```
+* To only run the LibreGaming Script to install the gaming packages enter this command:
+```
+python3 LibreGaming.py -g
+```
+* To only run the LibreGaming Script to install ProtonGE enter this command:
+```
+python3 LibreGaming.py -p
 ```
 
 # Feedback:

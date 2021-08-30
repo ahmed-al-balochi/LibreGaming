@@ -7,7 +7,7 @@ This a Python Program that downloads gaming required packages based on your Linu
 3. Fedora
 
 # Prerequisite:
-* To run this script you need python3 installed if not already.
+* To run this LibreGaming script you need python3 installed if not already.
 
 1. Install Python3 For Ubuntu:
 ```
@@ -23,13 +23,13 @@ sudo dnf install python3
 ```
 
 # Installation:
-* To install Python Script you need to enter these commands:
+* To install LibreGaming Script you need to enter these commands:
 ```
 git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/
 cd LibreGaming/
 ```
 
-* To run the Script copy this command:
+* To run the LibreGaming Script enter this command:
 ```
 python3 LibreGaming.py
 ```

@@ -1,15 +1,7 @@
 #!/bin/sh
-declare -A osInfo;
-osInfo[/etc/redhat-release]=yum
-osInfo[/etc/arch-release]=pacman
-osInfo[/etc/gentoo-release]=emerge
-osInfo[/etc/SuSE-release]=zypp
-osInfo[/etc/debian_version]=apt-get
-
-for f in ${!osInfo[@]}
-do
-    if [[ -f $f ]];then
-        echo ${osInfo[$f]}
-    fi
-done
-
+if [ -x "$(command -v dnf)" ]; then echo "dnf"
+elif [ -x "$(command -v yay)" ]; then echo "yay"
+elif [ -x "$(command -v paru)" ]; then echo "paru"
+elif [ -x "$(command -v pacman)" ]; then echo "pacman"
+elif [ -x "$(command -v apt)" ]; then echo "apt"
+else echo "FAILED TO INSTALL PACKAGE: Package manager not found."; fi

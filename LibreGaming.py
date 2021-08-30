@@ -1,7 +1,7 @@
 import os, subprocess, argparse
 
 global distro 
-distro = ["apt","pacman", "dnf"]
+distro = ["apt","yay", "paru", "pacman", "dnf"]
 global found
 found = subprocess.getoutput("./getPackageManager") # shell script to get the distro pakacge manager
 #print (found)
@@ -30,11 +30,15 @@ def installPkgs():
         for i in Ubuntu:
             os.system(Ubuntu[i]) #running each element in Ubuntu array 
 
-    elif found == distro[1]:    #packages for Arch and Arch based distros
+    elif found == distro[1] or found == distro[2]:    #packages for Arch and Arch based distros
+        print("\nNow installing Arch Gaming Packages")
+        Arch = found+" -Syu goverlay-bin python-pip wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader lutris steam gamemode --needed --noconfirm"
+        os.system(Arch)
+    elif found == distro[3]:    #packages for Arch and Arch based distros
         print("\nNow installing Arch Gaming Packages")
         Arch = "sudo pacman -Syu python-pip wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader lutris steam gamemode --needed --noconfirm"
         os.system(Arch)
-    elif found == distro[2]:    #packages for Fedora
+    elif found == distro[4]:    #packages for Fedora
         print("\nNow installing Fedora Gaming Packages")
         Fedora = "sudo dnf install python3-pip wine lutris steam gamemode goverlay -y"
         os.system(Fedora)

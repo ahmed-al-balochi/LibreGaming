@@ -30,9 +30,9 @@ cd LibreGaming/
 ```
 
 # Usage:
-* To run the LibreGaming Script enter this command:
+* To run the LibreGaming Script to install both the Gaming packages and ProtonGE enter this command:
 ```
-python3 LibreGaming.py
+python3 LibreGaming.py -a
 ```
 * To only run the LibreGaming Script to install the gaming packages enter this command:
 ```

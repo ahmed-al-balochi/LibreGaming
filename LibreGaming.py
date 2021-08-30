@@ -62,7 +62,7 @@ def installProtonGE():
 
 def parse_arguments():
     #Parse commandline arguments
-    parser = argparse.ArgumentParser(usage="python %(prog)s", description="Install Gaming Packages with ease",
+    parser = argparse.ArgumentParser(usage="python3 %(prog)s", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
     parser.add_argument('-p', '--proton', action='store_true', help='install ProtonGE only')
     parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages only')

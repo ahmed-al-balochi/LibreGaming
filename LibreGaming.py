@@ -15,20 +15,15 @@ def installPkgs():
             "sudo apt-key add winehq.key",
             "sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' -y",
             "sudo add-apt-repository ppa:lutris-team/lutris -y",
+            "sudo add-apt-repository multiverse -y",
+            "sudo add-apt-repository ppa:flexiondotorg/mangohud -y",
             "sudo apt update",
             "sudo apt-get install --install-recommends winehq-staging -y",
             "sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 -y",
-            "sudo apt-get install lutris python3-pip -y",
-            "sudo apt install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session -y",
-            "sudo add-apt-repository multiverse",
-            "sudo apt update",
-            "sudo apt install steam -y",
-            "sudo add-apt-repository ppa:flexiondotorg/mangohud",
-            "sudo apt-get update",
-            "sudo apt-get install goverlay"
+            "sudo apt-get install lutris python3-pip meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session steam goverlay -y"
             ]  
         for i in Ubuntu:
-            os.system(Ubuntu[i]) #running each element in Ubuntu array 
+            os.system(i) #running each element in Ubuntu array 
 
     elif found == distro[1] or found == distro[2]:    #packages for Arch and Arch based distros
         print("\nNow installing Arch Gaming Packages")
@@ -55,11 +50,12 @@ def installProtonGE():
             print("Skipping Proton!")
             exit()
         elif ProtonANS == "y":
-            os.system("pip install prontonup")
+            os.system("pip3 install protonup")
             os.system("mkdir ~/.steam/")
             os.system("mkdir ~/.steam/root/")
             os.system("mkdir ~/.steam/root/compatibilitytools.d/")
             os.system("protonup -d '~/.steam/root/compatibilitytools.d/'")
+            os.system("protonup")
             exit()
         else:
             print("Sorry wrong input! Please enter Y for Yes or N for No")

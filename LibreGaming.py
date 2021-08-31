@@ -25,10 +25,10 @@ def installPkgs():
             os.system(i) #running each element in Ubuntu array 
 
     elif found == distro[1] or found == distro[2]:    #packages for Arch and Arch based distros
-        print("\nNow installing Arch Gaming Packages")
+        print("\nNow installing Arch Gaming Packages")   #for those who have AUR enabled
         Arch = found+" -Syu goverlay-bin python-pip wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader lutris steam gamemode --needed --noconfirm"
         os.system(Arch)
-    elif found == distro[3]:    #packages for Arch and Arch based distros
+    elif found == distro[3]:    
         print("\nNow installing Arch Gaming Packages")
         Arch = "sudo pacman -Syu python-pip wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader lutris steam gamemode --needed --noconfirm"
         os.system(Arch)
@@ -63,15 +63,18 @@ def parse_arguments():
     #Parse commandline arguments
     parser = argparse.ArgumentParser(usage="python3 %(prog)s", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
-    parser.add_argument('-p', '--proton', action='store_true', help='install ProtonGE only')
-    parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages only')
     parser.add_argument('-a', '--all', action='store_true', help='Install both ProtonGE and Gaming Packages')
+    parser.add_argument('-p', '--proton', action='store_true', help='install ProtonGE only')
+    parser.add_argument('-pu', '--protonup', action='store_true', help='Update ProtonGE')
+    parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages only')
     return parser.parse_args()
 
 def main():
     args = parse_arguments()
     if args.proton:
         installProtonGE()
+    if args.protonup:
+        os.system("protonup")
     if args.gaming:
         installPkgs()
     if args.all:

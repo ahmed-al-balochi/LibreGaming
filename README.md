@@ -34,13 +34,17 @@ cd LibreGaming/
 ```
 python3 LibreGaming.py -a
 ```
-* To only run the LibreGaming Script to install the gaming packages enter this command:
-```
-python3 LibreGaming.py -g
-```
-* To only run the LibreGaming Script to install ProtonGE enter this command:
+* To run the LibreGaming Script to only install ProtonGE enter this command:
 ```
 python3 LibreGaming.py -p
+```
+* To run the LibreGaming Script to update ProtonGE enter this command:
+```
+python3 LibreGaming.py -pu
+```
+* To run the LibreGaming Script to only install the Gaming packages enter this command:
+```
+python3 LibreGaming.py -g
 ```
 
 # Feedback:

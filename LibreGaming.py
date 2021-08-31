@@ -34,7 +34,7 @@ def installPkgs():
         os.system(Arch)
     elif found == distro[4]:    #packages for Fedora
         print("\nNow installing Fedora Gaming Packages")
-        Fedora = "sudo dnf install python3-pip wine lutris steam gamemode goverlay -y"
+        Fedora = "sudo dnf install python3-pip wine lutris gamemode goverlay steam -y"
         os.system(Fedora)
     else:
         print("Your distro was not found :(")

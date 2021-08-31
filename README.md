@@ -5,17 +5,17 @@ This a Python Program that downloads gaming required packages based on your Linu
 Table of contents
 =================
 
- - [Distribution](#Currently Supported Distribution)
+ - [Distributions](#Distributions)
  - [Prerequisites](#Prerequisites)
- - [Packages:](#Packages that LibreGaming installs for you)
+ - [Packages:](#Packages)
     -[Dependencies](#Dependencies)
  - [Installation](#Installation)
  - [Usage](#Usage)
  - [Feedback](#Feedback)
- - [Thanks_&_Credits](#Thanks and Credits)
+ - [Credits](#Credits)
 
 
-# Currently Supported Distribution:
+# Distributions:
 1. Ubuntu
 2. Arch Linux
 3. Fedora
@@ -41,7 +41,7 @@ sudo dnf install \
 sudo dnf group update core
 ```
 
-# Packages that LibreGaming installs for you:
+# Packages:
 1. Wine
 2. Steam.
 3. ProtonGE(Optional).
@@ -94,6 +94,6 @@ python3 LibreGaming.py -g
 * Also please report if there are any bugs in the script.
 * Your feedback is always welcome
 
-# Thanks and Credits:
+# Credits:
 * Thanks to [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup for making it easier to install ProtonGE.
 * Thanks to anyone who downloads this script, and to everyone gives me feedback.  

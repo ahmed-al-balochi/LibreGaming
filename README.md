@@ -26,7 +26,7 @@ Table of contents
 * You can find the commands to enable nonfree packages for Fedora in this [website](https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/#proc_enabling-the-rpmfusion-repositories-using-command-line-utilities_enabling-the-rpmfusion-repositories):
 
 * Or you can enter these commands that I copied for the above website
-To enable free packages on Fedora enter these command:
+To enable free and nonfree packages on Fedora enter these command:
 ```
 sudo dnf install \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm

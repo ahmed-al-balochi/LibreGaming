@@ -8,7 +8,7 @@ Table of contents
  - [Distributions](#Distributions)
  - [Prerequisites](#Prerequisites)
  - [Packages:](#Packages)
-        -[Dependencies](#Dependencies)
+    - [Dependencies](#Dependencies)
  - [Installation](#Installation)
  - [Usage](#Usage)
  - [Feedback](#Feedback)

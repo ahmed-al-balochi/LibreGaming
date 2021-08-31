@@ -1,13 +1,55 @@
 # LibreGaming
 This a Python Program that downloads gaming required packages based on your Linux Distribution.
 
+
+Table of contents
+=================
+
+ - [Currently Supported Distribution](#Currently Supported Distribution:)
+ - [Prerequisites](#Prerequisites:)
+ - [Packages that LibreGaming installs for you:](#Packages that LibreGaming installs for you:)
+    -[Dependencies](#Dependencies:)
+ - [Installation](#Installation)
+ - [Usage](#Usage:)
+ - [Feedback](#Feedback:)
+ - [Thanks and Credits](#Thanks and Credits)
+
+
 # Currently Supported Distribution:
 1. Ubuntu
 2. Arch Linux
 3. Fedora
 
-# Prerequisite:
+# Prerequisites:
 * To run this LibreGaming script you need python3 installed if not already.
+* Also you need to enable nonfree packages if you are using Fedora to install steam.
+* You can find the commands to enable nonfree packages for Fedora in this [website](https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/#proc_enabling-the-rpmfusion-repositories-using-command-line-utilities_enabling-the-rpmfusion-repositories):
+
+* Or you can enter these commands that I copied for the above website
+To enable free packages on Fedora enter these command:
+```
+sudo dnf install \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+```
+To enable nonfree packages on Fedora enter these command:
+```
+sudo dnf install \
+  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+```
+* now you need to refreash the repos:
+```
+sudo dnf group update core
+```
+
+# Packages that LibreGaming installs for you:
+1. Wine
+2. Steam.
+3. ProtonGE(Optional).
+3. Lutris.
+4. mangohud and goverlay.
+
+## Dependencies:
+python3-pip needed to install [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup.
 
 1. Install Python3 For Ubuntu:
 ```
@@ -50,3 +92,8 @@ python3 LibreGaming.py -g
 # Feedback:
 * Tell me what distro to add if yours is not available.
 * Also please report if there are any bugs in the script.
+* Your feedback is always welcome
+
+# Thanks and Credits:
+* Thanks to [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup for making it easier to install ProtonGE.
+* Thanks to anyone who downloads this script, and to everyone gives me feedback.  

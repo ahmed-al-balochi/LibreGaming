@@ -42,11 +42,11 @@ sudo dnf group update core
 ```
 
 # Packages:
-1. Wine
-2. Steam.
-3. ProtonGE(Optional).
-3. Lutris.
-4. mangohud and goverlay.
+1. Steam.
+2. Wine
+3. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Optional).
+3. [Lutris](https://github.com/lutris/lutris.git).
+4. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
 
 ## Dependencies:
 * python3
@@ -96,5 +96,8 @@ python3 LibreGaming.py -g
 * Your feedback is always welcome
 
 # Credits:
-* Thanks to [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup for making it easier to install ProtonGE.
+* Thanks to [GloriousEggroll](https://github.com/GloriousEggroll/) for ProtonGE.
+* Thanks to [flightlessmango](https://github.com/flightlessmango/) for mangohud.
+* Thanks to [benjamimgois](https://github.com/benjamimgois/) for goverlay.
+* Thanks to [AUNaseef](https://github.com/AUNaseef/) protonup for making it easier to install ProtonGE.
 * Thanks to anyone who downloads this script, and to everyone gives me feedback.  

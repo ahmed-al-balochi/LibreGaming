@@ -21,7 +21,7 @@ Table of contents
 3. Fedora
 
 # Prerequisites:
-* To run this LibreGaming script you need python3 installed if not already to install python3 click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies).
+* To run this LibreGaming script you need python3 installed if not already. to install python3 click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies).
 * Also you need to enable nonfree packages if you are using Fedora to install steam.
 * You can find the commands to enable nonfree packages for Fedora in this [website](https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/#proc_enabling-the-rpmfusion-repositories-using-command-line-utilities_enabling-the-rpmfusion-repositories):
 
@@ -50,7 +50,6 @@ sudo dnf group update core
 
 ## Dependencies:
 * python3
-* python3-pip is needed to install [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup which is already inlcuded in the script so you don't have to install it yourself.
 
 1. Install Python3 For Ubuntu:
 ```
@@ -64,6 +63,7 @@ sudo pacman install python
 ```
 sudo dnf install python3
 ```
+* python3-pip is needed to install [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup which is already inlcuded in the script so you don't have to install it yourself.
 
 # Installation:
 * To install LibreGaming Script you need to enter these commands:

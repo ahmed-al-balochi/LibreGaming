@@ -5,13 +5,13 @@ This a Python Program that downloads gaming required packages based on your Linu
 Table of contents
 =================
 
- - [Currently Supported Distribution](#Currently Supported Distribution:)
- - [Prerequisites](#Prerequisites:)
- - [Packages that LibreGaming installs for you:](#Packages that LibreGaming installs for you:)
-    -[Dependencies](#Dependencies:)
+ - [Currently Supported Distribution](#Currently Supported Distribution)
+ - [Prerequisites](#Prerequisites)
+ - [Packages that LibreGaming installs for you:](#Packages that LibreGaming installs for you)
+    -[Dependencies](#Dependencies)
  - [Installation](#Installation)
- - [Usage](#Usage:)
- - [Feedback](#Feedback:)
+ - [Usage](#Usage)
+ - [Feedback](#Feedback)
  - [Thanks and Credits](#Thanks and Credits)
 
 

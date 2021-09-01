@@ -1,5 +1,5 @@
 # LibreGaming
-This a Python Program that downloads gaming required packages based on your Linux Distribution.
+Python Program that downloads gaming required packages based on your Linux Distribution.
 
 
 Table of contents

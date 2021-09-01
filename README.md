@@ -82,8 +82,7 @@ fi
 * To install LibreGaming script you need to enter these commands:
 ```
 git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/
-cd LibreGaming/
-cp LibreGaming getPackageManager ~/.local/bin
+cp LibreGaming/LibreGaming LibreGaming/getPackageManager ~/.local/bin
 ```
 
 # Usage:
@@ -105,9 +104,9 @@ LibreGaming -g
 ```
 
 # Feedback:
-* Tell me what distro to add if yours is not available.
+* Tell me what distro to add if yours is not available. And what features you'd like to see.
 * Also please report if there are any bugs in the script.
-* Your feedback is always welcome
+* Your feedback is always welcome.
 
 # Credits:
 * Thanks to [GloriousEggroll](https://github.com/GloriousEggroll/) for ProtonGE.

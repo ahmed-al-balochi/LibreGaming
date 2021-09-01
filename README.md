@@ -45,9 +45,10 @@ sudo dnf group update core
 # Packages:
 1. Steam.
 2. Wine
-3. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Optional).
-3. [Lutris](https://github.com/lutris/lutris.git).
-4. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
+3. Gamemode
+4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Optional).
+5. [Lutris](https://github.com/lutris/lutris.git).
+6. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
 
 ## Dependencies:
 * python3

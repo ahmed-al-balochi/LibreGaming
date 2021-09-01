@@ -76,7 +76,7 @@ mkdir ~/.local/bin
 cp LibreGaming/LibreGaming LibreGaming/getPackageManager ~/.local/bin
 ```
 * LibreGaming: command not found. This error can solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc)
-* The LibreGaming Script is saved in ~/.local/bin directory by default.
+* Note that the LibreGaming Script is saved in ~/.local/bin directory by default.
 ```
 ### PATH
 if [ -d "$HOME/.bin" ] ;

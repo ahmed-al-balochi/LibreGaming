@@ -1,9 +1,11 @@
+#!/usr/bin/python3
+
 import os, subprocess, argparse
 
 global distro 
 distro = ["apt","yay", "paru", "pacman", "dnf"]
 global found
-found = subprocess.getoutput("./getPackageManager") # shell script to get the distro pakacge manager
+found = subprocess.getoutput("getPackageManager") # you need your path setup to .local/bin in shell to run this script to get the distro pakacge manager
 #print (found)
 
 def installPkgs():

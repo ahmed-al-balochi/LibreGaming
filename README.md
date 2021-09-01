@@ -116,4 +116,4 @@ LibreGaming -g
 * Thanks to [AUNaseef](https://github.com/AUNaseef/) protonup for making it easier to install ProtonGE.
 * Thanks to [flightlessmango](https://github.com/flightlessmango/) for mangohud.
 * Thanks to [benjamimgois](https://github.com/benjamimgois/) for goverlay.
-* Thanks to anyone who downloads this script, and to everyone gives me feedback.  
+* Thanks to anyone who downloads this script, and to everyone who gives me feedback.  

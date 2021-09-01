@@ -16,9 +16,10 @@ Table of contents
 
 
 # Distributions:
-1. Ubuntu
-2. Arch Linux
-3. Fedora
+* I tested this script on these three distributions. but it should also work on their derivatives too.
+1. Ubuntu.
+2. Arch Linux.
+3. Fedora.
 
 # Prerequisites:
 * To run this LibreGaming script you need python3 installed if not already. to install python3 click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies).

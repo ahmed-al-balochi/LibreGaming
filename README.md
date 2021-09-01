@@ -75,7 +75,8 @@ git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/
 mkdir ~/.local/bin
 cp LibreGaming/LibreGaming LibreGaming/getPackageManager ~/.local/bin
 ```
-* LibreGaming: command not found. This error can solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc)
+* LibreGaming: command not found. 
+This error can solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc)
 * Note that the LibreGaming Script is saved in ~/.local/bin directory by default.
 ```
 ### PATH

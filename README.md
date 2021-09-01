@@ -51,6 +51,8 @@ sudo dnf group update core
 
 ## Dependencies:
 * python3
+* git
+* pip3
 
 1. Install Python3 For Ubuntu:
 ```
@@ -67,8 +69,14 @@ sudo dnf install python3
 * python3-pip is needed to install [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup which is already inlcuded in the script so you don't have to install it yourself.
 
 # Installation:
-* In order to run LibreGaming script you need your shell path already setup, you can do this by entering these lines in  your shell file(.bashrc or .zshrc)
-* The shell is saved in ~/.local/bin directory
+* To install LibreGaming script you need to enter these commands:
+```
+git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/
+mkdir ~/.local/bin
+cp LibreGaming/LibreGaming LibreGaming/getPackageManager ~/.local/bin
+```
+* LibreGaming: command not found. This error can solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc)
+* The LibreGaming Script is saved in ~/.local/bin directory by default.
 ```
 ### PATH
 if [ -d "$HOME/.bin" ] ;
@@ -78,12 +86,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
-```
-
-* To install LibreGaming script you need to enter these commands:
-```
-git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/
-cp LibreGaming/LibreGaming LibreGaming/getPackageManager ~/.local/bin
 ```
 
 # Usage:

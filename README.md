@@ -51,10 +51,9 @@ sudo dnf group update core
 6. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
 
 ## Dependencies:
-* python3
 * git
-* pip3
 
+* python3
 1. Install Python3 For Ubuntu:
 ```
 sudo apt install python3
@@ -82,9 +81,6 @@ This error can be solved by setting up the PATH in your shell you can do this by
 * Note that the LibreGaming Script is saved in ~/.local/bin directory by default.
 ```
 ### PATH
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
 
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"

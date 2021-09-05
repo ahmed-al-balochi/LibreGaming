@@ -60,7 +60,7 @@ sudo apt install python3
 ```
 3. Install Python3 For Arch Linux:
 ```
-sudo pacman install python
+sudo pacman -S install python
 ```
 3. Install Python3 For Fedora:
 ```

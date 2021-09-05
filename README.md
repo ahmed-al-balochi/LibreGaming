@@ -69,11 +69,16 @@ sudo dnf install python3
 * python3-pip is needed to install [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup which is already inlcuded in the script so you don't have to install it yourself.
 
 # Installation:
-* To install LibreGaming script you need to enter these commands:
+* You can install LibreGaming using pip:
 ```
-git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/
-mkdir ~/.local/bin
-cp LibreGaming/LibreGaming LibreGaming/getPackageManager ~/.local/bin
+pip install LibreGaming
+```
+* Or you can install LibreGaming script by entering these commands:
+```
+git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/ 
+cd LibreGaming/
+python3 setup.py install --user
+
 ```
 * LibreGaming: command not found. 
 

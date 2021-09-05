@@ -71,7 +71,7 @@ sudo dnf install python3
 # Installation:
 * You can install LibreGaming using pip:
 ```
-pip install LibreGaming
+pip3 install LibreGaming
 ```
 * Or you can install LibreGaming script by entering these commands:
 ```

@@ -4,8 +4,8 @@ import argparse
 
 global distro 
 distro = ["apt","yay", "paru", "pacman", "dnf"]
-global found
-found = subprocess.getoutput("getPackageManager") # you need your path setup to .local/bin in shell to run this script to get the distro pakacge manager
+global found # you need your path setup to .local/bin in shell to run this script to get the distro pakacge manager
+found = subprocess.getoutput("~/.local/lib/python3.9/site-packages/LibreGaming/./getPackageManager.sh")
 #print (found)
 
 def installPkgs():

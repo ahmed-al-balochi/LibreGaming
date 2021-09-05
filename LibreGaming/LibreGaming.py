@@ -1,6 +1,6 @@
-#!/usr/bin/python3
 
-import os, subprocess, argparse
+import os, subprocess
+import argparse
 
 global distro 
 distro = ["apt","yay", "paru", "pacman", "dnf"]
@@ -43,24 +43,13 @@ def installPkgs():
         exit()
 
 def installProtonGE():
-    while True:
-        print("\n\nDo you want to install ProtonGE?[Y/N]: ")
-        ProtonANS = input()
-        #print(ProtonANS)
-        if ProtonANS == "n" or ProtonANS == "N":
-            print("Skipping Proton!")
-            exit()
-        elif ProtonANS == "y":
             os.system("pip3 install protonup")
             os.system("mkdir ~/.steam/")
             os.system("mkdir ~/.steam/root/")
             os.system("mkdir ~/.steam/root/compatibilitytools.d/")
             os.system("protonup -d '~/.steam/root/compatibilitytools.d/'")
             os.system("protonup")
-            exit()
-        else:
-            print("Sorry wrong input! Please enter Y for Yes or N for No")
-
+           
 def parse_arguments():
     #Parse commandline arguments
     parser = argparse.ArgumentParser(usage="%(prog)s", description="Install Gaming Packages with ease",

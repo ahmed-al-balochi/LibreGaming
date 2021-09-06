@@ -101,10 +101,6 @@ LibreGaming -a
 ```
 LibreGaming -p
 ```
-* To run the LibreGaming Script to update ProtonGE enter this command:
-```
-LibreGaming -pu
-```
 * To run the LibreGaming Script to only install the Gaming packages enter this command:
 ```
 LibreGaming -g

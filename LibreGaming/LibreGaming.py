@@ -21,8 +21,8 @@ def installPkgs():
             "sudo add-apt-repository ppa:flexiondotorg/mangohud -y",
             "sudo apt update",
             "sudo apt install --install-recommends winehq-staging -y",
-            "sudo apt install winetricks libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 -y",
-            "sudo apt install lutris python3-pip meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session steam goverlay -y"
+            "sudo apt install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 -y",
+            "sudo apt install winetricks lutris python3-pip meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session steam goverlay -y"
             ]  
         for i in Ubuntu:
             os.system(i) #running each element in Ubuntu array 

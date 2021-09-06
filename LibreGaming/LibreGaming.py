@@ -42,36 +42,25 @@ def installPkgs():
     else:
         print("Your distro was not found :(")
         exit()
-
-def installProtonGE():
-            os.system("pip3 install protonup")
-            os.system("mkdir ~/.steam/")
-            os.system("mkdir ~/.steam/root/")
-            os.system("mkdir ~/.steam/root/compatibilitytools.d/")
-            os.system("protonup -d '~/.steam/root/compatibilitytools.d/'")
-            os.system("protonup")
            
 def parse_arguments():
     #Parse commandline arguments
     parser = argparse.ArgumentParser(usage="%(prog)s", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
     parser.add_argument('-a', '--all', action='store_true', help='Install both ProtonGE and Gaming Packages')
-    parser.add_argument('-p', '--proton', action='store_true', help='install ProtonGE only')
-    parser.add_argument('-pu', '--protonup', action='store_true', help='Update ProtonGE')
+    parser.add_argument('-p', '--proton', action='store_true', help='Install/Update ProtonGE')
     parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages only')
     return parser.parse_args()
 
 def main():
     args = parse_arguments()
     if args.proton:
-        installProtonGE()
-    if args.protonup:
         os.system("protonup")
     if args.gaming:
         installPkgs()
     if args.all:
         installPkgs()
-        installProtonGE()
+        os.system("protonup")
 
 if __name__ == "__main__":
     main()

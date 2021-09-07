@@ -7,8 +7,8 @@ Table of contents
 
  - [Distributions](#Distributions)
  - [Prerequisites](#Prerequisites)
+     - [Dependencies](#Dependencies)
  - [Packages:](#Packages)
-    - [Dependencies](#Dependencies)
  - [Installation](#Installation)
  - [Usage](#Usage)
  - [Feedback](#Feedback)
@@ -41,15 +41,6 @@ sudo dnf install \
 ```
 sudo dnf group update core
 ```
-
-# Packages:
-1. Steam.
-2. Wine
-3. Gamemode
-4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Optional).
-5. [Lutris](https://github.com/lutris/lutris.git).
-6. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
-
 ## Dependencies:
 * git
 
@@ -66,10 +57,31 @@ sudo pacman -S python
 ```
 sudo dnf install python3
 ```
-* python3-pip is needed to install [AUNaseef](https://github.com/AUNaseef/protonup.git)'s protonup which is already inlcuded in the script so you don't have to install it yourself.
+
+* python3-pip.
+1. Install Python3 For Ubuntu:
+```
+sudo apt install python3-pip
+```
+3. Install Python3 For Arch Linux:
+```
+sudo pacman -S python-pip
+```
+3. Install Python3 For Fedora:
+```
+sudo dnf install python3-pip
+```
+
+# Packages:
+1. Steam.
+2. Wine
+3. Gamemode
+4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Optional).
+5. [Lutris](https://github.com/lutris/lutris.git).
+6. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
 
 # Installation:
-* You can install LibreGaming using pip:
+* You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:
 ```
 pip3 install LibreGaming
 ```

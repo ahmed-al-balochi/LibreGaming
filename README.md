@@ -119,9 +119,9 @@ LibreGaming -p
 LibreGaming -g
 ```
 # VideoDemo:
-* This a my video demonstrating LibreGaming in [English](https://www.youtube.com/watch?v=F9GP5Et12qo). And click here for [Arabic](https://www.youtube.com/watch?v=QI8Ai8BTMwo):
+* This a my video demonstrating LibreGaming in [English](https://www.youtube.com/watch?v=F9GP5Et12qo). And click here for [Arabic](https://www.youtube.com/watch?v=QI8Ai8BTMwo)
 * This is a video demonstrating LibreGaming made by TechHut:
-https://www.youtube.com/watch?v=2f2zdViFDYg):
+https://www.youtube.com/watch?v=2f2zdViFDYg
 
 # Feedback:
 * Tell me what distro to add if yours is not available. And what features you'd like to see.

@@ -6,8 +6,7 @@ distro = ["apt","yay", "paru", "pacman", "dnf"]
 global PackageManager 
 dir = os.path.dirname(__file__)
 script = os.path.join(dir, 'getPackageManager.sh') # get the path to the package manager script
-#PackageManager = subprocess.getoutput("sh "+script)      # run the script 
-PackageManager = "pacman"
+PackageManager = subprocess.getoutput("sh "+script)      # run the script 
 #print (PackageManager)
 
 def installPkgs():

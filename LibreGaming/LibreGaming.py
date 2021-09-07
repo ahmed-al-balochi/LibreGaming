@@ -16,7 +16,7 @@ def installPkgs():
         Ubuntu = [
             "wget -nc https://dl.winehq.org/wine-builds/winehq.key",
             "sudo apt-key add winehq.key",
-            "sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ " + ReleaseCodename + " main' -y"
+            "sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ " + ReleaseCodename + " main' -y",
             "sudo add-apt-repository ppa:lutris-team/lutris -y",
             "sudo add-apt-repository multiverse -y",
             "sudo add-apt-repository ppa:flexiondotorg/mangohud -y",

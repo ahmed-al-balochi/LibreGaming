@@ -1,5 +1,6 @@
 # LibreGaming
 Python Program that downloads gaming required packages based on your Linux Distribution.
+
 [![Downloads](https://static.pepy.tech/personalized-badge/libregaming?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/libregaming)
 
 Table of contents

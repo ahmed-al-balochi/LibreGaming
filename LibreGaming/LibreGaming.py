@@ -24,7 +24,7 @@ def installPkgs():
             "sudo apt install --install-recommends winehq-staging -y",
             "sudo apt install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 -y",
             "sudo apt install winetricks lutris python3-pip meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session steam goverlay -y",
-            "curl -s https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest \ | grep 'browser_download_url.*deb' \ | cut -d : -f 2,3 \ | tr -d \" \ | wget -O heroicLatest.deb -i -", # if you know a better way to install heroic on Ubuntu please let me know
+            "curl -s https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest | grep 'browser_download_url.*deb' | cut -d : -f 2,3 | tr -d \" | wget -O HeroicLatest -i -", # if you know a better way to install heroic on Ubuntu please let me know
             "sudo sudo dpkg -i heroicLatest.deb"
             ]  
         for i in Ubuntu:

@@ -45,6 +45,18 @@ sudo dnf group update core
 ```
 ## Dependencies:
 * git
+1. Install git For Ubuntu:
+```
+sudo apt install git
+```
+3. Install git For Arch Linux:
+```
+sudo pacman -S git
+```
+3. Install git For Fedora:
+```
+sudo dnf install git
+```
 
 * python3
 1. Install Python3 For Ubuntu:
@@ -74,13 +86,17 @@ sudo pacman -S python-pip
 sudo dnf install python3-pip
 ```
 
+* [flatpak](https://flatpak.org/setup/) is needed for installing Athenaeum.
+
 # Packages:
 1. Steam.
 2. Wine
 3. Gamemode
 4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Optional).
 5. [Lutris](https://github.com/lutris/lutris.git).
-6. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
+6. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git).
+7. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
+8. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
 
 # Installation:
 * You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:
@@ -108,6 +124,7 @@ fi
 
 # Usage:
 * To run the LibreGaming Script to install both the Gaming packages and ProtonGE enter this command:
+Please note that this command installs everytning except Athenaeum.
 ```
 LibreGaming -a
 ```
@@ -119,6 +136,15 @@ LibreGaming -p
 ```
 LibreGaming -g
 ```
+* To run the LibreGaming Script to only install Athenaeum Launcher enter this command:
+```
+LibreGaming -ath
+```
+* To run the LibreGaming Script to install gaming packages, ProtonGE, and Athenaeum Launcher enter this command:
+```
+LibreGaming -a -ath
+```
+
 # VideoDemo:
 * This a my video demonstrating LibreGaming in [English](https://www.youtube.com/watch?v=F9GP5Et12qo). And click here for [Arabic](https://www.youtube.com/watch?v=QI8Ai8BTMwo)
 * This is a video demonstrating LibreGaming made by TechHut:

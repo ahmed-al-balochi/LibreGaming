@@ -94,7 +94,7 @@ sudo dnf install python3-pip
 3. Gamemode
 4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Optional).
 5. [Lutris](https://github.com/lutris/lutris.git).
-6. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git).
+6. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) for all distros except Ubuntu it will need extra work to include it.
 7. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
 8. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
 

@@ -32,8 +32,8 @@ def installPkgs():
         r = requests.get(url).json()
         for i in r['assets']:
             if  i['name'].endswith('.deb'):
-            url= i['browser_download_url']
-            #print(url)
+                url= i['browser_download_url']
+                #print(url)
         wget.download(url, "heroic.deb")
         os.system("sudo dpkg -i heroic.deb")
 

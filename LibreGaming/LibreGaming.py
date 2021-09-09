@@ -13,6 +13,7 @@ def installPkgs():
         print("\nNow installing Ubuntu Gaming Packages")
         ReleaseCodename = subprocess.getoutput("lsb_release -cs")
         Ubuntu = [
+            "sudo dpkg --add-architecture i386",
             "wget -nc https://dl.winehq.org/wine-builds/winehq.key",
             "sudo apt-key add winehq.key",
             "sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ " + ReleaseCodename + " main' -y",

@@ -22,6 +22,7 @@ Table of contents
 1. Ubuntu.
 2. Arch Linux.
 3. Fedora.
+4. OpenSUSE Tumbleweed.
 
 # Prerequisites:
 * To run this LibreGaming script you need python3 installed if not already. to install python3 click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies).
@@ -49,13 +50,17 @@ sudo dnf group update core
 ```
 sudo apt install git
 ```
-3. Install git For Arch Linux:
+2. Install git For Arch Linux:
 ```
 sudo pacman -S git
 ```
 3. Install git For Fedora:
 ```
 sudo dnf install git
+```
+4. Install git For OpenSUSE Tumbleweed:
+```
+sudo zypper install git
 ```
 
 * python3
@@ -71,19 +76,26 @@ sudo pacman -S python
 ```
 sudo dnf install python3
 ```
+4. Install Python3 For OpenSUSE Tumbleweed:
+```
+sudo zypper install python3
 
 * python3-pip.
-1. Install Python3 For Ubuntu:
+1. Install python3-pip For Ubuntu:
 ```
 sudo apt install python3-pip
 ```
-3. Install Python3 For Arch Linux:
+2. Install python3-pip For Arch Linux:
 ```
 sudo pacman -S python-pip
 ```
-3. Install Python3 For Fedora:
+3. Install python3-pip For Fedora:
 ```
 sudo dnf install python3-pip
+```
+4. Install python3-pip For OpenSUSE Tumbleweed:
+```
+sudo zypper install python3-pip
 ```
 
 * [flatpak](https://flatpak.org/setup/) is needed for installing Athenaeum.

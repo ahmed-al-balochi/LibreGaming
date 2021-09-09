@@ -57,6 +57,10 @@ def installPkgs():
         ]
         for i in Fedora:
             os.system(i) #running each element in Fedora array
+    elif PackageManager == distro[5]:    #packages for OpenSUSE
+        print("\nNow installing OpenSUSE Gaming Packages")
+        OpenSUSE = "sudo zypper install lutris steam wine-staging goverlay gamemode"         
+        os.system(OpenSUSE)
     else:
         print("Your distro is not supported or was not found :(")
         exit()

@@ -22,6 +22,7 @@ Table of contents
 1. Ubuntu.
 2. Arch Linux.
 3. Fedora.
+4. OpenSUSE Tumbleweed
 
 # Prerequisites:
 * To run this LibreGaming script you need python3 installed if not already. to install python3 click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies).

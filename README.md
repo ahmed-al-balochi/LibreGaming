@@ -79,6 +79,7 @@ sudo dnf install python3
 4. Install Python3 For OpenSUSE Tumbleweed:
 ```
 sudo zypper install python3
+```
 
 * python3-pip.
 1. Install python3-pip For Ubuntu:

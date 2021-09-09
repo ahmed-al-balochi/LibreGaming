@@ -27,7 +27,7 @@ def installPkgs():
         for i in Ubuntu:
             os.system(i) #running each element in Ubuntu array 
         
-        print('Beginning file download with requests')
+        print('Beginning Heroic download dpkg')
         url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
         r = requests.get(url).json()
         for i in r['assets']:

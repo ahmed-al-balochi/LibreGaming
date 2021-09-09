@@ -59,7 +59,7 @@ def installPkgs():
             os.system(i) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
         print("\nNow installing OpenSUSE Gaming Packages")
-        OpenSUSE = "sudo zypper install lutris steam wine-staging goverlay gamemode"         
+        OpenSUSE = "sudo zypper install lutris steam wine-staging goverlay gamemode -y"         
         os.system(OpenSUSE)
         print('Downloading Heroic latest AppImage')
         url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'

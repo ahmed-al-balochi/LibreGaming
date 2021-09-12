@@ -44,6 +44,7 @@ sudo dnf install \
 ```
 sudo dnf group update core
 ```
+
 ## Dependencies:
 * git
 1. Install git For Ubuntu:

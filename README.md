@@ -29,7 +29,7 @@ Table of contents
 * Also you need to enable nonfree packages if you are using Fedora to install steam.
 * You can find the commands to enable nonfree packages for Fedora in this [website](https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/#proc_enabling-the-rpmfusion-repositories-using-command-line-utilities_enabling-the-rpmfusion-repositories):
 
-* Or you can enter these commands that I copied for the above website
+Or you can enter these commands that I copied for the above website
 To enable free and nonfree packages on Fedora enter these command:
 ```
 sudo dnf install \
@@ -44,6 +44,8 @@ sudo dnf install \
 ```
 sudo dnf group update core
 ```
+
+* For OpenSUSE Tumbleweed you need to enable packman repos to install Steam and other packages. You can find that [here](https://en.opensuse.org/Additional_package_repositories)
 
 ## Dependencies:
 * git

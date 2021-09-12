@@ -47,6 +47,8 @@ sudo dnf group update core
 
 * For OpenSUSE Tumbleweed you need to enable packman repos to install Steam and other packages. You can find that [here](https://en.opensuse.org/Additional_package_repositories)
 
+* If you are using Arch Linux or an Arch based system you need to enable 32bit packages found in multilib repo you can enable it by going to this [Arch wiki page](https://wiki.archlinux.org/title/official_repositories#multilib).
+
 ## Dependencies:
 * git
 1. Install git For Ubuntu:
@@ -113,6 +115,7 @@ sudo zypper install python3-pip
 6. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
 7. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
 8. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
+9. [Protonup](https://github.com/AUNaseef/protonup).
 
 # Installation:
 * You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:

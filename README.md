@@ -114,6 +114,11 @@ cd LibreGaming/
 python3 setup.py install --user
 
 ```
+* To update LibreGaming when there is a new release enter this command:
+```
+pip install LibreGaming -U
+```
+
 * LibreGaming: command not found. 
 
 This error can be solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc)

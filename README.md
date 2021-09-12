@@ -18,32 +18,17 @@ Table of contents
 
 
 # Distributions:
-* I tested this script on these three distributions. but it should also work on their derivatives too.
+* I tested this script on these distributions. but it should also work on their derivatives too.
 1. Ubuntu.
 2. Arch Linux.
 3. Fedora.
 4. OpenSUSE Tumbleweed.
 
 # Prerequisites:
-* To run this LibreGaming script you need python3 installed if not already. to install python3 click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies).
-* Also you need to enable nonfree packages if you are using Fedora to install steam.
-* You can find the commands to enable nonfree packages for Fedora in this [website](https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/#proc_enabling-the-rpmfusion-repositories-using-command-line-utilities_enabling-the-rpmfusion-repositories):
+* You need your drivers installed beforehand for maximum performance under Linux. you can install them by going to this [page](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)
 
-Or you can enter these commands that I copied for the above website
-To enable free and nonfree packages on Fedora enter these command:
-```
-sudo dnf install \
-  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-```
-To enable nonfree packages on Fedora enter these command:
-```
-sudo dnf install \
-  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-```
-* now you need to refreash the repos:
-```
-sudo dnf group update core
-```
+* To run this LibreGaming script you need python3 installed if not already. to install python3 click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies).
+* Also you need to enable free and nonfree packages if you are using Fedora to install steam. You can find the commands to enable free and nonfree packages for Fedora [here](https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/#proc_enabling-the-rpmfusion-repositories-using-command-line-utilities_enabling-the-rpmfusion-repositories):
 
 * For OpenSUSE Tumbleweed you need to enable packman repos to install Steam and other packages. You can find that [here](https://en.opensuse.org/Additional_package_repositories)
 
@@ -104,7 +89,7 @@ sudo dnf install python3-pip
 sudo zypper install python3-pip
 ```
 
-* [flatpak](https://flatpak.org/setup/) is needed for installing Athenaeum.
+* [Flatpak](https://flatpak.org/setup/) is needed for installing Athenaeum.
 
 # Packages:
 1. Steam.

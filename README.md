@@ -153,6 +153,8 @@ LibreGaming -a -ath
 * This a my video demonstrating LibreGaming in [English](https://www.youtube.com/watch?v=F9GP5Et12qo). And click here for [Arabic](https://www.youtube.com/watch?v=QI8Ai8BTMwo)
 * This is a video demonstrating LibreGaming made by TechHut:
 https://www.youtube.com/watch?v=2f2zdViFDYg
+* This is a video demonstrating LibreGaming made by @BrodieRobertson:
+https://www.youtube.com/watch?v=sOch-qZMLq0&t=309s
 
 # Feedback:
 * Tell me what distro to add if yours is not available. And what features you'd like to see.

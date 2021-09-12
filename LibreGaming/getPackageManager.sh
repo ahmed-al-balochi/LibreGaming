@@ -1,4 +1,5 @@
 #!/bin/sh
+
 if [ -x "$(command -v dnf)" ]; then echo "dnf"
 elif [ -x "$(command -v yay)" ]; then echo "yay"
 elif [ -x "$(command -v paru)" ]; then echo "paru"

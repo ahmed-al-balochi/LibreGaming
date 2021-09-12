@@ -4,7 +4,7 @@ import os, subprocess, argparse, wget, requests
 #TODO make an option to install specifc packages.
 
 global distro
-distro = ["apt", "yay", "paru", "pacman", "dnf", "zypper"]
+distro = ["apt","yay", "paru", "pacman", "dnf", "zypper"]
 global PackageManager 
 dir = os.path.dirname(__file__)
 PKGmanScript = os.path.join(dir, 'getPackageManager.sh') # get the path to the package manager script
@@ -65,7 +65,7 @@ def installPkgs():
             os.system(i) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
         print("\nNow installing OpenSUSE Gaming Packages")
-        OpenSUSE = rootCommand + " zypper install lutris steam wine-staging goverlay gamemode -y"  ##also include the update command       
+        OpenSUSE = rootCommand + " zypper install lutris steam wine-staging goverlay gamemode -y"       
         os.system(rootCommand + " zypper update -y")
         os.system(OpenSUSE)
         print('Downloading Heroic latest AppImage')

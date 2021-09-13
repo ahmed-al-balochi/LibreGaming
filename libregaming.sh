@@ -1,5 +1,6 @@
 #!/bin/bash
-printf "Hey man, how are you today?\nPlease select which distro you are using...Also make sure you already have AUR and multilib enabled <https://low-orbit.net/arch-linux-how-to-enable-multilib>\n\n"
+printf "Hey man, how are you doin' today?\nPlease select which distro you are using...Also make sure you already have AUR and multilib enabled <https://low-orbit.net/arch-linux-how-to-enable-multilib>\n"
+printf "This script is a rewrite of: https://github.com/Ahmed-Al-Balochi/LibreGaming. because why not\n\n"
 printf "1) Arch-Based Distro (thats what i use btw)\n2) Debian-Based Distro\n\n"
 read -p 'Type here: ' distroOpt
 printf "\n"

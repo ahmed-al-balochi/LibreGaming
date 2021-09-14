@@ -86,6 +86,10 @@ def parse_arguments():
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
     parser.add_argument('-a', '--all', action='store_true', help='Install both ProtonGE and Gaming Packages')
     parser.add_argument('-p', '--proton', action='store_true', help='Install/Update ProtonGE')
+    parser.add_argument('-r', '--releases', action='store_true', help='List ProtonGE Releases')
+    parser.add_argument('-l', '--list', action='store_true', help='List installed ProtonGE Releases')
+    parser.add_argument('-t', '--tag', action='store',type=str, default=None, help='Install a specific ProtonGE Release')
+    parser.add_argument('-d', '--delete', action='store', type=str, default=None, help='Delete a specific ProtonGE Release')
     parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages only')
     parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher only')
     return parser.parse_args()
@@ -94,6 +98,14 @@ def main():
     args = parse_arguments()
     if args.proton:
         os.system("protonup")
+    if args.releases:
+        os.system("protonup --releases")
+    if args.list:
+        os.system("protonup -l")
+    if args.tag:
+        os.system("protonup -t " + args.tag)
+    if args.delete:
+        os.system("protonup -r " + args.delete)
     if args.gaming:
         installPkgs()
     if args.all:

@@ -166,12 +166,12 @@ LibreGaming -l
 * To install a specfic release of ProtonGE enter this command:
 for example:
 ```
-LibreGaming -t Proton-6.13-GE-1
+LibreGaming -t 6.13-GE-1
 ```
 * To delete a specfic release of ProtonGE enter this command:
 for example:
 ```
-LibreGaming -d Proton-6.13-GE-1
+LibreGaming -d 6.13-GE-1
 ```
 
 

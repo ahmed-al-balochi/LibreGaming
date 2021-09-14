@@ -12,7 +12,7 @@ Table of contents
  - [Packages](#Packages)
  - [Installation](#Installation)
  - [Usage](#Usage)
-     - [ProtonupCommands](#Protonup specfic commands)
+     - [ProtonupCommands](#ProtonupCommands)
  - [VideoDemo](#VideoDemo)
  - [Feedback](#Feedback)
  - [Credits](#Credits)
@@ -154,7 +154,7 @@ LibreGaming -ath
 ```
 LibreGaming -a -ath
 ```
-## Protonup specfic commands
+## ProtonupCommands
 * To list all the available releases of ProtonGE enter this command:
 ```
 LibreGaming -r

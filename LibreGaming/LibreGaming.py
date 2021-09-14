@@ -110,7 +110,7 @@ def BasicPkgs():
     elif PackageManager == distro[4]:    #packages for Fedora
         print("\nNow installing Fedora Gaming Packages")
         os.system(rootCommand + " dnf install redhat-lsb-core -y")
-        ReleaseNumber = subprocess.getoutput("lsb_release -rs")
+        ReleaseNumber = int(subprocess.getoutput("lsb_release -rs"))
         if ReleaseNumber >= 33:                                           
             Fedora = [
             "wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks", #installing winetricks here

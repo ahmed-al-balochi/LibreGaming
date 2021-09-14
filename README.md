@@ -174,7 +174,6 @@ for example:
 LibreGaming -d 6.13-GE-1
 ```
 
-
 # VideoDemo:
 * This a my video demonstrating LibreGaming in [English](https://www.youtube.com/watch?v=F9GP5Et12qo). And click here for [Arabic](https://www.youtube.com/watch?v=QI8Ai8BTMwo)
 * This is a video demonstrating LibreGaming made by TechHut:

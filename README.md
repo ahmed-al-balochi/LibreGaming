@@ -138,7 +138,7 @@ Please note that this command installs everytning except Athenaeum.
 ```
 LibreGaming -a
 ```
-* To only install ProtonGE and Basic Packages(Wine, Steam, Gamemode):
+* To install ProtonGE and Basic Packages(Wine, Steam, Gamemode):
 ```
 LibreGaming -b
 ```

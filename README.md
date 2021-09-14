@@ -12,6 +12,7 @@ Table of contents
  - [Packages](#Packages)
  - [Installation](#Installation)
  - [Usage](#Usage)
+     - [ProtonupCommands](#Protonup specfic commands)
  - [VideoDemo](#VideoDemo)
  - [Feedback](#Feedback)
  - [Credits](#Credits)
@@ -153,6 +154,26 @@ LibreGaming -ath
 ```
 LibreGaming -a -ath
 ```
+## Protonup specfic commands
+* To list all the available releases of ProtonGE enter this command:
+```
+LibreGaming -r
+```
+* To list all the installed verions of ProtonGE enter this command:
+```
+LibreGaming -l
+```
+* To install a specfic release of ProtonGE enter this command:
+for example:
+```
+LibreGaming -t Proton-6.13-GE-1
+```
+* To delete a specfic release of ProtonGE enter this command:
+for example:
+```
+LibreGaming -d Proton-6.13-GE-1
+```
+
 
 # VideoDemo:
 * This a my video demonstrating LibreGaming in [English](https://www.youtube.com/watch?v=F9GP5Et12qo). And click here for [Arabic](https://www.youtube.com/watch?v=QI8Ai8BTMwo)

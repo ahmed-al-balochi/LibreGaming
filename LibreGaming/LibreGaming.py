@@ -153,7 +153,7 @@ def BasicPkgs():
 
 def parse_arguments():
     #Parse commandline arguments
-    parser = argparse.ArgumentParser(usage="%(prog)s", description="Install Gaming Packages with ease",
+    parser = argparse.ArgumentParser(usage="%(prog)s <arguments>", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
     parser.add_argument('-a', '--all', action='store_true', help='Install both ProtonGE and Gaming Packages')
     parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages and ProtonGE')

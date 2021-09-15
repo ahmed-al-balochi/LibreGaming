@@ -96,7 +96,7 @@ sudo zypper install python3-pip
 1. Steam.
 2. Wine-Staging.
 3. [Gamemode](https://github.com/FeralInteractive/gamemode).
-4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Optional).
+4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom).
 5. [Lutris](https://github.com/lutris/lutris.git).
 6. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
 7. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.

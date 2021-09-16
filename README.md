@@ -122,7 +122,7 @@ pip install LibreGaming -U
 
 * LibreGaming: command not found. 
 
-This error can be solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc) and by default your shell file is hidden by default. 
+This error can be solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc) and by default your shell file is hidden. to show hidden files enter ```ls -al``` in the terminal.
 * Note that the LibreGaming Script is saved in ~/.local/bin directory by default.
 ```
 ### PATH

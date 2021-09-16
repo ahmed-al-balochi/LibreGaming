@@ -96,11 +96,11 @@ sudo zypper install python3-pip
 1. Steam.
 2. Wine-Staging.
 3. [Gamemode](https://github.com/FeralInteractive/gamemode).
-4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(Must run Steam at least once before installing ProtonGE).
+4. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(You Must run Steam at least once before installing ProtonGE).
 5. [Lutris](https://github.com/lutris/lutris.git).
 6. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
 7. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
-8. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git).
+8. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
 9. [Protonup](https://github.com/AUNaseef/protonup).
 
 # Installation:
@@ -122,7 +122,7 @@ pip install LibreGaming -U
 
 * LibreGaming: command not found. 
 
-This error can be solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc)
+This error can be solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc) and by default your shell file is hidden by default. 
 * Note that the LibreGaming Script is saved in ~/.local/bin directory by default.
 ```
 ### PATH
@@ -133,12 +133,13 @@ fi
 ```
 
 # Usage:
-* To install both the Gaming packages enter this command:
-Please note that this command installs everytning except Athenaeum.
+* Note: you can also run this script using libregaming command if you don't like LibreGaming. Both can be used, so chose what you prefer.
+* To install all the Gaming packages enter this command:
+Please note that this command installs everytning except Athenaeum and ProtonGE(because you need to run Steam at least once).
 ```
 LibreGaming -a
 ```
-* To install ProtonGE and Basic Packages(Wine, Steam, Gamemode):
+* To install Basic Packages(Wine, Steam, Gamemode):
 ```
 LibreGaming -b
 ```

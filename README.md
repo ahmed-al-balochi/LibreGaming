@@ -171,7 +171,7 @@ LibreGaming -t 6.13-GE-1
 * To delete a specfic release of ProtonGE enter this command:
 for example:
 ```
-LibreGaming -d 6.13-GE-1
+LibreGaming -rm 6.13-GE-1
 ```
 
 # VideoDemo:

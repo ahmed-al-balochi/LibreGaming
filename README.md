@@ -134,8 +134,7 @@ fi
 
 # Usage:
 * Note: you can also run this script using ```libregaming``` command if you don't like ```LibreGaming```. Both can be used, so choose what you prefer.
-* To install all the Gaming packages enter this command:
-* To only install all the Gaming packages mentioned in the packages section enter this command:
+* To install all the Gaming packages mentioned in the packages section enter this command:
 ```
 LibreGaming -g
 ```

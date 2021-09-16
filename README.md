@@ -135,9 +135,9 @@ fi
 # Usage:
 * Note: you can also run this script using ```libregaming``` command if you don't like ```LibreGaming```. Both can be used, so choose what you prefer.
 * To install all the Gaming packages enter this command:
-Please note that this command installs everytning except Athenaeum and ProtonGE(because you need to run Steam at least once).
+* To only install all the Gaming packages mentioned in the packages section enter this command:
 ```
-LibreGaming -a
+LibreGaming -g
 ```
 * To install Basic Packages(Wine, Steam, Gamemode):
 ```
@@ -147,17 +147,13 @@ LibreGaming -b
 ```
 LibreGaming -p
 ```
-* To only install the Gaming packages enter this command:
-```
-LibreGaming -g
-```
 * To only install Athenaeum Launcher enter this command:
 ```
 LibreGaming -ath
 ```
 * To install gaming packages, ProtonGE, and Athenaeum Launcher enter this command:
 ```
-LibreGaming -a -ath
+LibreGaming -g -p -ath
 ```
 ## ProtonupCommands
 * To list all the available releases of ProtonGE enter this command:

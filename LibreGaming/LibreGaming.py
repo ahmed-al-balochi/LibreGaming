@@ -185,6 +185,7 @@ def main():
         os.system("protonup")
     if args.basic:
         BasicPkgs()
+        os.system("protonup")
     if args.athenaeum:
         os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
 

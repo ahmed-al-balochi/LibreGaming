@@ -133,7 +133,7 @@ fi
 ```
 
 # Usage:
-* Note: you can also run this script using libregaming command if you don't like LibreGaming. Both can be used, so chose what you prefer.
+* Note: you can also run this script using ```libregaming``` command if you don't like ```LibreGaming```. Both can be used, so choose what you prefer.
 * To install all the Gaming packages enter this command:
 Please note that this command installs everytning except Athenaeum and ProtonGE(because you need to run Steam at least once).
 ```

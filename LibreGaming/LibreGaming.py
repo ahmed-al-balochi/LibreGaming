@@ -155,15 +155,14 @@ def parse_arguments():
     #Parse commandline arguments
     parser = argparse.ArgumentParser(usage="%(prog)s <arguments>", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
-    parser.add_argument('-a', '--all', action='store_true', help='Install both ProtonGE and Gaming Packages')
-    parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages and ProtonGE')
-    parser.add_argument('-p', '--proton', action='store_true', help='Install/Update ProtonGE')
+    parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages ')
+    parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages')
+    parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher only')
+    parser.add_argument('-p', '--proton', action='store_true', help='Install/Update ProtonGE(You must run Steam once before installing ProtonGE)')
     parser.add_argument('-r', '--releases', action='store_true', help='List ProtonGE Releases')
     parser.add_argument('-l', '--list', action='store_true', help='List installed ProtonGE Releases')
     parser.add_argument('-t', '--tag', action='store',type=str, default=None, help='Install a specific ProtonGE Release')
-    parser.add_argument('-d', '--delete', action='store', type=str, default=None, help='Delete a specific ProtonGE Release')
-    parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages only')
-    parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher only')
+    parser.add_argument('-rm', '--rm', action='store', type=str, default=None, metavar='TAG', help='remove a specific ProtonGE Release')
     return parser.parse_args()
 
 def main():
@@ -176,16 +175,12 @@ def main():
         os.system("protonup -l")
     if args.tag:
         os.system("protonup -t " + args.tag)
-    if args.delete:
-        os.system("protonup -r " + args.delete)
+    if args.rm:
+        os.system("protonup -r " + args.rm)
     if args.gaming:
         installAllPkgs()
-    if args.all:
-        installAllPkgs()
-        os.system("protonup")
     if args.basic:
         BasicPkgs()
-        os.system("protonup")
     if args.athenaeum:
         os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
 

@@ -105,7 +105,7 @@ sudo zypper install python3-pip
 4. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
 5. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
 6. [itch.io](https://itch.io/app) a Launcher for indie games.
-7. [Steam Tinker Launch](https://github.com/frostworx/steamtinkerlaunch)
+7. [Steam Tinker Launch](https://github.com/frostworx/steamtinkerlaunch)(Only for Arch Linux).
 
 # Installation:
 * You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:

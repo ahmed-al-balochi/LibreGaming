@@ -151,13 +151,21 @@ def BasicPkgs():
         print("Your distro is not supported or was not found :(")
         exit()
 
+def itch():
+        print('Downloading itch.io')
+        os.system("wget 'https://itch.io/app/download?platform=linux' -O itch-setup")
+        os.system("chmod +x itch-setup && ./itch-setup && wget 'https://itch.io/app/download?platform=linux' -o itch-setup")
+
+
 def parse_arguments():
     #Parse commandline arguments
     parser = argparse.ArgumentParser(usage="%(prog)s <arguments>", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
     parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages ')
     parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages')
-    parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher only')
+    parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher')
+    parser.add_argument('-itch', '--itch', action='store_true', help='Install itch.io Launcher')
+    parser.add_argument('-stl', '--stl', action='store_true', help='Install Steam Tinker Launch(For Arch Linux only)')
     parser.add_argument('-p', '--proton', action='store_true', help='Install/Update ProtonGE(You must run Steam once before installing ProtonGE)')
     parser.add_argument('-r', '--releases', action='store_true', help='List ProtonGE Releases')
     parser.add_argument('-l', '--list', action='store_true', help='List installed ProtonGE Releases')
@@ -181,6 +189,10 @@ def main():
         installAllPkgs()
     if args.basic:
         BasicPkgs()
+    if args.itch:
+        itch()
+    if args.stl:
+        os.system(PackageManager + " -S steamtinkerlaunch -y")      ##gawk git unzip wget xdotool xxd yad
     if args.athenaeum:
         os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
 

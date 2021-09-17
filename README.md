@@ -11,6 +11,7 @@ Table of contents
      - [Dependencies](#Dependencies)
  - [Packages](#Packages)
      - [Optional_Packages](#Optional_Packages)
+          - [Other_Packages](#Other_Packages)
  - [Installation](#Installation)
  - [Usage](#Usage)
      - [ProtonupCommands](#ProtonupCommands)
@@ -100,12 +101,12 @@ sudo zypper install python3-pip
 3. [Gamemode](https://github.com/FeralInteractive/gamemode).
 4. [Protonup](https://github.com/AUNaseef/protonup).
 ## Optional_Packages
-* These Packages and the ones above can be installed using ```LibreGaming -g ```
+* These Packages + the ones above can be installed using ```LibreGaming -g ```
 1. [Lutris](https://github.com/lutris/lutris.git).
 2. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
 3. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
-### Other Packages
-* These Packages have their own install option and they are not included in the above packages. To know more click [here](https://github.com/Ahmed-Al-Balochi/LibreGaming/tree/stl-itch-Support#usage)
+### Other_Packages
+* These Packages have their own install option and they are not included in the above packages. They need to be installed seperatly, to know more click [here](https://github.com/Ahmed-Al-Balochi/LibreGaming/tree/stl-itch-Support#usage)
 1. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(You Must run Steam at least once before installing ProtonGE).
 2. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
 3. [itch.io](https://itch.io/app) a Launcher for indie games.
@@ -121,7 +122,6 @@ pip3 install LibreGaming
 git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/ 
 cd LibreGaming/
 python3 setup.py install --user
-
 ```
 * To update LibreGaming when there is a new release enter this command:
 ```
@@ -150,17 +150,25 @@ LibreGaming -g
 ```
 LibreGaming -b
 ```
-* To only install ProtonGE enter this command:
+* To install ProtonGE enter this command:
 ```
 LibreGaming -p
 ```
-* To only install Athenaeum Launcher enter this command:
+* To install Athenaeum Launcher enter this command:
 ```
 LibreGaming -ath
 ```
 * To install gaming packages, ProtonGE, and Athenaeum Launcher enter this command:
 ```
 LibreGaming -g -p -ath
+```
+* To install itch.io Launcher enter this command:
+```
+LibreGaming --itch
+```
+* To install Steam Tinker Launch(For Arch Linux only) enter this command:
+```
+LibreGaming --stl
 ```
 ## ProtonupCommands
 * To list all the available releases of ProtonGE enter this command:

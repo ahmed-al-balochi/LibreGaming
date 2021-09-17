@@ -94,18 +94,22 @@ sudo zypper install python3-pip
 * [Flatpak](https://flatpak.org/setup/) is needed for installing Athenaeum.
 
 # Packages:
+* These Packages are installed using ```LibreGaming -b ```
 1. Steam.
 2. Wine-Staging.
 3. [Gamemode](https://github.com/FeralInteractive/gamemode).
 4. [Protonup](https://github.com/AUNaseef/protonup).
 ## Optional_Packages
+* These Packages and the ones above can be installed using ```LibreGaming -g ```
+1. [Lutris](https://github.com/lutris/lutris.git).
+2. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
+3. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
+### Other Packages
+* These Packages have their own install option and they are not included in the above packages. To know more click [here](https://github.com/Ahmed-Al-Balochi/LibreGaming/tree/stl-itch-Support#usage)
 1. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(You Must run Steam at least once before installing ProtonGE).
-2. [Lutris](https://github.com/lutris/lutris.git).
-3. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
-4. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
-5. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
-6. [itch.io](https://itch.io/app) a Launcher for indie games.
-7. [Steam Tinker Launch](https://github.com/frostworx/steamtinkerlaunch)(Only for Arch Linux).
+2. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
+3. [itch.io](https://itch.io/app) a Launcher for indie games.
+4. [Steam Tinker Launch](https://github.com/frostworx/steamtinkerlaunch)(Only for Arch Linux).
 
 # Installation:
 * You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:

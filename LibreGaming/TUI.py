@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# TODO Make a TUI
 
 import os, subprocess, argparse, wget, requests
 import npyscreen

@@ -3,6 +3,8 @@ Python Program that downloads gaming required packages based on your Linux Distr
 
 [![Downloads](https://static.pepy.tech/personalized-badge/libregaming?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/libregaming) ![PyPI](https://img.shields.io/pypi/v/libregaming?color=ge&label=Version) [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Duser%3Fu%3D42792180%26type%3Dpatrons&style=flat)](https://patreon.com/user?u=42792180)
 
+![TUI image](TUI.png "TUI")
+
 Table of contents
 =================
 
@@ -172,7 +174,8 @@ LibreGaming --itch
 LibreGaming --stl
 ```
 ## TUI 
-* You can use a Terminal Based User Interface(TUI) to help you install what you want in a graphical way
+* You can use a Terminal Based User Interface(TUI) to help you install what you want in a graphical way.
+
 enter this command to use the TUI 
 ```
 LibreGaming --tui

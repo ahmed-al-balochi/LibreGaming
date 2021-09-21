@@ -14,7 +14,8 @@ Table of contents
           - [Other Packages](#Other_Packages)
  - [Installation](#Installation)
  - [Usage](#Usage)
-     - [Protonup Commands](#Protonup_Commands)
+     - [TUI](#TUI)
+            - [Protonup Commands](#Protonup_Commands)
  - [VideoDemo](#VideoDemo)
  - [Feedback](#Feedback)
  - [Credits](#Credits)
@@ -170,7 +171,14 @@ LibreGaming --itch
 ```
 LibreGaming --stl
 ```
-## Protonup_Commands
+## TUI 
+* You can use a Terminal Based User Interface(TUI) to help you install what you want in a graphical way
+enter this command to use the TUI 
+```
+LibreGaming --tui
+```
+
+### Protonup_Commands
 * To list all the available releases of ProtonGE enter this command:
 ```
 LibreGaming -r

@@ -16,7 +16,7 @@ class LibreGamingTUI(npyscreen.Form):
 def myFunction(*args):
     F = LibreGamingTUI(name = "LibreGaming TUI")
     F.edit()
-    s = (F.options.get_selected_objects())
+    s = str(F.options.get_selected_objects())
     numbers = []
     for item in s:
         for subitem in item.split():

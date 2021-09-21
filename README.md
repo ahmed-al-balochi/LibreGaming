@@ -127,7 +127,7 @@ python3 setup.py install --user
 ```
 * To update LibreGaming when there is a new release enter this command:
 ```
-pip install LibreGaming -U
+pip3 install LibreGaming -U
 ```
 
 * LibreGaming: command not found. 

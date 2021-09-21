@@ -102,7 +102,6 @@ sudo zypper install python3-pip
 1. Steam.
 2. Wine-Staging.
 3. [Gamemode](https://github.com/FeralInteractive/gamemode).
-4. [Protonup](https://github.com/AUNaseef/protonup).
 ## Optional_Packages
 * These Packages + the ones above can be installed using ```LibreGaming -g ```
 1. [Lutris](https://github.com/lutris/lutris.git).

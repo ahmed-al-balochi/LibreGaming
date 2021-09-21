@@ -2,20 +2,59 @@
 # TODO Make a TUI
 
 import os, subprocess, argparse, wget, requests
-
 import npyscreen
 
-class LibreGaming(npyscreen.Form):
+class LibreGamingTUI(npyscreen.Form):
     def create(self):
-        self.desc1= self.add(npyscreen.TitleFixedText,name ="desc One",value="1. LibreGaming -g will install Wine,Steam,Gamemode,Mangohud,Heroic Launcher")
-        self.desc2= self.add(npyscreen.TitleFixedText,name ="desc One",value="2. LibreGaming -b will install Wine,Steam,Gamemode")
-        self.desc3= self.add(npyscreen.TitleFixedText,name ="desc one",value="3. LibreGaming -p will install ProtonGE")
-        self.options = self.add(npyscreen.TitleSelectOne, scroll_exit=True, max_height=3, name='options', values = [' -g', ' -b', ' -p'])
+        self.options = self.add(npyscreen.TitleMultiSelect, scroll_exit=True, name='options', values = [
+        'Option 1: will install Wine=staging,Steam,Gamemode,Lutris,Heroic Launcher,Mangohud & Goverlay',
+        'Option 2: will install Wine=staging,Steam,Gamemode',
+        'Option 3: will install/Update ProtonGE',
+        'Option 4: will install Athenaeum Launcher',
+        'Option 5: will install itch.io Launcher',
+        'Option 6: will install Steam Tinker Launch(For Arch Linux only)',
+        ])
 def myFunction(*args):
-    F = LibreGaming(name = "LibreGaming Wizard")
+    F = LibreGamingTUI(name = "LibreGaming TUI")
     F.edit()
-    s = (str(F.options.get_selected_objects()))[2:-2]
-    return s 
-if __name__ == '__main__':
-    s= (npyscreen.wrapper_basic(myFunction))
-    os.system("LibreGaming"+s)
+    s = (F.options.get_selected_objects())
+    numbers = []
+    for item in s:
+        for subitem in item.split():
+            if(subitem.isdigit()):
+                numbers.append(subitem)
+    return numbers 
+
+def main(): 
+    s = (npyscreen.wrapper_basic(myFunction))
+    print("You Selected " + str(s))
+    for i in s:
+        if i == "1":
+            print("\n==>> Executing Option " + str(i) + "\n")
+            os.system("libregaming -g")
+            continue
+        elif i == "2":
+            print("\n==>> Executing Option " + str(i) + "\n")
+            os.system("libregaming -b")
+            continue
+        elif i == "3":
+            print("\n==>> Executing Option " + str(i) + "\n")
+            os.system("protonup")
+            continue
+        elif i == "4":
+            print("\n==>> Executing Option " + str(i) + "\n")
+            os.system("libregaming -ath")
+            continue
+        elif i == "5":
+            print("\n==>> Executing Option " + str(i) + "\n")
+            os.system("libregaming --itch")
+            continue
+        elif i == "6":
+            print("\n==>> Executing Option " + str(i) + "\n")
+            os.system("libregaming --stl")
+            continue
+        else:
+            print("Sorry could not execute. Please check your input")
+
+if __name__ == "__main__":
+    main()

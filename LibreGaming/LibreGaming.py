@@ -160,6 +160,7 @@ def parse_arguments():
     #Parse commandline arguments
     parser = argparse.ArgumentParser(usage="%(prog)s <arguments>", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
+    parser.add_argument('--tui', action='store_true', help='use a Terminal User Interface to install Packages ')
     parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages ')
     parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages')
     parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher')
@@ -174,6 +175,11 @@ def parse_arguments():
 
 def main():
     args = parse_arguments()
+    if args.tui:
+        dir = os.path.dirname(__file__)
+        tui = os.path.join(dir, 'TUI.py') # get the path to the package manager script
+        print(tui)
+        os.system("python3 "+tui)
     if args.proton:
         os.system("protonup")
     if args.releases:

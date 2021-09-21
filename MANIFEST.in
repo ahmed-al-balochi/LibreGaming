@@ -1,1 +1,2 @@
 include LibreGaming/*.sh
+include LibreGaming/TUI.py

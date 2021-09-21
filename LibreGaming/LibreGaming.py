@@ -197,7 +197,7 @@ def main():
     if args.itch:
         itch()
     if args.stl:
-        os.system(PackageManager + " -S steamtinkerlaunch -y")      ##gawk git unzip wget xdotool xxd yad
+        os.system(PackageManager + " -S steamtinkerlaunch -y --needed --noconfirm")      ##gawk git unzip wget xdotool xxd yad
     if args.athenaeum:
         os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
 

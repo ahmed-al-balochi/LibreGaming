@@ -14,20 +14,20 @@ class LibreGamingTUI(npyscreen.Form):
         'Option 6: will install Steam Tinker Launch(For Arch Linux only)',
         ])
 def myFunction(*args):
-    F = LibreGamingTUI(name = "LibreGaming TUI")
-    F.edit()
-    s = str(F.options.get_selected_objects())
+    Form = LibreGamingTUI(name = "LibreGaming TUI")
+    Form.edit()
+    Option = str(Form.options.get_selected_objects())
     numbers = []
-    for item in s:
+    for item in Option:
         for subitem in item.split():
             if(subitem.isdigit()):
                 numbers.append(subitem)
     return numbers 
 
 def main(): 
-    s = (npyscreen.wrapper_basic(myFunction))
-    print("You Selected " + str(s))
-    for i in s:
+    Option = (npyscreen.wrapper_basic(myFunction))
+    print("You Selected " + str(Option))
+    for i in Option:
         if i == "1":
             print("\n==>> Executing Option " + str(i) + "\n")
             os.system("libregaming -g")

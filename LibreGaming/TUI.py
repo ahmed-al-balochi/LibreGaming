@@ -6,8 +6,8 @@ import npyscreen
 class LibreGamingTUI(npyscreen.Form):
     def create(self):
         self.options = self.add(npyscreen.TitleMultiSelect, scroll_exit=True, name='options', values = [
-        'Option 1: will install Wine=staging,Steam,Gamemode,Lutris,Heroic Launcher,Mangohud & Goverlay',
-        'Option 2: will install Wine=staging,Steam,Gamemode',
+        'Option 1: will install Wine-staging,Steam,Gamemode,Lutris,Heroic Launcher,Mangohud & Goverlay',
+        'Option 2: will install Wine-staging,Steam,Gamemode',
         'Option 3: will install/Update ProtonGE(You must run Steam once before installing ProtonGE)',
         'Option 4: will install Athenaeum Launcher',
         'Option 5: will install itch.io Launcher',
@@ -29,7 +29,7 @@ def TUI(*args):
 class LibreGamingWizard(npyscreen.Form):
     def create(self):
         self.apps = self.add(npyscreen.TitleMultiSelect, scroll_exit=True, name='apps', values = [
-        'Option 1: will install Wine=staging,Steam,Gamemode',
+        'Option 1: will install Wine-staging,Steam,Gamemode',
         'Option 2: will install Lutris',
         'Option 3: will install Heroic Launcher',
         'Option 4: will install Mangohud & Goverlay',
@@ -37,6 +37,7 @@ class LibreGamingWizard(npyscreen.Form):
         'Option 6: will install Athenaeum Launcher',
         'Option 7: will install itch.io Launcher',
         'Option 8: will install Steam Tinker Launch(For Arch Linux only)',
+        'Option 9: Go Back To the Previous Screen',
         ])
 
 def WizardScreen(*args):
@@ -85,10 +86,13 @@ def installingApps(installApps):
             print("\n==>> Executing Option " + str(i) + "\n")
             os.system("libregaming --stl")
             continue
+        elif i == "9":
+            MainForm()
+            continue
         else:
             print("Sorry could not execute. Please check your input")
 
-def main(): 
+def MainForm(): 
     installOption = (npyscreen.wrapper_basic(TUI))
     print("You Selected " + str(installOption))
     for i in installOption:
@@ -122,6 +126,9 @@ def main():
             continue
         else:
             print("Sorry could not execute. Please check your input")
+
+def main(): 
+    MainForm()
 
 if __name__ == "__main__":
     main()

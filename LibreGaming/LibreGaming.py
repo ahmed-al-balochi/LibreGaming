@@ -151,6 +151,44 @@ def BasicPkgs():
         print("Your distro is not supported or was not found :(")
         exit()
 
+def Heroic():
+    if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
+        print('Downloading Heroic latest dpkg')
+        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
+        r = requests.get(url).json()
+        for i in r['assets']:
+            if  i['name'].endswith('.deb'):
+                url= i['browser_download_url']
+        wget.download(url, "heroic.deb")
+        os.system(rootCommand + " dpkg -i heroic.deb")
+
+    elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
+        print("\nNow installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
+        Arch = PackageManager + " -S heroic-games-launcher-bin -y --needed --noconfirm"
+        os.system(Arch)
+    elif PackageManager == distro[3]:    
+        print("\nYou need to have AUR helpers like yay,paru")
+    elif PackageManager == distro[4]:    #packages for Fedora
+        Fedora = [
+        rootCommand + " dnf copr enable atim/heroic-games-launcher -y",
+        rootCommand + " dnf update -y",
+        rootCommand + " dnf install heroic-games-launcher-bin -y"
+            ]
+        for i in Fedora:
+            os.system(i) #running each element in Fedora array
+    elif PackageManager == distro[5]:    #packages for OpenSUSE
+        print('Downloading Heroic latest AppImage')
+        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
+        r = requests.get(url).json()
+        for i in r['assets']:
+            if  i['name'].endswith('.AppImage'):
+                url= i['browser_download_url']
+        wget.download(url, "heroic.AppImage")
+        os.system("chmod +x heroic.AppImage && mv heroic.AppImage ~/Downloads")
+    else:
+        print("Your distro is not supported or was not found :(")
+        exit()
+
 def itch():
         print('Downloading itch.io')
         os.system("wget 'https://itch.io/app/download?platform=linux' -O itch-setup")
@@ -163,6 +201,7 @@ def parse_arguments():
     parser.add_argument('--tui', action='store_true', help='use a Terminal User Interface to install Packages ')
     parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages ')
     parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages')
+    parser.add_argument('--heroic', action='store_true', help='Install Heroic Launcher')
     parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher')
     parser.add_argument('--itch', action='store_true', help='Install itch.io Launcher')
     parser.add_argument('--stl', action='store_true', help='Install Steam Tinker Launch(For Arch Linux only)')
@@ -194,6 +233,8 @@ def main():
         installAllPkgs()
     if args.basic:
         BasicPkgs()
+    if args.heroic:
+        Heroic()
     if args.itch:
         itch()
     if args.stl:

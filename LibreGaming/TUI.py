@@ -8,12 +8,13 @@ class LibreGamingTUI(npyscreen.Form):
         self.options = self.add(npyscreen.TitleMultiSelect, scroll_exit=True, name='options', values = [
         'Option 1: will install Wine=staging,Steam,Gamemode,Lutris,Heroic Launcher,Mangohud & Goverlay',
         'Option 2: will install Wine=staging,Steam,Gamemode',
-        'Option 3: will install/Update ProtonGE',
+        'Option 3: will install/Update ProtonGE(You must run Steam once before installing ProtonGE)',
         'Option 4: will install Athenaeum Launcher',
         'Option 5: will install itch.io Launcher',
         'Option 6: will install Steam Tinker Launch(For Arch Linux only)',
         ])
-def myFunction(*args):
+
+def TUI(*args):
     Form = LibreGamingTUI(name = "LibreGaming TUI")
     Form.edit()
     Option = str(Form.options.get_selected_objects())
@@ -25,7 +26,7 @@ def myFunction(*args):
     return numbers 
 
 def main(): 
-    Option = (npyscreen.wrapper_basic(myFunction))
+    Option = (npyscreen.wrapper_basic(TUI))
     print("You Selected " + str(Option))
     for i in Option:
         if i == "1":

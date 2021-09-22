@@ -211,7 +211,7 @@ def Heroic():
             if  i['name'].endswith('.AppImage'):
                 url= i['browser_download_url']
         wget.download(url, "heroic.AppImage")
-        os.system("chmod +x heroic.AppImage && mv heroic.AppImage ~/Downloads")
+        os.system("chmod +x heroic.AppImage && mv heroic.AppImage ~/Downloads && cd ~/Downloads && ./heroic.AppImage")
     else:
         print("Your distro is not supported or was not found :(")
         exit()
@@ -232,7 +232,7 @@ def Overlays():
         Arch = PackageManager + " -S goverlay-bin -y --needed --noconfirm"
         os.system(Arch)
     elif PackageManager == distro[3]:    
-        print("\nYou need to have AUR helpers like yay,paru to install Heroic")
+        print("\nYou need to have AUR helpers like yay,paru to install Mangohud and Goverlay")
     elif PackageManager == distro[4]:    #packages for Fedora
         print("\ninstalling Mangohud and Goverlay for Fedora")
         Fedora = rootCommand + " dnf install goverlay -y"

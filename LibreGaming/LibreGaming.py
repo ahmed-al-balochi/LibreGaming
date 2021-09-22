@@ -32,16 +32,7 @@ def installAllPkgs():
             ]  
         for i in Ubuntu:
             os.system(i) #running each element in Ubuntu array 
-        
-        print('Downloading Heroic latest dpkg')
-        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
-        r = requests.get(url).json()
-        for i in r['assets']:
-            if  i['name'].endswith('.deb'):
-                url= i['browser_download_url']
-        wget.download(url, "heroic.deb")
-        os.system(rootCommand + " dpkg -i heroic.deb")
-
+        Heroic() 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\nNow installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
         Arch = PackageManager + " -Syu python-pip goverlay-bin heroic-games-launcher-bin wine-staging winetricks lutris steam gamemode giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader -y --needed --noconfirm"
@@ -81,14 +72,7 @@ def installAllPkgs():
         OpenSUSE = rootCommand + " zypper install lutris steam wine-staging goverlay gamemode -y"       
         os.system(rootCommand + " zypper update -y")
         os.system(OpenSUSE)
-        print('Downloading Heroic latest AppImage')
-        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
-        r = requests.get(url).json()
-        for i in r['assets']:
-            if  i['name'].endswith('.AppImage'):
-                url= i['browser_download_url']
-        wget.download(url, "heroic.AppImage")
-        os.system("chmod +x heroic.AppImage && mv heroic.AppImage ~/Downloads")
+        Heroic()
     else:
         print("Your distro is not supported or was not found :(")
         exit()

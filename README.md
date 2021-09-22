@@ -162,6 +162,18 @@ LibreGaming -ath
 ```
 LibreGaming -g -p -ath
 ```
+* To install Lutris Launcher enter this command:
+```
+LibreGaming --lutris 
+```
+* To install Heroic Launcher enter this command:
+```
+LibreGaming --heroic
+```
+* To install MangoHud & Goverlay enter this command:
+```
+LibreGaming -o
+```
 * To install itch.io Launcher enter this command:
 ```
 LibreGaming --itch

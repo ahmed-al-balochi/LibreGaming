@@ -254,20 +254,20 @@ def parse_arguments():
     #Parse commandline arguments
     parser = argparse.ArgumentParser(usage="%(prog)s <arguments>", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
-    parser.add_argument('--tui', action='store_true', help='use a Terminal User Interface to install Packages ')
     parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages ')
     parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages')
     parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher')
     parser.add_argument('-o', '--overlays', action='store_true', help='Install Mangohud & Goverlay')
-    parser.add_argument('--heroic', action='store_true', help='Install Heroic Launcher')
-    parser.add_argument('--lutris', action='store_true', help='Install lutris Launcher')
-    parser.add_argument('--itch', action='store_true', help='Install itch.io Launcher')
-    parser.add_argument('--stl', action='store_true', help='Install Steam Tinker Launch(For Arch Linux only)')
     parser.add_argument('-p', '--proton', action='store_true', help='Install/Update ProtonGE(You must run Steam once before installing ProtonGE)')
     parser.add_argument('-r', '--releases', action='store_true', help='List ProtonGE Releases')
     parser.add_argument('-l', '--list', action='store_true', help='List installed ProtonGE Releases')
     parser.add_argument('-t', '--tag', action='store',type=str, default=None, help='Install a specific ProtonGE Release')
     parser.add_argument('-rm', '--rm', action='store', type=str, default=None, metavar='TAG', help='remove a specific ProtonGE Release')
+    parser.add_argument('--tui', action='store_true', help='use a Terminal User Interface to install Packages ')
+    parser.add_argument('--heroic', action='store_true', help='Install Heroic Launcher')
+    parser.add_argument('--lutris', action='store_true', help='Install lutris Launcher')
+    parser.add_argument('--itch', action='store_true', help='Install itch.io Launcher')
+    parser.add_argument('--stl', action='store_true', help='Install Steam Tinker Launch(For Arch Linux only)')
     return parser.parse_args()
 
 def main():

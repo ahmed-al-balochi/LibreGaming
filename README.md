@@ -158,10 +158,6 @@ LibreGaming -p
 ```
 LibreGaming -ath
 ```
-* To install gaming packages, ProtonGE, and Athenaeum Launcher enter this command:
-```
-LibreGaming -g -p -ath
-```
 * To install Lutris Launcher enter this command:
 ```
 LibreGaming --lutris 
@@ -182,8 +178,13 @@ LibreGaming --itch
 ```
 LibreGaming --stl
 ```
+* You can mix options to install packages. For example, To install gaming packages, ProtonGE, and Athenaeum Launcher enter this command:
+```
+LibreGaming -g -p -ath
+```
 ## TUI 
 ![TUI image](/pics/tui.png "TUI")
+![TUI image](/pics/TUI.GIF "TUI")
 
 * You can use a Terminal Based User Interface(TUI) to help you install what you want in a graphical way.
 
@@ -195,7 +196,7 @@ LibreGaming --tui
 ### Protonup_Commands
 * To list all the available releases of ProtonGE enter this command:
 ```
-LibreGaming -r
+LibreGaming --release
 ```
 * To list all the installed verions of ProtonGE enter this command:
 ```
@@ -209,7 +210,7 @@ LibreGaming -t 6.13-GE-1
 * To delete a specfic release of ProtonGE enter this command:
 for example:
 ```
-LibreGaming -rm 6.13-GE-1
+LibreGaming -r 6.13-GE-1
 ```
 
 # VideoDemo:

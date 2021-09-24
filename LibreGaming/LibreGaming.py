@@ -243,10 +243,10 @@ def parse_arguments():
     parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher')
     parser.add_argument('-o', '--overlays', action='store_true', help='Install Mangohud & Goverlay')
     parser.add_argument('-p', '--proton', action='store_true', help='Install/Update ProtonGE(You must run Steam once before installing ProtonGE)')
-    parser.add_argument('-r', '--releases', action='store_true', help='List ProtonGE Releases')
     parser.add_argument('-l', '--list', action='store_true', help='List installed ProtonGE Releases')
     parser.add_argument('-t', '--tag', action='store',type=str, default=None, help='Install a specific ProtonGE Release')
-    parser.add_argument('-rm', '--rm', action='store', type=str, default=None, metavar='TAG', help='remove a specific ProtonGE Release')
+    parser.add_argument('-r', '--rem', action='store', type=str, default=None, metavar='TAG', help='remove a specific ProtonGE Release')
+    parser.add_argument('--releases', action='store_true', help='List ProtonGE Releases')
     parser.add_argument('--tui', action='store_true', help='use a Terminal User Interface to install Packages ')
     parser.add_argument('--heroic', action='store_true', help='Install Heroic Launcher')
     parser.add_argument('--lutris', action='store_true', help='Install lutris Launcher')
@@ -259,7 +259,6 @@ def main():
     if args.tui:
         dir = os.path.dirname(__file__)
         tui = os.path.join(dir, 'TUI.py') # get the path to the package manager script
-        print(tui)
         os.system("python3 "+tui)
     if args.proton:
         os.system("protonup")
@@ -269,8 +268,8 @@ def main():
         os.system("protonup -l")
     if args.tag:
         os.system("protonup -t " + args.tag)
-    if args.rm:
-        os.system("protonup -r " + args.rm)
+    if args.rem:
+        os.system("protonup -r " + args.rem)
     if args.gaming:
         installAllPkgs()
     if args.basic:

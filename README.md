@@ -15,6 +15,7 @@ Table of contents
  - [Installation](#Installation)
  - [Usage](#Usage)
      - [TUI](#TUI)
+     - [Wizard](#Wizard)
           - [Protonup Commands](#Protonup_Commands)
  - [VideoDemo](#VideoDemo)
  - [Feedback](#Feedback)
@@ -184,11 +185,18 @@ LibreGaming -g -p -ath
 ```
 ## TUI 
 ![TUI image](/pics/tui.png "TUI")
-![TUI image](/pics/TUI.GIF "TUI")
 
 * You can use a Terminal Based User Interface(TUI) to help you install what you want in a graphical way.
 
 enter this command to use the TUI 
+```
+LibreGaming --tui
+```
+## Wizard 
+![Wizard image](/pics/Wizard-101.png "Wizard TUI")
+![Wizard image](/pics/Wizard-102.png "Wizard TUI")
+
+* You can have more control over what gets installed on your system by using Wizard mode in the TUI, enter this command to use the TUI 
 ```
 LibreGaming --tui
 ```

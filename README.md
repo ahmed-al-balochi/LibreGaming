@@ -98,8 +98,8 @@ sudo zypper install python3-pip
 
 # Packages:
 * These Packages are installed using ```LibreGaming -b ```
-1. Steam.
-2. Wine-Staging.
+1. [Steam](https://store.steampowered.com/).
+2. [Wine-Staging](https://www.winehq.org/).
 3. [Gamemode](https://github.com/FeralInteractive/gamemode).
 ## Optional_Packages
 * These Packages + the ones above can be installed using ```LibreGaming -g ```
@@ -238,4 +238,5 @@ https://www.youtube.com/watch?v=sOch-qZMLq0&t=309s
 * Thanks to [AUNaseef](https://github.com/AUNaseef/) protonup for making it easier to install ProtonGE.
 * Thanks to [flightlessmango](https://github.com/flightlessmango/) for mangohud.
 * Thanks to [benjamimgois](https://github.com/benjamimgois/) for goverlay.
+* The TUI uses [Npyscreen](https://github.com/npcole/npyscreen).
 * Thanks to anyone who downloads this script, and to everyone who gives me feedback.  

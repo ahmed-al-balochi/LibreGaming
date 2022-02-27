@@ -251,7 +251,7 @@ def parse_arguments():
     parser.add_argument('--heroic', action='store_true', help='Install Heroic Launcher')
     parser.add_argument('--lutris', action='store_true', help='Install lutris Launcher')
     parser.add_argument('--itch', action='store_true', help='Install itch.io Launcher')
-    parser.add_argument('--stl', action='store_true', help='Install Steam Tinker Launch(For Arch Linux only)')
+    parser.add_argument('--stl', action='store_true', help='Install Steam Tinker Launch(For Arch Linux and YAY only')
     return parser.parse_args()
 
 def main():
@@ -283,7 +283,7 @@ def main():
     if args.itch:
         itch()
     if args.stl:
-        os.system(PackageManager + " -S steamtinkerlaunch -y --needed --noconfirm")      ##gawk git unzip wget xdotool xxd yad
+        os.system("yay -S steamtinkerlaunch -y --needed --noconfirm")
     if args.athenaeum:
         os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
 

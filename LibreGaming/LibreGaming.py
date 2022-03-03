@@ -148,7 +148,7 @@ def Lutris():
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2] or PackageManager == distro[3]:    
         print("\ninstalling Lutris for Arch")
-        Arch = rootCommand + " pacman -S lutris -y --needed --noconfirm"
+        Arch = rootCommand + " pacman -S python-evdev lutris -y --needed --noconfirm"
         os.system(Arch)
     elif PackageManager == distro[4]:    #packages for Fedora
         print("\ninstalling Lutris for Fedora")

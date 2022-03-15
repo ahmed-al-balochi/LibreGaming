@@ -228,7 +228,11 @@ def main():
     if args.itch:
         itch()
     if args.stl:
-        os.system(PackageManager + " -S steamtinkerlaunch -y --needed --noconfirm")      ##gawk git unzip wget xdotool xxd yad
+        if PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
+            print("\ninstalling Heroic for Arch")
+            os.system(PackageManager + " -S steamtinkerlaunch -y --needed --noconfirm")
+        elif PackageManager == distro[3]:    
+            print("\nYou need to have AUR helpers like yay,paru to install Heroic")
     if args.athenaeum:
         os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
 

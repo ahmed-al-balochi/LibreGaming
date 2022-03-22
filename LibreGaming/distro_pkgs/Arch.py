@@ -21,9 +21,5 @@ class Arch:
 # For installing Steam Tinker Lanuch
     Arch_AUR_STL = PackageManager + " -S steamtinkerlaunch -y --needed --noconfirm"
 
-def __init__(self):
-    distro = ["apt","yay", "paru", "pacman", "dnf", "zypper"]
-    PackageManager = ""
-    dir = os.path.dirname(__file__)
-    PKGmanScript = os.path.join(dir, 'getPackageManager.sh') # get the path to the package manager script
-    PackageManager = subprocess.getoutput("sh "+PKGmanScript)      # run the script
+def __init__(self, PackageManager):
+    self.PackageManager = PackageManager

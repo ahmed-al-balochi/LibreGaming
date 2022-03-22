@@ -1,7 +1,9 @@
 import os, subprocess, argparse, wget, requests
 
-
-#TODO make an option to install specifc packages.
+from LibreGaming.distro_pkgs.Arch import Arch 
+from LibreGaming.distro_pkgs.Fedora import Fedora
+from LibreGaming.distro_pkgs.OpenSUSE import OpenSUSE 
+from LibreGaming.distro_pkgs.Ubuntu import Ubuntu 
 
 global distro
 distro = ["apt","yay", "paru", "pacman", "dnf", "zypper"]
@@ -13,6 +15,11 @@ PackageManager = subprocess.getoutput("sh "+PKGmanScript)      # run the script
 rootScript = os.path.join(dir, 'getRoot.sh') # get the path to the root script
 global rootCommand
 rootCommand = subprocess.getoutput("sh "+rootScript)      # gets the rootCommand like sudo doas if both dont exist it will fall back to su -
+
+Arch_Object = Arch(PackageManager)
+Fedora_Object = Fedora()
+OpenSUSE_Object = OpenSUSE()
+Ubuntu_Object = Ubuntu()
 
 def installAllPkgs():
     BasicPkgs()
@@ -41,41 +48,27 @@ def BasicPkgs():
 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\nNow installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
-        Arch = PackageManager + " -Syu python-pip wine-staging winetricks steam gamemode giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader -y --needed --noconfirm"
-        os.system(Arch)
+        print(getattr(Arch_Object,'PackageManager'))
+        os.system(Arch_Object.Arch_AUR_Basics)
     elif PackageManager == distro[3]:    
         print("\nNow installing Arch Gaming Packages")
-        Arch = rootCommand + " pacman -Syu python-pip wine-staging winetricks steam gamemode giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader -y --needed --noconfirm"
-        os.system(Arch)
+        os.system(Arch_Object.Arch_Basics)
     elif PackageManager == distro[4]:    #packages for Fedora
-        print("\nNow installing Fedora Gaming Packages")
-        os.system(rootCommand + " dnf install redhat-lsb-core -y")
-        ReleaseNumber = int(subprocess.getoutput("lsb_release -rs"))
+        os.system("dnf install redhat-lsb-core -y") # used to get the release version of Fedora using "lsb_release -rs"
+        Fedora_Object.ReleaseNumber =  ReleaseNumber
+        print("\nNow installing Fedora " + str(ReleaseNumber) +" Gaming Packages")
         if ReleaseNumber >= 33:                                           
-            Fedora = [
-            "wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks", #installing winetricks here
-            "chmod +x winetricks",
-            rootCommand + " mv winetricks /usr/local/bin/",
-            rootCommand + " dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/"+ str(ReleaseNumber) +"/winehq.repo",
-            rootCommand + " dnf update -y",
-            rootCommand + " dnf install python3-pip wine-staging gamemode steam alsa-plugins-pulseaudio.i686 glibc-devel.i686 glibc-devel libgcc.i686 libX11-devel.i686 freetype-devel.i686 libXcursor-devel.i686 libXi-devel.i686 libXext-devel.i686 libXxf86vm-devel.i686 libXrandr-devel.i686 libXinerama-devel.i686 mesa-libGLU-devel.i686 mesa-libOSMesa-devel.i686 libXrender-devel.i686 libpcap-devel.i686 ncurses-devel.i686 libzip-devel.i686 lcms2-devel.i686 zlib-devel.i686 libv4l-devel.i686 libgphoto2-devel.i686 cups-devel.i686 libxml2-devel.i686 openldap-devel.i686 libxslt-devel.i686 gnutls-devel.i686 libpng-devel.i686 flac-libs.i686 json-c.i686 libICE.i686 libSM.i686 libXtst.i686 libasyncns.i686 liberation-narrow-fonts.noarch libieee1284.i686 libogg.i686 libsndfile.i686 libuuid.i686 libva.i686 libvorbis.i686 libwayland-client.i686 libwayland-server.i686 llvm-libs.i686 mesa-dri-drivers.i686 mesa-filesystem.i686 mesa-libEGL.i686 mesa-libgbm.i686 nss-mdns.i686 ocl-icd.i686 pulseaudio-libs.i686 sane-backends-libs.i686 tcp_wrappers-libs.i686 unixODBC.i686 samba-common-tools.x86_64 samba-libs.x86_64 samba-winbind.x86_64 samba-winbind-clients.x86_64 samba-winbind-modules.x86_64 mesa-libGL-devel.i686 fontconfig-devel.i686 libXcomposite-devel.i686 libtiff-devel.i686 openal-soft-devel.i686 mesa-libOpenCL-devel.i686 opencl-utils-devel.i686 alsa-lib-devel.i686 gsm-devel.i686 libjpeg-turbo-devel.i686 pulseaudio-libs-devel.i686 pulseaudio-libs-devel gtk3-devel.i686 libattr-devel.i686 libva-devel.i686 libexif-devel.i686 libexif.i686 glib2-devel.i686 mpg123-devel.i686 mpg123-devel.x86_64 libcom_err-devel.i686 libcom_err-devel.x86_64 libFAudio-devel.i686 libFAudio-devel.x86_64 -y"
-            ]
+            for i in Fedora_Object.Fedora_33_Basics:
+                os.system(i) #running each element in Fedora array from distro_pkgs/Fedora
         else:
-            print("Can't install wine-staging Because your Fedora version is less than 33. Installing wine from Fedora repo")
-            Fedora = [
-            "wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks", #installing winetricks here
-            "chmod +x winetricks",
-            rootCommand + " mv winetricks /usr/local/bin/",
-            rootCommand + " dnf update -y",
-            rootCommand + " dnf install python3-pip wine gamemode steam alsa-plugins-pulseaudio.i686 glibc-devel.i686 glibc-devel libgcc.i686 libX11-devel.i686 freetype-devel.i686 libXcursor-devel.i686 libXi-devel.i686 libXext-devel.i686 libXxf86vm-devel.i686 libXrandr-devel.i686 libXinerama-devel.i686 mesa-libGLU-devel.i686 mesa-libOSMesa-devel.i686 libXrender-devel.i686 libpcap-devel.i686 ncurses-devel.i686 libzip-devel.i686 lcms2-devel.i686 zlib-devel.i686 libv4l-devel.i686 libgphoto2-devel.i686 cups-devel.i686 libxml2-devel.i686 openldap-devel.i686 libxslt-devel.i686 gnutls-devel.i686 libpng-devel.i686 flac-libs.i686 json-c.i686 libICE.i686 libSM.i686 libXtst.i686 libasyncns.i686 liberation-narrow-fonts.noarch libieee1284.i686 libogg.i686 libsndfile.i686 libuuid.i686 libva.i686 libvorbis.i686 libwayland-client.i686 libwayland-server.i686 llvm-libs.i686 mesa-dri-drivers.i686 mesa-filesystem.i686 mesa-libEGL.i686 mesa-libgbm.i686 nss-mdns.i686 ocl-icd.i686 pulseaudio-libs.i686 sane-backends-libs.i686 tcp_wrappers-libs.i686 unixODBC.i686 samba-common-tools.x86_64 samba-libs.x86_64 samba-winbind.x86_64 samba-winbind-clients.x86_64 samba-winbind-modules.x86_64 mesa-libGL-devel.i686 fontconfig-devel.i686 libXcomposite-devel.i686 libtiff-devel.i686 openal-soft-devel.i686 mesa-libOpenCL-devel.i686 opencl-utils-devel.i686 alsa-lib-devel.i686 gsm-devel.i686 libjpeg-turbo-devel.i686 pulseaudio-libs-devel.i686 pulseaudio-libs-devel gtk3-devel.i686 libattr-devel.i686 libva-devel.i686 libexif-devel.i686 libexif.i686 glib2-devel.i686 mpg123-devel.i686 mpg123-devel.x86_64 libcom_err-devel.i686 libcom_err-devel.x86_64 libFAudio-devel.i686 libFAudio-devel.x86_64 -y"
-            ]
-        for i in Fedora:
-            os.system(i) #running each element in Fedora array
+            print("can't install wine-staging because your fedora version is less than 33. installing wine from fedora repo")
+            for i in getattr(Fedora_Object,'Fedora_32_Basics'):
+                os.system(i) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
-        print("\nNow installing OpenSUSE Gaming Packages")
-        OpenSUSE = rootCommand + " zypper install steam wine-staging gamemode -y"       
-        os.system(rootCommand + " zypper update -y")
-        os.system(OpenSUSE)
+            print("\nNow installing OpenSUSE Gaming Packages")
+            OpenSUSE = rootCommand + " zypper install steam wine-staging gamemode -y"       
+            os.system(rootCommand + " zypper update -y")
+            os.system(OpenSUSE)
     else:
         print("Your distro is not supported or was not found :(")
         exit()
@@ -97,8 +90,7 @@ def Lutris():
         os.system(Arch)
     elif PackageManager == distro[4]:    #packages for Fedora
         print("\ninstalling Lutris for Fedora")
-        Fedora = rootCommand + " dnf install lutris -y"
-        os.system(Fedora) #running each element in Fedora array
+        os.system(getattr(Fedora_Object,'Fedora_Lutris')) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
         print("\ninstalling Lutris for OpenSUSE")
         OpenSUSE = rootCommand + " zypper install lutris -y"       
@@ -125,12 +117,7 @@ def Heroic():
     elif PackageManager == distro[3]:    
         print("\nYou need to have AUR helpers like yay,paru to install Heroic")
     elif PackageManager == distro[4]:    #packages for Fedora
-        Fedora = [
-        rootCommand + " dnf copr enable atim/heroic-games-launcher -y",
-        rootCommand + " dnf update -y",
-        rootCommand + " dnf install heroic-games-launcher-bin -y"
-            ]
-        for i in Fedora:
+       for i in getattr(Fedora_Object,'Fedora_Heroic'):
             os.system(i) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
         print('Downloading Heroic latest AppImage')
@@ -153,7 +140,7 @@ def Overlays():
             rootCommand + " add-apt-repository ppa:flexiondotorg/mangohud -y",
             rootCommand + " apt update",
             rootCommand + " apt install goverlay -y"
-            ]  
+            ]
         for i in Ubuntu:
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
@@ -164,11 +151,10 @@ def Overlays():
         print("\nYou need to have AUR helpers like yay,paru to install Mangohud and Goverlay")
     elif PackageManager == distro[4]:    #packages for Fedora
         print("\ninstalling Mangohud and Goverlay for Fedora")
-        Fedora = rootCommand + " dnf install goverlay -y"
-        os.system(Fedora) #running each element in Fedora array
+        os.system(getattr(Fedora_Object,'Fedora_Overlays')) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
         print("\ninstalling Mangohud and Goverlay for OpenSUSE")
-        OpenSUSE = rootCommand + " zypper install goverlay -y"       
+        OpenSUSE = rootCommand + " zypper install goverlay -y"
         os.system(OpenSUSE)
     else:
         print("Your distro is not supported or was not found :(")
@@ -229,7 +215,7 @@ def main():
         itch()
     if args.stl:
         if PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
-            print("\ninstalling Heroic for Arch")
+            print("\ninstalling Steam Tinker Lanuch for Arch")
             os.system(PackageManager + " -S steamtinkerlaunch -y --needed --noconfirm")
         elif PackageManager == distro[3]:    
             print("\nYou need to have AUR helpers like yay,paru to install Heroic")

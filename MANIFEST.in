@@ -1,2 +1,3 @@
 include LibreGaming/*.sh
+include LibreGaming/distro_pkgs/*
 include LibreGaming/TUI.py

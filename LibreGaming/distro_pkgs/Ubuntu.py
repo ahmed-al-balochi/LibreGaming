@@ -13,7 +13,7 @@ class Ubuntu:
         " dpkg --add-architecture i386",
         "wget -nc https://dl.winehq.org/wine-builds/winehq.key",
         " apt-key add winehq.key",
-        " add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/"+ str(subprocess.getoutput("lsb_release -cs")) +" main' -y",
+        " add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ "+ ReleaseCodename +" main' -y",
         " add-apt-repository multiverse -y",
         " apt update",
         " apt install --install-recommends winehq-staging -y",
@@ -47,9 +47,9 @@ class Ubuntu:
         wget.download(url, "heroic.deb")
         os.system(" dpkg -i heroic.deb") #
 
-    def __init__():
+    def __init__(self):
         distroName = str(subprocess.getoutput("lsb_release -is"))
         if distroName is "Ubuntu":
-            ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
+            self.ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
         else:
-            ReleaseCodename = str(subprocess.getoutput("grep -oP '(?<=DISTRIB_CODENAME=)\w+' /etc/upstream-release/lsb-release"))
+            self.ReleaseCodename = str(subprocess.getoutput("grep -oP '(?<=DISTRIB_CODENAME=)\w+' /etc/upstream-release/lsb-release"))

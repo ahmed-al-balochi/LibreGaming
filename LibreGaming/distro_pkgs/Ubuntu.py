@@ -1,3 +1,5 @@
+import os, subprocess, wget
+
 class Ubuntu:
     """
     Here are all the pkgs that LibreGaming installs for Ubuntu

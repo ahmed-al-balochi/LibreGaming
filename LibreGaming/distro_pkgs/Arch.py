@@ -3,6 +3,7 @@ class Arch:
     Here are all the pkgs that LibreGaming installs for Arch Linux
     """
 
+# Saves the Arch package manager or AUR helpers. For example: pacman, yay
     PackageManager = ""
 
 # For installing Basic Packages like Steam, Wine, Gamemode 

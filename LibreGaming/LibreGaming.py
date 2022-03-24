@@ -68,7 +68,7 @@ def Lutris():
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2] or PackageManager == distro[3]:    
         print("\ninstalling Lutris for Arch")
-        os.system(Arch_Object.Lutris)
+        os.system(Arch_Object.Arch_Lutris)
     elif PackageManager == distro[4]:    #packages for Fedora
         print("\ninstalling Lutris for Fedora")
         os.system(getattr(Fedora_Object,'Fedora_Lutris')) #running each element in Fedora array
@@ -85,7 +85,7 @@ def Heroic():
         Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\ninstalling Heroic for Arch")
-        os.system(Arch_Object.Heroic)
+        os.system(Arch_Object.Arch_AUR_Heroic)
     elif PackageManager == distro[3]:
         print("\nYou need to have AUR helpers like yay,paru to install Heroic")
     elif PackageManager == distro[4]:    #packages for Fedora
@@ -111,7 +111,7 @@ def Overlays():
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\ninstalling Mangohud and Goverlay for Arch")
-        os.system(Arch_Object.Overlays)
+        os.system(Arch_Object.Arch_AUR_Overlays)
     elif PackageManager == distro[3]:    
         print("\nYou need to have AUR helpers like yay,paru to install Mangohud and Goverlay")
     elif PackageManager == distro[4]:    #packages for Fedora

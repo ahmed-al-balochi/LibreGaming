@@ -21,5 +21,5 @@ class Arch:
 # For installing Steam Tinker Lanuch
     Arch_AUR_STL = PackageManager + " -S steamtinkerlaunch -y --needed --noconfirm"
 
-def __init__(self, PackageManager):
-    self.PackageManager = PackageManager
+    def __init__(self, PackageManager):
+        self.PackageManager = PackageManager

@@ -32,20 +32,8 @@ def installAllPkgs():
 def BasicPkgs():
     if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
         print("\nNow installing Ubuntu Gaming Packages")
-        ReleaseCodename = subprocess.getoutput("lsb_release -cs")
-        Ubuntu = [
-            rootCommand + " dpkg --add-architecture i386",
-            "wget -nc https://dl.winehq.org/wine-builds/winehq.key",
-            rootCommand + " apt-key add winehq.key",
-            rootCommand + " add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ " + ReleaseCodename + " main' -y",
-            rootCommand + " add-apt-repository multiverse -y",
-            rootCommand + " apt update",
-            rootCommand + " apt install --install-recommends winehq-staging -y",
-            rootCommand + " apt install steam winetricks python3-pip gawk curl meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 -y"
-            ]  
-        for i in Ubuntu:
+        for i in Ubuntu_Object.Ubuntu_Basics:
             os.system(i) #running each element in Ubuntu array 
-
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\nNow installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
         print(getattr(Arch_Object,'PackageManager'))
@@ -76,13 +64,7 @@ def BasicPkgs():
 def Lutris():
     if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
         print("\ninstalling Lutris for Ubuntu")
-        Ubuntu = [
-            rootCommand + " dpkg --add-architecture i386",
-            rootCommand + " add-apt-repository ppa:lutris-team/lutris -y",
-            rootCommand + " apt update",
-            rootCommand + " apt install lutris -y"
-            ]  
-        for i in Ubuntu:
+        for i in Ubuntu_Object.Ubuntu_Lutris:
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2] or PackageManager == distro[3]:    
         print("\ninstalling Lutris for Arch")
@@ -100,15 +82,7 @@ def Lutris():
 
 def Heroic():
     if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
-        print('Downloading Heroic latest dpkg')
-        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
-        r = requests.get(url).json()
-        for i in r['assets']:
-            if  i['name'].endswith('.deb'):
-                url= i['browser_download_url']
-        wget.download(url, "heroic.deb")
-        os.system(rootCommand + " dpkg -i heroic.deb")
-
+        os.system(Ubuntu_Object.Ubuntu_Heroic) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\ninstalling Heroic for Arch")
         os.system(Arch_Object.Heroic)
@@ -133,13 +107,7 @@ def Heroic():
 def Overlays():
     if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
         print("\ninstalling Mangohud and Goverlay for Ubuntu")
-        Ubuntu = [
-            rootCommand + " dpkg --add-architecture i386",
-            rootCommand + " add-apt-repository ppa:flexiondotorg/mangohud -y",
-            rootCommand + " apt update",
-            rootCommand + " apt install goverlay -y"
-            ]
-        for i in Ubuntu:
+        for i in Ubuntu_Object.Ubuntu_Overlay:
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\ninstalling Mangohud and Goverlay for Arch")
@@ -166,7 +134,7 @@ def parse_arguments():
     #Parse commandline arguments
     parser = argparse.ArgumentParser(usage="%(prog)s <arguments>", description="Install Gaming Packages with ease",
                                      epilog="GPLv3 - Repo : https://github.com/Ahmed-Al-Balochi/LibreGaming.git")
-    parser.add_argument('-g', '--gaming', action='store_true', help='Install Gaming Packages ')
+    parser.add_argument('-g', '--gaming', action='store_true', help='Install all the Gaming Packages')
     parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages')
     parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher')
     parser.add_argument('-o', '--overlays', action='store_true', help='Install Mangohud & Goverlay')

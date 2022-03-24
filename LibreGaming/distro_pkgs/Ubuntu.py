@@ -3,15 +3,14 @@ class Ubuntu:
     Here are all the pkgs that LibreGaming installs for Ubuntu
     """
 
-# Saves the Fedora release codename. For example: Fedora 35
-    ReleaseCodename = ""
+# ReleaseCodename Saves the Fedora release codename. For example: Fedora 35
 
 # For installing Basic Packages like Steam, Wine, Gamemode 
     Ubuntu_Basics = [
         " dpkg --add-architecture i386",
         "wget -nc https://dl.winehq.org/wine-builds/winehq.key",
         " apt-key add winehq.key",
-        " add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ "+ ReleaseCodename +" main' -y",
+        " add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ "+ str(subprocess.getoutput("lsb_release -cs")) +" main' -y",
         " add-apt-repository multiverse -y",
         " apt update",
         " apt install --install-recommends winehq-staging -y",

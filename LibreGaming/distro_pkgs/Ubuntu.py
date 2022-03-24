@@ -5,14 +5,15 @@ class Ubuntu:
     Here are all the pkgs that LibreGaming installs for Ubuntu
     """
 
-# ReleaseCodename Saves the Fedora release codename. For example: Fedora 35
+# Saves the Fedora release codename. For example: Fedora 35
+    ReleaseCodename =  ""
 
 # For installing Basic Packages like Steam, Wine, Gamemode 
     Ubuntu_Basics = [
         " dpkg --add-architecture i386",
         "wget -nc https://dl.winehq.org/wine-builds/winehq.key",
         " apt-key add winehq.key",
-        " add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ "+ str(subprocess.getoutput("lsb_release -cs")) +" main' -y",
+        " add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/"+ str(subprocess.getoutput("lsb_release -cs")) +" main' -y",
         " add-apt-repository multiverse -y",
         " apt update",
         " apt install --install-recommends winehq-staging -y",
@@ -45,3 +46,10 @@ class Ubuntu:
                 url= i['browser_download_url']
         wget.download(url, "heroic.deb")
         os.system(" dpkg -i heroic.deb") #
+
+    def __init__():
+        distroName = str(subprocess.getoutput("lsb_release -is"))
+        if distroName is "Ubuntu":
+            ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
+        else:
+            ReleaseCodename = str(subprocess.getoutput("grep -oP '(?<=DISTRIB_CODENAME=)\w+' /etc/upstream-release/lsb-release"))

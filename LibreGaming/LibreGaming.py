@@ -32,7 +32,7 @@ def installAllPkgs():
 def BasicPkgs():
     if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
         print("\nNow installing Ubuntu Gaming Packages")
-        for i in Ubuntu_Object.Ubuntu_Basics:
+        for i in Ubuntu_Object.Ubuntu_Basics():
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\nNow installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
@@ -82,11 +82,11 @@ def Lutris():
 
 def Heroic():
     if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
-        os.system(Ubuntu_Object.Ubuntu_Heroic) #running each element in Ubuntu array 
+        Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\ninstalling Heroic for Arch")
         os.system(Arch_Object.Heroic)
-    elif PackageManager == distro[3]:    
+    elif PackageManager == distro[3]:
         print("\nYou need to have AUR helpers like yay,paru to install Heroic")
     elif PackageManager == distro[4]:    #packages for Fedora
        for i in getattr(Fedora_Object,'Fedora_Heroic'):

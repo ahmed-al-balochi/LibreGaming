@@ -5,11 +5,10 @@ class Fedora:
     Here are all the pkgs that LibreGaming installs for Fedora 
     """
 
-# Saves the Fedora release number. For example: Fedora 35
-    ReleaseNumber = 0
 
 # For fedora 33 and above
 # For installing Basic Packages like Steam, Wine, Gamemode 
+# ReleaseNumber Saves the Fedora release number. For example: Fedora 35
     Fedora_33_Basics = [
         "wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks", #installing winetricks here
         "chmod -744 winetricks",

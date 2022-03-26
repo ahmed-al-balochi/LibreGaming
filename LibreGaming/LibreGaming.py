@@ -36,16 +36,15 @@ def BasicPkgs():
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\nNow installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
-        print(getattr(Arch_Object,'PackageManager'))
-        os.system(Arch_Object.Arch_AUR_Basics)
+        os.system(Arch_Object.Arch_AUR_Basics())
     elif PackageManager == distro[3]:    
         print("\nNow installing Arch Gaming Packages")
         os.system(Arch_Object.Arch_Basics)
     elif PackageManager == distro[4]:    #packages for Fedora
         os.system("dnf install redhat-lsb-core -y") # used to get the release version of Fedora using "lsb_release -rs"
-        Fedora_Object.ReleaseNumber =  ReleaseNumber
-        print("\nNow installing Fedora " + str(ReleaseNumber) +" Gaming Packages")
-        if ReleaseNumber >= 33:                                           
+        ReleaseNumber = subprocess.getoutput("lsb_release -rs")
+        print("\nNow installing Fedora " + ReleaseNumber +" Gaming Packages")
+        if ReleaseNumber >= '33':                                           
             for i in Fedora_Object.Fedora_33_Basics:
                 os.system(i) #running each element in Fedora array from distro_pkgs/Fedora
         else:
@@ -85,7 +84,7 @@ def Heroic():
         Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\ninstalling Heroic for Arch")
-        os.system(Arch_Object.Arch_AUR_Heroic)
+        os.system(Arch_Object.Arch_AUR_Heroic())
     elif PackageManager == distro[3]:
         print("\nYou need to have AUR helpers like yay,paru to install Heroic")
     elif PackageManager == distro[4]:    #packages for Fedora
@@ -111,7 +110,7 @@ def Overlays():
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
         print("\ninstalling Mangohud and Goverlay for Arch")
-        os.system(Arch_Object.Arch_AUR_Overlays)
+        os.system(Arch_Object.Arch_AUR_Overlays())
     elif PackageManager == distro[3]:    
         print("\nYou need to have AUR helpers like yay,paru to install Mangohud and Goverlay")
     elif PackageManager == distro[4]:    #packages for Fedora

@@ -12,6 +12,8 @@ dir = os.path.dirname(__file__)
 PKGmanScript = os.path.join(dir, 'getPackageManager.sh') # get the path to the package manager script
 PackageManager = subprocess.getoutput("sh "+PKGmanScript)      # run the script
 
+# TODO find if the user is running Libregaming as root or not
+
 rootScript = os.path.join(dir, 'getRoot.sh') # get the path to the root script
 global rootCommand
 rootCommand = subprocess.getoutput("sh "+rootScript)      # gets the rootCommand like sudo doas if both dont exist it will fall back to su -
@@ -53,9 +55,8 @@ def BasicPkgs():
                 os.system(i) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
             print("\nNow installing OpenSUSE Gaming Packages")
-            OpenSUSE = rootCommand + " zypper install steam wine-staging gamemode -y"       
-            os.system(rootCommand + " zypper update -y")
-            os.system(OpenSUSE)
+        for i in OpenSUSE_Object.OpenSUSE_Basics():
+            os.system(i) #running each element in Ubuntu array 
     else:
         print("Your distro is not supported or was not found :(")
         exit()
@@ -73,8 +74,7 @@ def Lutris():
         os.system(getattr(Fedora_Object,'Fedora_Lutris')) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
         print("\ninstalling Lutris for OpenSUSE")
-        OpenSUSE = rootCommand + " zypper install lutris -y"       
-        os.system(OpenSUSE)
+        os.system(OpenSUSE_Object.OpenSUSE_Lutris)
     else:
         print("Your distro is not supported or was not found :(")
         exit()
@@ -91,14 +91,7 @@ def Heroic():
        for i in getattr(Fedora_Object,'Fedora_Heroic'):
             os.system(i) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
-        print('Downloading Heroic latest AppImage')
-        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
-        r = requests.get(url).json()
-        for i in r['assets']:
-            if  i['name'].endswith('.AppImage'):
-                url= i['browser_download_url']
-        wget.download(url, "heroic.AppImage")
-        os.system("chmod +x heroic.AppImage && mv heroic.AppImage ~/Downloads && cd ~/Downloads && ./heroic.AppImage")
+        OpenSUSE_Object.OpenSUSE_Heroic() #running each element in Ubuntu array 
     else:
         print("Your distro is not supported or was not found :(")
         exit()
@@ -118,8 +111,7 @@ def Overlays():
         os.system(getattr(Fedora_Object,'Fedora_Overlays')) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
         print("\ninstalling Mangohud and Goverlay for OpenSUSE")
-        OpenSUSE = rootCommand + " zypper install goverlay -y"
-        os.system(OpenSUSE)
+        os.system(OpenSUSE_Object.OpenSUSE_Overlays)
     else:
         print("Your distro is not supported or was not found :(")
         exit()

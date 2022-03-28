@@ -5,121 +5,139 @@ from LibreGaming.distro_pkgs.OpenSUSE import OpenSUSE
 from LibreGaming.distro_pkgs.Ubuntu import Ubuntu 
 from LibreGaming.distro_pkgs.Common_Pkgs import Common_Pkgs 
 
-global distro
-distro = ["apt","yay", "paru", "pacman", "dnf", "zypper"]
-global PackageManager 
-dir = os.path.dirname(__file__)
-PKGmanScript = os.path.join(dir, 'getPackageManager.sh') # get the path to the package manager script
-PackageManager = subprocess.getoutput("sh "+PKGmanScript)      # run the script
+class LibreGaming:
+    """
+    Here is where all the magic gets done. 
+   """
 
-rootScript = os.path.join(dir, 'getRoot.sh') # get the path to the root script
-global rootCommand
-rootCommand = subprocess.getoutput("sh "+rootScript)      # gets the rootCommand like sudo doas if both dont exist it will fall back to su -
+    PackageManager = ""
+    distro = ["apt","yay", "paru", "pacman", "dnf", "zypper"]
+    Arch_Object = Arch(None)
+    Fedora_Object = Fedora()
+    OpenSUSE_Object = OpenSUSE()
+    Ubuntu_Object = Ubuntu()
+    Common_Pkgs_Object = Common_Pkgs()
 
-Arch_Object = Arch(PackageManager)
-Fedora_Object = Fedora()
-OpenSUSE_Object = OpenSUSE()
-Ubuntu_Object = Ubuntu()
-Common_Pkgs_Object = Common_Pkgs()
+    def __init__(self):
+        self.PackageManager = self.getPackageManager()
+        self.Arch_Object = Arch(self.PackageManager)
 
-def installAllPkgs():
-    BasicPkgs()
-    Lutris()
-    Heroic()
-    Overlays()
-    itch()
 
-def BasicPkgs():
-    if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
-        print("\nNow installing Ubuntu Gaming Packages")
-        for i in Ubuntu_Object.Ubuntu_Basics():
-            os.system(i) #running each element in Ubuntu array 
-    elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
-        print("\nNow installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
-        os.system(Arch_Object.Arch_AUR_Basics())
-    elif PackageManager == distro[3]:    
-        print("\nNow installing Arch Gaming Packages")
-        os.system(Arch_Object.Arch_Basics)
-    elif PackageManager == distro[4]:    #packages for Fedora
-        os.system("dnf install redhat-lsb-core -y") # used to get the release version of Fedora using "lsb_release -rs"
-        ReleaseNumber = subprocess.getoutput("lsb_release -rs")
-        print("\nNow installing Fedora " + ReleaseNumber +" Gaming Packages")
-        if ReleaseNumber >= '33':                                           
-            for i in Fedora_Object.Fedora_33_Basics:
-                os.system(i) #running each element in Fedora array from distro_pkgs/Fedora
+    def getPackageManager(self):
+        if subprocess.getoutput("$(command -v dnf)"):
+            self.PackageManager =  "dnf"
+        elif subprocess.getoutput("$(command -v yay)"):
+            self.PackageManager =  "yay"
+        elif subprocess.getoutput("$(command -v paru)"):
+            self.PackageManager =  "paru"
+        elif subprocess.getoutput("$(command -v pacman)"):
+            self.PackageManager =  "pacman"
+        elif subprocess.getoutput("$(command -v apt)"):
+            self.PackageManager =  "apt"
+        elif subprocess.getoutput("$(command -v zypper)"):
+            self.PackageManager =  "zypper"
         else:
-            print("can't install wine-staging because your fedora version is less than 33. installing wine from fedora repo")
-            for i in getattr(Fedora_Object,'Fedora_32_Basics'):
-                os.system(i) #running each element in Fedora array
-    elif PackageManager == distro[5]:    #packages for OpenSUSE
-            print("\nNow installing OpenSUSE Gaming Packages")
-            for i in OpenSUSE_Object.OpenSUSE_Basics:
+            print("Could not know your distro based on your Package Manager!")
+        return self.PackageManager
+
+    def installAllPkgs(self):
+        BasicPkgs()
+        Lutris()
+        Heroic()
+        Overlays()
+        itch()
+
+    def BasicPkgs(self):
+        if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
+            print("\nNow installing Ubuntu Gaming Packages")
+            for i in Ubuntu_Object.Ubuntu_Basics():
                 os.system(i) #running each element in Ubuntu array 
-    else:
-        print("Your distro is not supported or was not found :(")
-        exit()
+        elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
+            print("\nNow installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
+            os.system(self.Arch_Object.Arch_AUR_Basics())
+        elif self.PackageManager == self.distro[3]:    
+            print("\nNow installing Arch Gaming Packages")
+            os.system(self.Arch_Object.Arch_Basics)
+        elif self.PackageManager == self.distro[4]:    #packages for Fedora
+            os.system("dnf install redhat-lsb-core -y") # used to get the release version of Fedora using "lsb_release -rs"
+            ReleaseNumber = subprocess.getoutput("lsb_release -rs")
+            print("\nNow installing Fedora " + ReleaseNumber +" Gaming Packages")
+            if ReleaseNumber >= '33':                                           
+                for i in self.Fedora_Object.Fedora_33_Basics:
+                    os.system(i) #running each element in Fedora array from distro_pkgs/Fedora
+            else:
+                print("can't install wine-staging because your fedora version is less than 33. installing wine from fedora repo")
+                for i in self.Fedora_Object.Fedora_32_Basics:
+                    os.system(i) #running each element in Fedora array
+        elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
+                print("\nNow installing OpenSUSE Gaming Packages")
+                for i in OpenSUSE_Object.OpenSUSE_Basics:
+                    os.system(i) #running each element in Ubuntu array 
+        else:
+            print("Your distro is not supported or was not found :(")
+            exit()
 
-def Lutris():
-    if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
-        print("\ninstalling Lutris for Ubuntu")
-        for i in Ubuntu_Object.Ubuntu_Lutris:
-            os.system(i) #running each element in Ubuntu array 
-    elif PackageManager == distro[1] or PackageManager == distro[2] or PackageManager == distro[3]:    
-        print("\ninstalling Lutris for Arch")
-        os.system(Arch_Object.Arch_Lutris())
-    elif PackageManager == distro[4]:    #packages for Fedora
-        print("\ninstalling Lutris for Fedora")
-        os.system(getattr(Fedora_Object,'Fedora_Lutris')) #running each element in Fedora array
-    elif PackageManager == distro[5]:    #packages for OpenSUSE
-        print("\ninstalling Lutris for OpenSUSE")
-        os.system(OpenSUSE_Object.OpenSUSE_Lutris)
-    else:
-        print("Your distro is not supported or was not found :(")
-        exit()
+    def Lutris(self):
+        if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
+            print("\ninstalling Lutris for Ubuntu")
+            for i in Ubuntu_Object.Ubuntu_Lutris:
+                os.system(i) #running each element in Ubuntu array 
+        elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2] or self.PackageManager == self.distro[3]:    
+            print("\ninstalling Lutris for Arch")
+            os.system(self.Arch_Object.Arch_Lutris())
+        elif self.PackageManager == self.distro[4]:    #packages for Fedora
+            print("\ninstalling Lutris for Fedora")
+            os.system(self.Fedora_Object.Fedora_Lutris) #running each element in Fedora array
+        elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
+            print("\ninstalling Lutris for OpenSUSE")
+            os.system(OpenSUSE_Object.OpenSUSE_Lutris)
+        else:
+            print("Your distro is not supported or was not found :(")
+            exit()
 
-def Heroic():
-    if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
-        Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
-    elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
-        print("\ninstalling Heroic for Arch")
-        os.system(Arch_Object.Arch_AUR_Heroic())
-    elif PackageManager == distro[3]:
-        print("\nYou need to have AUR helpers like yay,paru to install Heroic")
-    elif PackageManager == distro[4]:    #packages for Fedora
-       for i in getattr(Fedora_Object,'Fedora_Heroic'):
-            os.system(i) #running each element in Fedora array
-    elif PackageManager == distro[5]:    #packages for OpenSUSE
-        OpenSUSE_Object.OpenSUSE_Heroic() #running each element in Ubuntu array 
-    else:
-        print("Your distro is not supported or was not found :(")
-        exit()
+    def Heroic(self):
+        if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
+            Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
+        elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
+            print("\ninstalling Heroic for Arch")
+            os.system(self.Arch_Object.Arch_AUR_Heroic())
+        elif self.PackageManager == self.distro[3]:
+            print("\nYou need to have AUR helpers like yay,paru to install Heroic")
+        elif self.PackageManager == self.distro[4]:    #packages for Fedora
+            for i in self.Fedora_Object.Fedora_Heroic:
+                os.system(i) #running each element in Fedora array
+        elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
+            OpenSUSE_Object.OpenSUSE_Heroic() #running each element in Ubuntu array 
+        else:
+            print("Your distro is not supported or was not found :(")
+            exit()
 
-def Overlays():
-    if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
-        print("\ninstalling Mangohud and Goverlay for Ubuntu")
-        for i in Ubuntu_Object.Ubuntu_Overlay:
-            os.system(i) #running each element in Ubuntu array 
-    elif PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
-        print("\ninstalling Mangohud and Goverlay for Arch")
-        os.system(Arch_Object.Arch_AUR_Overlays())
-    elif PackageManager == distro[3]:    
-        print("\nYou need to have AUR helpers like yay,paru to install Mangohud and Goverlay")
-    elif PackageManager == distro[4]:    #packages for Fedora
-        print("\ninstalling Mangohud and Goverlay for Fedora")
-        os.system(getattr(Fedora_Object,'Fedora_Overlays')) #running each element in Fedora array
-    elif PackageManager == distro[5]:    #packages for OpenSUSE
-        print("\ninstalling Mangohud and Goverlay for OpenSUSE")
-        os.system(OpenSUSE_Object.OpenSUSE_Overlays)
-    else:
-        print("Your distro is not supported or was not found :(")
-        exit()
+    def Overlays(self):
+        if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
+            print("\ninstalling Mangohud and Goverlay for Ubuntu")
+            for i in Ubuntu_Object.Ubuntu_Overlay:
+                os.system(i) #running each element in Ubuntu array 
+        elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
+            print("\ninstalling Mangohud and Goverlay for Arch")
+            os.system(self.Arch_Object.Arch_AUR_Overlays())
+        elif self.PackageManager == self.distro[3]:    
+            print("\nYou need to have AUR helpers like yay,paru to install Mangohud and Goverlay")
+        elif self.PackageManager == self.distro[4]:    #packages for Fedora
+            print("\ninstalling Mangohud and Goverlay for Fedora")
+            os.system(self.Fedora_Object.Fedora_Overlays) #running each element in Fedora array
+        elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
+            print("\ninstalling Mangohud and Goverlay for OpenSUSE")
+            os.system(OpenSUSE_Object.OpenSUSE_Overlays)
+        else:
+            print("Your distro is not supported or was not found :(")
+            exit()
 
-def STL():
-    if PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
-       print("\ninstalling Steam Tinker Lanuch for Arch")
-       os.system(Arch_Object.Arch_AUR_STL())
-    elif PackageManager == distro[3]:    
-       print("\nYou need to have AUR helpers like yay,paru to install Heroic")
+    def STL(self):
+        if self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
+            print("\ninstalling Steam Tinker Lanuch for Arch")
+            os.system(self.Arch_Object.Arch_AUR_STL())
+        elif self.PackageManager == self.distro[3]:    
+            print("\nYou need to have AUR helpers like yay,paru to install Heroic")
 
 def parse_arguments():
     #Parse commandline arguments
@@ -142,6 +160,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def main():
+    LibreGaming_Object = LibreGaming()
     args = parse_arguments()
     if args.tui:
         dir = os.path.dirname(__file__)
@@ -158,21 +177,21 @@ def main():
     if args.rem:
         os.system("protonup -r " + args.rem)
     if args.gaming:
-        installAllPkgs()
+        LibreGaming_Object.installAllPkgs()
     if args.basic:
-        BasicPkgs()
+        LibreGaming_Object.BasicPkgs()
     if args.overlays:
-        Overlays()
+        LibreGaming_Object.Overlays()
     if args.lutris:
-        Lutris()
+        LibreGaming_Object.Lutris()
     if args.heroic:
-        Heroic()
+        LibreGaming_Object.Heroic()
     if args.itch:
-        Common_Pkgs_Object.itch()
+        LibreGaming_Object.Common_Pkgs_Object.itch()
     if args.stl:
-        STL()
+        LibreGaming_Object.STL()
     if args.athenaeum:
-        Common_Pkgs_Object.Athenaeum()
+        LibreGaming_Object.Common_Pkgs_Object.Athenaeum()
 
 if __name__ == "__main__":
     main()

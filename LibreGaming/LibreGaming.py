@@ -68,7 +68,7 @@ def Lutris():
             os.system(i) #running each element in Ubuntu array 
     elif PackageManager == distro[1] or PackageManager == distro[2] or PackageManager == distro[3]:    
         print("\ninstalling Lutris for Arch")
-        os.system(Arch_Object.Arch_Lutris)
+        os.system(Arch_Object.Arch_Lutris())
     elif PackageManager == distro[4]:    #packages for Fedora
         print("\ninstalling Lutris for Fedora")
         os.system(getattr(Fedora_Object,'Fedora_Lutris')) #running each element in Fedora array
@@ -120,6 +120,13 @@ def itch():
         print('Downloading itch.io')
         os.system("wget 'https://itch.io/app/download?platform=linux' -O itch-setup")
         os.system("chmod +x itch-setup && ./itch-setup && wget 'https://itch.io/app/download?platform=linux' -o itch-setup")
+
+def STL():
+    if PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
+       print("\ninstalling Steam Tinker Lanuch for Arch")
+       os.system(Arch_Object.Arch_AUR_STL())
+   elif PackageManager == distro[3]:    
+       print("\nYou need to have AUR helpers like yay,paru to install Heroic")
 
 def parse_arguments():
     #Parse commandline arguments

@@ -53,5 +53,7 @@ class Ubuntu:
         distroName = str(subprocess.getoutput("lsb_release -is"))
         if distroName == "Ubuntu":
             self.ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
+        if distroName == "Pop":
+            self.ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
         else:
             self.ReleaseCodename = str(subprocess.getoutput("grep -oP '(?<=DISTRIB_CODENAME=)\w+' /etc/upstream-release/lsb-release"))

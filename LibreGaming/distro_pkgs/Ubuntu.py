@@ -18,7 +18,7 @@ class Ubuntu:
         " add-apt-repository multiverse -y",
         " apt update",
         " apt install --install-recommends winehq-staging -y",
-        " apt install steam winetricks python3-pip gawk curl meson libsystemd-dev zstd pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 -y"
+        " apt install steam winetricks python3-pip gawk curl meson libsystemd-dev zstd pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session libgnutls30:i386 libldap-2.5-0:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 -y"
         ]
         return basic_pkgs 
 

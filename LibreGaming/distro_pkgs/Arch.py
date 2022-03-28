@@ -12,6 +12,7 @@ class Arch:
 # For installing Lutris
     def Arch_Lutris(self):
         Install_Lutris = self.PackageManager + " -S python-evdev lutris -y --needed --noconfirm"
+        return Install_Lutris
 
     # The PackageManager variable uses the updated PackageManager only in functions. otherwise  its values will be blank
     def Arch_AUR_Basics(self):

@@ -55,8 +55,8 @@ def BasicPkgs():
                 os.system(i) #running each element in Fedora array
     elif PackageManager == distro[5]:    #packages for OpenSUSE
             print("\nNow installing OpenSUSE Gaming Packages")
-        for i in OpenSUSE_Object.OpenSUSE_Basics():
-            os.system(i) #running each element in Ubuntu array 
+            for i in OpenSUSE_Object.OpenSUSE_Basics():
+                os.system(i) #running each element in Ubuntu array 
     else:
         print("Your distro is not supported or was not found :(")
         exit()

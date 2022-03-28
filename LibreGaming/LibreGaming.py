@@ -1,9 +1,9 @@
 import os, subprocess, argparse, wget, requests
-
 from LibreGaming.distro_pkgs.Arch import Arch 
 from LibreGaming.distro_pkgs.Fedora import Fedora
 from LibreGaming.distro_pkgs.OpenSUSE import OpenSUSE 
 from LibreGaming.distro_pkgs.Ubuntu import Ubuntu 
+from LibreGaming.distro_pkgs.Common_Pkgs import Common_Pkgs 
 
 global distro
 distro = ["apt","yay", "paru", "pacman", "dnf", "zypper"]
@@ -11,8 +11,6 @@ global PackageManager
 dir = os.path.dirname(__file__)
 PKGmanScript = os.path.join(dir, 'getPackageManager.sh') # get the path to the package manager script
 PackageManager = subprocess.getoutput("sh "+PKGmanScript)      # run the script
-
-# TODO find if the user is running Libregaming as root or not
 
 rootScript = os.path.join(dir, 'getRoot.sh') # get the path to the root script
 global rootCommand
@@ -22,6 +20,7 @@ Arch_Object = Arch(PackageManager)
 Fedora_Object = Fedora()
 OpenSUSE_Object = OpenSUSE()
 Ubuntu_Object = Ubuntu()
+Common_Pkgs_Object = Common_Pkgs()
 
 def installAllPkgs():
     BasicPkgs()
@@ -29,7 +28,6 @@ def installAllPkgs():
     Heroic()
     Overlays()
     itch()
-
 
 def BasicPkgs():
     if PackageManager == distro[0]:  #packages for Ubuntu and Ubuntu based distros
@@ -116,11 +114,6 @@ def Overlays():
         print("Your distro is not supported or was not found :(")
         exit()
 
-def itch():
-        print('Downloading itch.io')
-        os.system("wget 'https://itch.io/app/download?platform=linux' -O itch-setup")
-        os.system("chmod +x itch-setup && ./itch-setup && wget 'https://itch.io/app/download?platform=linux' -o itch-setup")
-
 def STL():
     if PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
        print("\ninstalling Steam Tinker Lanuch for Arch")
@@ -175,11 +168,11 @@ def main():
     if args.heroic:
         Heroic()
     if args.itch:
-        itch()
+        Common_Pkgs_Object.itch()
     if args.stl:
         STL()
     if args.athenaeum:
-        os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
+        Common_Pkgs_Object.Athenaeum()
 
 if __name__ == "__main__":
     main()

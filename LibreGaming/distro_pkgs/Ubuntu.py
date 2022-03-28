@@ -51,7 +51,7 @@ class Ubuntu:
 
     def __init__(self):
         distroName = str(subprocess.getoutput("lsb_release -is"))
-        if distroName is "Ubuntu":
+        if distroName == "Ubuntu":
             self.ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
         else:
             self.ReleaseCodename = str(subprocess.getoutput("grep -oP '(?<=DISTRIB_CODENAME=)\w+' /etc/upstream-release/lsb-release"))

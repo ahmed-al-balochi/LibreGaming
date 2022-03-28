@@ -40,18 +40,14 @@ class Ubuntu:
 
 # For installing Heroic
     def Ubuntu_Heroic(self):
-        whoami = str(subprocess.getoutput("whoami"))
-        if whoami == "root":
-            print("Please run LibreGaming for Ubuntu Heroic without sudo or doas. So that it installs  correctly")
-        else:
-            print('Downloading Heroic latest dpkg')
-            url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
-            r = requests.get(url).json()
-            for i in r['assets']:
-                if  i['name'].endswith('.deb'):
-                    url= i['browser_download_url']
-            wget.download(url, "heroic.deb")
-            os.system(" dpkg -i heroic.deb")
+        print('Downloading Heroic latest dpkg')
+        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
+        r = requests.get(url).json()
+        for i in r['assets']:
+            if  i['name'].endswith('.deb'):
+                url= i['browser_download_url']
+        wget.download(url, "heroic.deb")
+        os.system(" dpkg -i heroic.deb")
 
     def __init__(self):
         distroName = str(subprocess.getoutput("lsb_release -is"))

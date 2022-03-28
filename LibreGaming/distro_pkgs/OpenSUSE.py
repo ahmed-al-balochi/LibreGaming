@@ -7,9 +7,7 @@ class OpenSUSE:
 
 # For installing Basic Packages like Steam, Wine, Gamemode 
     OpenSUSE_Basics = [
-        " zypper addrepo https://download.opensuse.org/repositories/games:tools/openSUSE_Tumbleweed/games:tools.repo",
-        " zypper refresh",
-        " zypper install -y steam wine-staging gamemode",
+        " zypper install -y steam wine-staging gamemoded libgamemode0 libgamemode0-32bit",
         " zypper update -y"
     ]
 

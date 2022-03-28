@@ -18,7 +18,7 @@ class OpenSUSE:
     OpenSUSE_Overlays = " zypper install -y goverlay"
 
 # For installing Heroic
-    def OpenSUSE_Heroic(): 
+    def OpenSUSE_Heroic(self): 
         print('Downloading Heroic latest AppImage')
         url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
         r = requests.get(url).json()

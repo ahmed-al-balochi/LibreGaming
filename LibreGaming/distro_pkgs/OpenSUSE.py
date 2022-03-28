@@ -1,3 +1,5 @@
+import os, subprocess, wget, requests
+
 class OpenSUSE:
     """
     Here are all the pkgs that LibreGaming installs for OpenSUSE

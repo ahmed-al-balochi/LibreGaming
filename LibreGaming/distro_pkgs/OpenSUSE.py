@@ -5,15 +5,17 @@ class OpenSUSE:
 
 # For installing Basic Packages like Steam, Wine, Gamemode 
     OpenSUSE_Basics = [
-        " zypper install steam wine-staging gamemode -y",
+        " zypper addrepo https://download.opensuse.org/repositories/games:tools/openSUSE_Tumbleweed/games:tools.repo",
+        " zypper refresh",
+        " zypper install -y steam wine-staging gamemode",
         " zypper update -y"
     ]
 
 # For installing Lutris
-    OpenSUSE_Lutris = " zypper install lutris -y"       
+    OpenSUSE_Lutris = " zypper install -y lutris"       
 
 # For installing The FPS programs and overlays
-    OpenSUSE_Overlays = " zypper install goverlay -y"
+    OpenSUSE_Overlays = " zypper install -y goverlay"
 
 # For installing Heroic
     def OpenSUSE_Heroic(): 

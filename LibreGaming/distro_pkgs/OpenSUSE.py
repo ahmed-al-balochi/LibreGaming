@@ -19,11 +19,15 @@ class OpenSUSE:
 
 # For installing Heroic
     def OpenSUSE_Heroic(self): 
-        print('Downloading Heroic latest AppImage')
-        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
-        r = requests.get(url).json()
-        for i in r['assets']:
-            if  i['name'].endswith('.AppImage'):
-                url= i['browser_download_url']
-        wget.download(url, "heroic.AppImage")
-        os.system("chmod +x heroic.AppImage && mv heroic.AppImage ~/Downloads && cd ~/Downloads && ./heroic.AppImage")
+        whoami = str(subprocess.getoutput("whoami"))
+        if whoami == "root":
+           print("Please run LibreGaming for OpenSUSE Heroic without sudo or doas command, so that it installs correctly")
+        else:
+            print('Downloading Heroic latest AppImage')
+            url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
+            r = requests.get(url).json()
+            for i in r['assets']:
+                if  i['name'].endswith('.AppImage'):
+                    url= i['browser_download_url']
+            wget.download(url, "heroic.AppImage")
+            os.system("chmod +x heroic.AppImage && mv heroic.AppImage ~/Downloads && cd ~/Downloads && ./heroic.AppImage")

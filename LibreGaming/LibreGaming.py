@@ -125,7 +125,7 @@ def STL():
     if PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
        print("\ninstalling Steam Tinker Lanuch for Arch")
        os.system(Arch_Object.Arch_AUR_STL())
-   elif PackageManager == distro[3]:    
+    elif PackageManager == distro[3]:    
        print("\nYou need to have AUR helpers like yay,paru to install Heroic")
 
 def parse_arguments():
@@ -177,11 +177,7 @@ def main():
     if args.itch:
         itch()
     if args.stl:
-        if PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
-            print("\ninstalling Steam Tinker Lanuch for Arch")
-            os.system(Arch_Object.Arch_AUR_STL())
-        elif PackageManager == distro[3]:    
-            print("\nYou need to have AUR helpers like yay,paru to install Heroic")
+        STL()
     if args.athenaeum:
         os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
 

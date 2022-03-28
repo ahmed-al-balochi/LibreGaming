@@ -1,3 +1,5 @@
+import subprocess
+
 class Arch:
     """ 
     Here are all the pkgs that LibreGaming installs for Arch Linux

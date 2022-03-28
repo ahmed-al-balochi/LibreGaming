@@ -172,7 +172,7 @@ def main():
     if args.stl:
         if PackageManager == distro[1] or PackageManager == distro[2]:    #packages for Arch and Arch based distros
             print("\ninstalling Steam Tinker Lanuch for Arch")
-            os.system(PackageManager + " -S steamtinkerlaunch -y --needed --noconfirm")
+            os.system(Arch_Object.Arch_AUR_STL())
         elif PackageManager == distro[3]:    
             print("\nYou need to have AUR helpers like yay,paru to install Heroic")
     if args.athenaeum:

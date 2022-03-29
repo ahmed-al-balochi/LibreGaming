@@ -176,7 +176,7 @@ class LibreGaming:
         if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
             self.whoami(True)
             print("\n\tinstalling Minigalaxy for Ubuntu")
-            os.system(self.Ubuntu_Minigalaxy)
+            os.system(self.Ubuntu_Object.Ubuntu_Minigalaxy)
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             self.whoami(False)
             print("\n\tinstalling Minigalaxy for Arch")

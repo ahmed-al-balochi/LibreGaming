@@ -65,7 +65,7 @@ class LibreGaming:
         if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
             self.whoami(True)
             print("\n\tNow Installing Ubuntu Gaming Packages")
-            for i in Ubuntu_Object.Ubuntu_Basics():
+            for i in self.Ubuntu_Object.Ubuntu_Basics():
                 os.system(i) #running each element in Ubuntu array 
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             self.whoami(False)
@@ -90,7 +90,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\nNow Installing OpenSUSE Gaming Packages")
-            for i in OpenSUSE_Object.OpenSUSE_Basics:
+            for i in self.OpenSUSE_Object.OpenSUSE_Basics:
                 os.system(i) #running each element in Ubuntu array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
@@ -101,7 +101,7 @@ class LibreGaming:
         if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
             self.whoami(True)
             print("\n\tInstalling Lutris for Ubuntu")
-            for i in Ubuntu_Object.Ubuntu_Lutris:
+            for i in self.Ubuntu_Object.Ubuntu_Lutris:
                 os.system(i) #running each element in Ubuntu array 
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:
             self.whoami(False)
@@ -118,7 +118,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\tInstalling Lutris for OpenSUSE")
-            os.system(OpenSUSE_Object.OpenSUSE_Lutris)
+            os.system(self.OpenSUSE_Object.OpenSUSE_Lutris)
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()
@@ -127,7 +127,7 @@ class LibreGaming:
     def Heroic(self):
         if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
             self.whoami(True)
-            Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
+            self.Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             self.whoami(False)
             print("\n\tInstalling Heroic for Arch")
@@ -140,7 +140,7 @@ class LibreGaming:
             for i in self.Fedora_Object.Fedora_Heroic:
                 os.system(i) #running each element in Fedora array
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
-            OpenSUSE_Object.OpenSUSE_Heroic() #running each element in Ubuntu array 
+            self.OpenSUSE_Object.OpenSUSE_Heroic() #running each element in Ubuntu array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()
@@ -150,7 +150,7 @@ class LibreGaming:
         if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
             self.whoami(True)
             print("\n\tinstalling Mangohud and Goverlay for Ubuntu")
-            for i in Ubuntu_Object.Ubuntu_Overlay:
+            for i in self.Ubuntu_Object.Ubuntu_Overlay:
                 os.system(i) #running each element in Ubuntu array 
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             self.whoami(False)
@@ -166,7 +166,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\tinstalling Mangohud and Goverlay for OpenSUSE")
-            os.system(OpenSUSE_Object.OpenSUSE_Overlays)
+            os.system(self.OpenSUSE_Object.OpenSUSE_Overlays)
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()

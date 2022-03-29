@@ -159,7 +159,7 @@ sudo LibreGaming --lutris
 ```
 sudo LibreGaming --heroic
 ```
-* To install Minigalaxy Launcher enter this command (Don't use sudo if you are using Arch Linux):
+* To install Minigalaxy Launcher enter this command (yay or paru needed):
 ```
 sudo LibreGaming --minigalaxy
 ```

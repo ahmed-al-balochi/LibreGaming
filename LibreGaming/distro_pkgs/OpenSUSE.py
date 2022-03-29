@@ -21,7 +21,7 @@ class OpenSUSE:
     def OpenSUSE_Heroic(self): 
         whoami = str(subprocess.getoutput("whoami"))
         if whoami == "root":
-           print("Please run LibreGaming for OpenSUSE Heroic without sudo or doas command, so that it installs correctly")
+           print("\n\tPlease run LibreGaming for OpenSUSE Heroic without sudo or doas command, so that it installs correctly\n")
         else:
             print('Downloading Heroic latest AppImage')
             url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'

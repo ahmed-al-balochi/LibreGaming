@@ -9,10 +9,10 @@ class Common_Pkgs:
     def whoami(self, authorize):
         whoami = str(subprocess.getoutput("whoami"))
         if whoami == "root" and authorize == False:
-           print("Please run LibreGaming without sudo or doas command for this flag")
+           print("\n\tPlease run LibreGaming without sudo or doas command for this flag\t")
            exit(0)
         elif whoami != "root" and authorize == True:
-           print("Please run LibreGaming with sudo or doas command for this flag")
+           print("\n\tPlease run LibreGaming with sudo or doas command for this flag\n")
            exit(0)
 
     # installation for Itch.io store

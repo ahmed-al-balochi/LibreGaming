@@ -159,6 +159,10 @@ sudo LibreGaming --lutris
 ```
 sudo LibreGaming --heroic
 ```
+* To install Minigalaxy Launcher enter this command (Don't use sudo if you are using Arch Linux):
+```
+sudo LibreGaming --minigalaxy
+```
 * To install MangoHud & Goverlay enter this command:
 ```
 sudo LibreGaming -o

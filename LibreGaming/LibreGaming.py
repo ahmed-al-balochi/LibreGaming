@@ -91,7 +91,7 @@ class LibreGaming:
             self.whoami(True)
             print("\n\nNow Installing OpenSUSE Gaming Packages")
             for i in self.OpenSUSE_Object.OpenSUSE_Basics:
-                os.system(i) #running each element in Ubuntu array 
+                os.system(i) #running each element in OpenSUSE array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()
@@ -140,7 +140,7 @@ class LibreGaming:
             for i in self.Fedora_Object.Fedora_Heroic:
                 os.system(i) #running each element in Fedora array
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
-            self.OpenSUSE_Object.OpenSUSE_Heroic() #running each element in Ubuntu array 
+            self.OpenSUSE_Object.OpenSUSE_Heroic() #running each element in OpenSUSE array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()
@@ -167,6 +167,32 @@ class LibreGaming:
             self.whoami(True)
             print("\n\tinstalling Mangohud and Goverlay for OpenSUSE")
             os.system(self.OpenSUSE_Object.OpenSUSE_Overlays)
+        else:
+            print("\n\tYour distro is not supported or was not found :(")
+            exit()
+
+    #Used to install Minigalaxy
+    def Minigalaxy(self):
+        if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
+            self.whoami(True)
+            print("\n\tinstalling Minigalaxy for Ubuntu")
+            os.system(self.Ubuntu_Minigalaxy)
+        elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
+            self.whoami(False)
+            print("\n\tinstalling Minigalaxy for Arch")
+            os.system(self.Arch_Object.Arch_AUR_Minigalaxy())
+        elif self.PackageManager == self.distro[3]:    
+            self.whoami(True)
+            print("\n\tYou need to have AUR helpers like yay,paru to install Minigalaxy")
+        elif self.PackageManager == self.distro[4]:    #packages for Fedora
+            self.whoami(True)
+            print("\n\tinstalling Minigalaxy for Fedora")
+            os.system(self.Fedora_Object.Fedora_Minigalaxy) #running each element in Fedora array
+        elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
+            self.whoami(True)
+            print("\n\tinstalling Minigalaxy for OpenSUSE")
+            for i in self.OpenSUSE.OpenSUSE_Minigalaxy:
+                os.system(i) #running each element in OpenSUSE array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()

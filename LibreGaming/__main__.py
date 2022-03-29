@@ -17,6 +17,7 @@ def parse_arguments():
     parser.add_argument('--tui', action='store_true', help='use a Terminal User Interface to install Packages ')
     parser.add_argument('--heroic', action='store_true', help='Install Heroic Launcher')
     parser.add_argument('--lutris', action='store_true', help='Install Lutris Launcher')
+    parser.add_argument('--minigalaxy', action='store_true', help='Install Minigalaxy Launcher')
     parser.add_argument('--itch', action='store_true', help='Install itch.io Launcher')
     parser.add_argument('--stl', action='store_true', help='Install Steam Tinker Launch(For Arch Linux only)')
     return parser.parse_args()
@@ -48,6 +49,8 @@ def main():
         LibreGaming_Object.Overlays()
     if args.lutris:
         LibreGaming_Object.Lutris()
+    if args.minigalaxy:
+        LibreGaming_Object.Minigalaxy()
     if args.heroic:
         LibreGaming_Object.Heroic()
     if args.itch:

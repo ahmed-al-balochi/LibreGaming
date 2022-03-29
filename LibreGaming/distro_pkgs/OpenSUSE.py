@@ -11,6 +11,11 @@ class OpenSUSE:
         " zypper update -y"
     ]
 
+    OpenSUSE_Minigalaxy = [
+    " zypper addrepo https://download.opensuse.org/repositories/openSUSE:Factory/standard/openSUSE:Factory.repo",
+    " zypper refresh",
+    " zypper install -y minigalaxy",
+    ]
 # For installing Lutris
     OpenSUSE_Lutris = " zypper install -y lutris"       
 

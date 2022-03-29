@@ -191,7 +191,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\tinstalling Minigalaxy for OpenSUSE")
-            os.(OpenSUSE_Object.OpenSUSE_Minigalaxy)
+            os.system(OpenSUSE_Object.OpenSUSE_Minigalaxy)
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()

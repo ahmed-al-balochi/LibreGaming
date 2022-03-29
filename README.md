@@ -116,7 +116,7 @@ sudo zypper install python3-pip
 # Installation:
 * You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:
 ```
-pip3 install LibreGaming
+sudo pip3 install LibreGaming
 ```
 * Or you can install LibreGaming script by entering these commands:
 ```

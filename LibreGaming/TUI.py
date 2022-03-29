@@ -56,19 +56,19 @@ def installingApps(installApps):
     for i in installApps:
         if i == "1":
             print("\n==>> Executing Option " + str(i) + "\n")
-            os.system("libregaming -b")
+            os.system("pkexec libregaming -b")
             continue
         elif i == "2":
             print("\n==>> Executing Option " + str(i) + "\n")
-            os.system("libregaming --lutris")
+            os.system("pkexec libregaming --lutris")
             continue
         elif i == "3":
             print("\n==>> Executing Option " + str(i) + "\n")
-            os.system("libregaming --heroic")
+            os.system("pkexec libregaming --heroic")
             continue
         elif i == "4":
             print("\n==>> Executing Option " + str(i) + "\n")
-            os.system("libregaming -o")
+            os.system("pkexec libregaming -o")
             continue
         elif i == "5":
             print("\n==>> Executing Option " + str(i) + "\n")
@@ -84,7 +84,7 @@ def installingApps(installApps):
             continue
         elif i == "8":
             print("\n==>> Executing Option " + str(i) + "\n")
-            os.system("libregaming --stl")
+            os.system("pkexec libregaming --stl")
             continue
         elif i == "9":
             MainForm()
@@ -98,11 +98,11 @@ def MainForm():
     for i in installOption:
         if i == "1":
             print("\n==>> Executing Option " + str(i) + "\n")
-            os.system("libregaming -g")
+            os.system("pkexec libregaming -g")
             continue
         elif i == "2":
             print("\n==>> Executing Option " + str(i) + "\n")
-            os.system("libregaming -b")
+            os.system("pkexec libregaming -b")
             continue
         elif i == "3":
             print("\n==>> Executing Option " + str(i) + "\n")
@@ -118,7 +118,7 @@ def MainForm():
             continue
         elif i == "6":
             print("\n==>> Executing Option " + str(i) + "\n")
-            os.system("libregaming --stl")
+            os.system("pkexec libregaming --stl")
             continue
         elif i == "7":
             installApps= (npyscreen.wrapper_basic(WizardScreen))

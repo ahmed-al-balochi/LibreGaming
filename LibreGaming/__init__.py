@@ -1,3 +1,3 @@
 def main():
-    from .LibreGaming import main
+    from .__main__ import main
     return main()

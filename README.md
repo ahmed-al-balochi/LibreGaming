@@ -24,7 +24,7 @@ Table of contents
 
 # Distributions:
 * I tested this script on these distributions. but it should also work on their derivatives too.
-1. Ubuntu.
+1. Ubuntu(Tested also on Linux Mint, Pop_OS!).
 2. Arch Linux.
 3. Fedora.
 4. OpenSUSE Tumbleweed.
@@ -116,17 +116,17 @@ sudo zypper install python3-pip
 # Installation:
 * You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:
 ```
-pip3 install LibreGaming
+sudo pip3 install LibreGaming
 ```
 * Or you can install LibreGaming script by entering these commands:
 ```
 git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/ 
 cd LibreGaming/
-python3 setup.py install --user
+sudo python3 setup.py install --user
 ```
 * To update LibreGaming when there is a new release enter this command:
 ```
-pip3 install LibreGaming -U
+sudo pip3 install LibreGaming -U
 ```
 
 * LibreGaming: command not found. 
@@ -145,11 +145,27 @@ fi
 * Note: you can also run this script using ```libregaming``` command if you don't like ```LibreGaming```. Both can be used, so choose what you prefer.
 * To install all the Gaming packages mentioned in the packages section enter this command:
 ```
-LibreGaming -g
+sudo LibreGaming -g
 ```
 * To install Basic Packages(Wine, Steam, Gamemode):
 ```
-LibreGaming -b
+sudo LibreGaming -b
+```
+* To install Lutris Launcher enter this command:
+```
+sudo LibreGaming --lutris 
+```
+* To install Heroic Launcher enter this command (Don't use sudo if you are using OpenSUSE):
+```
+sudo LibreGaming --heroic
+```
+* To install Minigalaxy Launcher enter this command (For Arch Don't use sudo. Use yay or paru):
+```
+sudo LibreGaming --minigalaxy
+```
+* To install MangoHud & Goverlay enter this command:
+```
+sudo LibreGaming -o
 ```
 * To install ProtonGE enter this command:
 ```
@@ -159,18 +175,6 @@ LibreGaming -p
 ```
 LibreGaming -ath
 ```
-* To install Lutris Launcher enter this command:
-```
-LibreGaming --lutris 
-```
-* To install Heroic Launcher enter this command:
-```
-LibreGaming --heroic
-```
-* To install MangoHud & Goverlay enter this command:
-```
-LibreGaming -o
-```
 * To install itch.io Launcher enter this command:
 ```
 LibreGaming --itch
@@ -178,10 +182,6 @@ LibreGaming --itch
 * To install Steam Tinker Launch(For Arch Linux only) enter this command:
 ```
 LibreGaming --stl
-```
-* You can mix options to install packages. For example, To install gaming packages, ProtonGE, and Athenaeum Launcher enter this command:
-```
-LibreGaming -g -p -ath
 ```
 ## TUI 
 ![TUI image](/pics/tui.png "TUI")

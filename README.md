@@ -151,14 +151,6 @@ sudo LibreGaming -g
 ```
 sudo LibreGaming -b
 ```
-* To install ProtonGE enter this command:
-```
-LibreGaming -p
-```
-* To install Athenaeum Launcher enter this command:
-```
-LibreGaming -ath
-```
 * To install Lutris Launcher enter this command:
 ```
 sudo LibreGaming --lutris 
@@ -170,6 +162,14 @@ sudo LibreGaming --heroic
 * To install MangoHud & Goverlay enter this command:
 ```
 sudo LibreGaming -o
+```
+* To install ProtonGE enter this command:
+```
+LibreGaming -p
+```
+* To install Athenaeum Launcher enter this command:
+```
+LibreGaming -ath
 ```
 * To install itch.io Launcher enter this command:
 ```

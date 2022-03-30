@@ -7,18 +7,17 @@ class OpenSUSE:
 
 # For installing Basic Packages like Steam, Wine, Gamemode 
     OpenSUSE_Basics = [
-        " zypper install -y steam wine-staging gamemoded libgamemode0 libgamemode0-32bit",
-        " zypper update -y"
-    ]
+        ["zypper", "install", "-y", "steam", "wine-staging", "gamemoded", "libgamemode0", "libgamemode0-32bit"],
+        ["zypper", "update", "-y"]
+        ]
 
 # For installing Minigalaxy 
-    OpenSUSE_Minigalaxy = " zypper install -y minigalaxy"
-
+    OpenSUSE_Minigalaxy = ["zypper", "install", "-y", "minigalaxy"]
 # For installing Lutris
-    OpenSUSE_Lutris = " zypper install -y lutris"       
+    OpenSUSE_Lutris = ["zypper", "install", "-y", "lutris"]
 
 # For installing The FPS programs and overlays
-    OpenSUSE_Overlays = " zypper install -y goverlay"
+    OpenSUSE_Overlays = ["zypper", "install", "-y", "goverlay"]
 
 # For installing Heroic
     def OpenSUSE_Heroic(self): 

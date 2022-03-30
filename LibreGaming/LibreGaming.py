@@ -77,7 +77,7 @@ class LibreGaming:
             subprocess.run(self.Arch_Object.Arch_Basics)
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
             self.whoami(True)
-            subprocess.run("dnf install redhat-lsb-core -y") # used to get the release version of Fedora using "lsb_release -rs"
+            subprocess.run(["dnf", "install", "redhat-lsb-core", "-y"]) # used to get the release version of Fedora using "lsb_release -rs"
             ReleaseNumber = subprocess.getoutput("lsb_release -rs")
             print("\n\tNow Installing Fedora " + ReleaseNumber +" Gaming Packages")
             if ReleaseNumber >= '33':                                           

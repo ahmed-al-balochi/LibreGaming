@@ -24,41 +24,45 @@ def parse_arguments():
 
 # Main execution
 def main():
-    LibreGaming_Object = LibreGaming()
-    args = parse_arguments()
-    if args.tui:
-        dir = os.path.dirname(__file__)
-        # Gets the path to the TUI.py file
-        tui = os.path.join(dir, 'TUI.py')
-        os.system("python3 "+tui)
-    if args.proton:
-        LibreGaming_Object.protonup_Install_Latest()
-    if args.releases:
-        LibreGaming_Object.protonup_Show_Releases()
-    if args.list:
-        LibreGaming_Object.protonup_List()
-    if args.tag:
-        LibreGaming_Object.protonup_Install_Specific()
-    if args.rem:
-        LibreGaming_Object.protonup_Remove()
-    if args.gaming:
-        LibreGaming_Object.installAllPkgs()
-    if args.basic:
-        LibreGaming_Object.BasicPkgs()
-    if args.overlays:
-        LibreGaming_Object.Overlays()
-    if args.lutris:
-        LibreGaming_Object.Lutris()
-    if args.minigalaxy:
-        LibreGaming_Object.Minigalaxy()
-    if args.heroic:
-        LibreGaming_Object.Heroic()
-    if args.itch:
-        LibreGaming_Object.Common_Pkgs_Object.itch()
-    if args.stl:
-        LibreGaming_Object.STL()
-    if args.athenaeum:
-        LibreGaming_Object.Common_Pkgs_Object.Athenaeum()
+    try:
+        LibreGaming_Object = LibreGaming()
+        args = parse_arguments()
+        if args.tui:
+            dir = os.path.dirname(__file__)
+            # Gets the path to the TUI.py file
+            tui = os.path.join(dir, 'TUI.py')
+            os.system("python3 "+tui)
+        if args.proton:
+            LibreGaming_Object.protonup_Install_Latest()
+        if args.releases:
+            LibreGaming_Object.protonup_Show_Releases()
+        if args.list:
+            LibreGaming_Object.protonup_List()
+        if args.tag:
+            LibreGaming_Object.protonup_Install_Specific()
+        if args.rem:
+            LibreGaming_Object.protonup_Remove()
+        if args.gaming:
+            LibreGaming_Object.installAllPkgs()
+        if args.basic:
+            LibreGaming_Object.BasicPkgs()
+        if args.overlays:
+            LibreGaming_Object.Overlays()
+        if args.lutris:
+            LibreGaming_Object.Lutris()
+        if args.minigalaxy:
+            LibreGaming_Object.Minigalaxy()
+        if args.heroic:
+            LibreGaming_Object.Heroic()
+        if args.itch:
+            LibreGaming_Object.Common_Pkgs_Object.itch()
+        if args.stl:
+            LibreGaming_Object.STL()
+        if args.athenaeum:
+            LibreGaming_Object.Common_Pkgs_Object.Athenaeum()
+    except KeyboardInterrupt:
+        print("\n^C detected exiting\n")
+        exit(0)
 
 if __name__ == "__main__":
     main()

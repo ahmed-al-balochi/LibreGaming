@@ -82,11 +82,11 @@ class LibreGaming:
             print("\n\tNow Installing Fedora " + ReleaseNumber +" Gaming Packages")
             if ReleaseNumber >= '33':                                           
                 for i in self.Fedora_Object.Fedora_33_Basics:
-                    os.system(i) #running each element in Fedora array from distro_pkgs/Fedora
+                    subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
             else:
                 print("can't install wine-staging because your fedora version is less than 33. installing wine from fedora repo")
                 for i in self.Fedora_Object.Fedora_32_Basics:
-                    os.system(i) #running each element in Fedora array
+                    subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\nNow Installing OpenSUSE Gaming Packages")
@@ -114,7 +114,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
             self.whoami(True)
             print("\n\tInstalling Lutris for Fedora")
-            os.system(self.Fedora_Object.Fedora_Lutris) #running each element in Fedora array
+            subprocess.run(self.Fedora_Object.Fedora_Lutris)
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\tInstalling Lutris for OpenSUSE")
@@ -138,7 +138,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
             self.whoami(True)
             for i in self.Fedora_Object.Fedora_Heroic:
-                os.system(i) #running each element in Fedora array
+                subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.OpenSUSE_Object.OpenSUSE_Heroic() #running each element in OpenSUSE array 
         else:
@@ -162,7 +162,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
             self.whoami(True)
             print("\n\tinstalling Mangohud and Goverlay for Fedora")
-            os.system(self.Fedora_Object.Fedora_Overlays) #running each element in Fedora array
+            subprocess.run(self.Fedora_Object.Fedora_Overlays) #running each element in Fedora array
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\tinstalling Mangohud and Goverlay for OpenSUSE")

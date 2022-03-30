@@ -1,4 +1,4 @@
-import os, subprocess, wget, requests
+import subprocess, wget, requests
 
 class Ubuntu:
     """
@@ -50,7 +50,7 @@ class Ubuntu:
             if  i['name'].endswith('.deb'):
                 url= i['browser_download_url']
         wget.download(url, "heroic.deb")
-        os.system(" dpkg -i heroic.deb")
+        subprocess.run("dpkg", "-i", "heroic.deb")
 
     def __init__(self):
         distroName = str(subprocess.getoutput("lsb_release -is"))

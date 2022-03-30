@@ -1,5 +1,5 @@
 from .LibreGaming import LibreGaming
-import os, argparse
+import os, argparse, subprocess
 
 #Parse commandline arguments
 def parse_arguments():
@@ -31,17 +31,22 @@ def main():
             dir = os.path.dirname(__file__)
             # Gets the path to the TUI.py file
             tui = os.path.join(dir, 'TUI.py')
-            os.system("python3 "+tui)
+            subprocess.run(["python3", tui])
         if args.proton:
-            LibreGaming_Object.protonup_Install_Latest()
+            LibreGaming_Object.whoami(False)
+            subprocess.run("protonup")
         if args.releases:
-            LibreGaming_Object.protonup_Show_Releases()
+            LibreGaming_Object.whoami(False)
+            subprocess.run(["protonup", "--releases"])
         if args.list:
-            LibreGaming_Object.protonup_List()
+            LibreGaming_Object.whoami(False)
+            subprocess.run(["protonup", "-l"])
         if args.tag:
-            LibreGaming_Object.protonup_Install_Specific()
+            LibreGaming_Object.whoami(False)
+            subprocess.run(["protonup", "-t" + args.tag])
         if args.rem:
-            LibreGaming_Object.protonup_Remove()
+            LibreGaming_Object.whoami(False)
+            subprocess.run(["protonup", "-r", + args.rem])
         if args.gaming:
             LibreGaming_Object.installAllPkgs()
         if args.basic:

@@ -1,4 +1,4 @@
-import os, subprocess, argparse, wget, requests
+import subprocess, argparse, wget, requests
 from LibreGaming.distro_pkgs.Arch import Arch 
 from LibreGaming.distro_pkgs.Fedora import Fedora
 from LibreGaming.distro_pkgs.OpenSUSE import OpenSUSE 
@@ -66,18 +66,18 @@ class LibreGaming:
             self.whoami(True)
             print("\n\tNow Installing Ubuntu Gaming Packages")
             for i in self.Ubuntu_Object.Ubuntu_Basics():
-                os.system(i) #running each element in Ubuntu array 
+                subprocess.run(i) #running each element in Ubuntu array 
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             self.whoami(False)
             print("\n\tNow Installing Arch Gaming Packages")   #for those who have AUR(yay or paru) enabled
-            os.system(self.Arch_Object.Arch_AUR_Basics())
+            subprocess.run(self.Arch_Object.Arch_AUR_Basics())
         elif self.PackageManager == self.distro[3]:    
             self.whoami(True)
             print("\n\tNow Installing Arch Gaming Packages")
-            os.system(self.Arch_Object.Arch_Basics)
+            subprocess.run(self.Arch_Object.Arch_Basics)
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
             self.whoami(True)
-            os.system("dnf install redhat-lsb-core -y") # used to get the release version of Fedora using "lsb_release -rs"
+            subprocess.run("dnf install redhat-lsb-core -y") # used to get the release version of Fedora using "lsb_release -rs"
             ReleaseNumber = subprocess.getoutput("lsb_release -rs")
             print("\n\tNow Installing Fedora " + ReleaseNumber +" Gaming Packages")
             if ReleaseNumber >= '33':                                           
@@ -91,7 +91,7 @@ class LibreGaming:
             self.whoami(True)
             print("\n\nNow Installing OpenSUSE Gaming Packages")
             for i in self.OpenSUSE_Object.OpenSUSE_Basics:
-                os.system(i) #running each element in OpenSUSE array 
+                subprocess.run(i) #running each element in OpenSUSE array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()
@@ -102,15 +102,15 @@ class LibreGaming:
             self.whoami(True)
             print("\n\tInstalling Lutris for Ubuntu")
             for i in self.Ubuntu_Object.Ubuntu_Lutris:
-                os.system(i) #running each element in Ubuntu array 
+                subprocess.run(i) #running each element in Ubuntu array 
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:
             self.whoami(False)
             print("\n\tInstalling Lutris for Arch using an AUR helper")
-            os.system(self.Arch_Object.Arch_Lutris())
+            subprocess.run(self.Arch_Object.Arch_Lutris())
         elif self.PackageManager == self.distro[3]:    
             self.whoami(True)
             print("\n\tInstalling Lutris for Arch")
-            os.system(self.Arch_Object.Arch_Lutris())
+            subprocess.run(self.Arch_Object.Arch_Lutris())
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
             self.whoami(True)
             print("\n\tInstalling Lutris for Fedora")
@@ -118,7 +118,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\tInstalling Lutris for OpenSUSE")
-            os.system(self.OpenSUSE_Object.OpenSUSE_Lutris)
+            subprocess.run(self.OpenSUSE_Object.OpenSUSE_Lutris)
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()
@@ -131,7 +131,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             self.whoami(False)
             print("\n\tInstalling Heroic for Arch")
-            os.system(self.Arch_Object.Arch_AUR_Heroic())
+            subprocess.run(self.Arch_Object.Arch_AUR_Heroic())
         elif self.PackageManager == self.distro[3]:
             self.whoami(True)
             print("\n\tYou need to have AUR helpers like yay,paru to install Heroic")
@@ -151,11 +151,11 @@ class LibreGaming:
             self.whoami(True)
             print("\n\tinstalling Mangohud and Goverlay for Ubuntu")
             for i in self.Ubuntu_Object.Ubuntu_Overlay:
-                os.system(i) #running each element in Ubuntu array 
+                subprocess.run(i) #running each element in Ubuntu array 
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             self.whoami(False)
             print("\n\tinstalling Mangohud and Goverlay for Arch")
-            os.system(self.Arch_Object.Arch_AUR_Overlays())
+            subprocess.run(self.Arch_Object.Arch_AUR_Overlays())
         elif self.PackageManager == self.distro[3]:    
             self.whoami(True)
             print("\n\tYou need to have AUR helpers like yay,paru to install Mangohud and Goverlay")
@@ -166,7 +166,7 @@ class LibreGaming:
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\tinstalling Mangohud and Goverlay for OpenSUSE")
-            os.system(self.OpenSUSE_Object.OpenSUSE_Overlays)
+            subprocess.run(self.OpenSUSE_Object.OpenSUSE_Overlays)
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()
@@ -176,22 +176,22 @@ class LibreGaming:
         if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
             self.whoami(True)
             print("\n\tinstalling Minigalaxy for Ubuntu")
-            os.system(self.Ubuntu_Object.Ubuntu_Minigalaxy)
+            subprocess.run(self.Ubuntu_Object.Ubuntu_Minigalaxy)
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             self.whoami(False)
             print("\n\tinstalling Minigalaxy for Arch")
-            os.system(self.Arch_Object.Arch_AUR_Minigalaxy())
+            subprocess.run(self.Arch_Object.Arch_AUR_Minigalaxy())
         elif self.PackageManager == self.distro[3]:    
             self.whoami(True)
             print("\n\tYou need to have AUR helpers like yay,paru to install Minigalaxy")
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
             self.whoami(True)
             print("\n\tinstalling Minigalaxy for Fedora")
-            os.system(self.Fedora_Object.Fedora_Minigalaxy) #running each element in Fedora array
+            subprocess.run(self.Fedora_Object.Fedora_Minigalaxy) #running each element in Fedora array
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
             self.whoami(True)
             print("\n\tinstalling Minigalaxy for OpenSUSE")
-            os.system(self.OpenSUSE_Object.OpenSUSE_Minigalaxy)
+            subprocess.run(self.OpenSUSE_Object.OpenSUSE_Minigalaxy)
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()
@@ -201,31 +201,6 @@ class LibreGaming:
         self.whoami(False)
         if self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
             print("\n\tinstalling Steam Tinker Lanuch for Arch")
-            os.system(self.Arch_Object.Arch_AUR_STL())
+            subprocess.run(self.Arch_Object.Arch_AUR_STL())
         elif self.PackageManager == self.distro[3]:    
             print("\n\tYou need to have AUR helpers like yay,paru to install Heroic")
-
-    #Used to install to install the latest ProtonGE release
-    def protonup_Install_Latest(self):
-        self.whoami(False)
-        os.system("protonup")
-
-    #Used to install to show the ProtonGE releases
-    def protonup_Show_Releases(Self):
-        self.whoami(False)
-        os.system("protonup --releases")
-
-    #Used to install to list all installed ProtonGE on your system
-    def protonup_List(Self):
-        self.whoami(False)
-        os.system("protonup -l")
-
-    #Used to install a specific ProtonGE
-    def protonup_Install_Specific(Self):
-        self.whoami(False)
-        os.system("protonup -t " + args.tag)
-
-    #Used to remove a specific ProtonGE
-    def protonup_Remove(Self):
-        self.whoami(False)
-        os.system("protonup -r " + args.rem)

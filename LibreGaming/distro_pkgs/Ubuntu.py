@@ -33,7 +33,7 @@ class Ubuntu:
         ["dpkg", "--add-architecture", "i386"],
         ["wget", "-nc", "https://dl.winehq.org/wine-builds/winehq.key"],
         ["apt-key", "add", "winehq.key"],
-        ["add-apt-repository", "'deb https://dl.winehq.org/wine-builds/ubuntu/ "+ self.ReleaseCodename +" main'", "-y"],
+        ["add-apt-repository", "deb https://dl.winehq.org/wine-builds/ubuntu/ "+ self.ReleaseCodename +" main", "-y"],
         ["add-apt-repository", "multiverse", "-y"],
         ["apt", "update"],
         ["apt", "install", "--install-recommends", "winehq-staging", "-y"],
@@ -56,7 +56,9 @@ class Ubuntu:
         distroName = str(subprocess.getoutput("lsb_release -is"))
         if distroName == "Ubuntu":
             self.ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
-        if distroName == "Pop":
+        elif distroName == "Pop":
             self.ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
-        else:
+        elif distroName == "Linuxmint":
             self.ReleaseCodename = str(subprocess.getoutput("grep -oP '(?<=DISTRIB_CODENAME=)\w+' /etc/upstream-release/lsb-release"))
+        else:
+            print("\nSorry could not identify your Distro\n")

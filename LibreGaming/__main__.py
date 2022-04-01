@@ -66,7 +66,7 @@ def main():
         if args.athenaeum:
             LibreGaming_Object.Common_Pkgs_Object.Athenaeum()
     except KeyboardInterrupt:
-        print("\n^C detected exiting\n")
+        print("\nInterrupt signal received exiting...\n")
         exit(0)
 
 if __name__ == "__main__":

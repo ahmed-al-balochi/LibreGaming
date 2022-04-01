@@ -40,7 +40,7 @@ class Arch:
         if PackageManager == "yay" or PackageManager == "paru":
             whoami = str(subprocess.getoutput("whoami"))
             if whoami == "root":
-                print("\n\tPlease run LibreGaming without the sudo or doas command if you use an AUR Helper\n")
+                print("\nPlease run LibreGaming without the sudo or doas command if you use an AUR Helper\n")
                 exit(0)
             else:
                 self.PackageManager = PackageManager

@@ -14,9 +14,7 @@ Table of contents
           - [Other Packages](#Other_Packages)
  - [Installation](#Installation)
  - [Usage](#Usage)
-     - [TUI](#TUI)
-     - [Wizard](#Wizard)
-          - [Protonup Commands](#Protonup_Commands)
+      - [Protonup Commands](#Protonup_Commands)
  - [VideoDemo](#VideoDemo)
  - [Feedback](#Feedback)
  - [Credits](#Credits)
@@ -183,23 +181,6 @@ LibreGaming --minigalaxy
 ```
 LibreGaming --stl
 ```
-## TUI 
-![TUI image](/pics/tui.png "TUI")
-
-* You can use a Terminal Based User Interface(TUI) to help you install what you want in a graphical way.
-
-enter this command to use the TUI 
-```
-LibreGaming --tui
-```
-## Wizard 
-![Wizard image](/pics/Wizard-101.png "Wizard TUI")
-![Wizard image](/pics/Wizard-102.png "Wizard TUI")
-
-* You can have more control over what gets installed on your system by using Wizard mode in the TUI, enter this command to use the TUI 
-```
-LibreGaming --tui
-```
 
 ### Protonup_Commands
 * To list all the available releases of ProtonGE enter this command:
@@ -238,5 +219,4 @@ https://www.youtube.com/watch?v=sOch-qZMLq0&t=309s
 * Thanks to [AUNaseef](https://github.com/AUNaseef/) protonup for making it easier to install ProtonGE.
 * Thanks to [flightlessmango](https://github.com/flightlessmango/) for mangohud.
 * Thanks to [benjamimgois](https://github.com/benjamimgois/) for goverlay.
-* The TUI uses [Npyscreen](https://github.com/npcole/npyscreen).
 * Thanks to anyone who downloads this script, and to everyone who gives me feedback.  

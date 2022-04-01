@@ -8,9 +8,6 @@ class Ubuntu:
 # Saves the Ubuntu release codename. For example: focal fossa 
     ReleaseCodename =  ""
 
-# For installing Minigalaxy 
-    Ubuntu_Minigalaxy = ["apt", "install", "minigalaxy", "-y"]
-
 # For installing Lutris
     Ubuntu_Lutris = [
         ["dpkg", "--add-architecture", "i386"],

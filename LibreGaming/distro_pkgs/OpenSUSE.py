@@ -11,8 +11,6 @@ class OpenSUSE:
         ["zypper", "update", "-y"]
         ]
 
-# For installing Minigalaxy 
-    OpenSUSE_Minigalaxy = ["zypper", "install", "-y", "minigalaxy"]
 # For installing Lutris
     OpenSUSE_Lutris = ["zypper", "install", "-y", "lutris"]
 

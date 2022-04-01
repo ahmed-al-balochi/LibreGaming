@@ -5,9 +5,6 @@ class Fedora:
     Here are all the pkgs that LibreGaming installs for Fedora 
     """
 
-# For installing Minigalaxy 
-    Fedora_Minigalaxy = ["dnf", "install", "minigalaxy", "-y"]
-
 # For fedora 33 and above
 # For installing Basic Packages like Steam, Wine, Gamemode 
 # ReleaseNumber Saves the Fedora release number. For example: Fedora 35

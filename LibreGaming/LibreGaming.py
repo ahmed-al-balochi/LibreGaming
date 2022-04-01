@@ -1,4 +1,4 @@
-import subprocess, argparse, wget, requests
+import subprocess, argparse, wget, requests, sys
 from LibreGaming.distro_pkgs.Arch import Arch 
 from LibreGaming.distro_pkgs.Fedora import Fedora
 from LibreGaming.distro_pkgs.OpenSUSE import OpenSUSE 
@@ -24,6 +24,23 @@ class LibreGaming:
         self.Ubuntu_Object = Ubuntu()
         self.Common_Pkgs_Object = Common_Pkgs()
 
+    # Checking if there is a new version of LibreGaming
+        self.check()
+
+    def check(self):
+        print("Checking if there is a new version of LibreGaming, please wait.")
+        name = "LibreGaming"
+        reqs = subprocess.check_output([sys.executable, '-m', 'pip', 'list','--outdated'])
+        outdated_packages = [r.decode().split('==')[0] for r in reqs.split()]
+        if name in outdated_packages:
+            self.whoami(True)
+            update = input("Your LibreGaming version is old, do you want to update?[Y/n]: ")
+            if update.upper() == "Y" or update.upper() == "YES":
+                subprocess.run(["pip", "install", "LibreGaming", "-U"])
+            else:
+                print("Declined update!\n")
+        else:
+            print("You are up to date.\n")
 
     # Gets the package manager by running $(command -v dnf)
     def getPackageManager(self):

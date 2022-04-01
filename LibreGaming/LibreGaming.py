@@ -30,6 +30,7 @@ class LibreGaming:
 
     def isLatestVersion(self):
         pkgName = "LibreGaming"
+        print("Checking for updates, please wait...")
         # Get the currently installed version
         current_version = ''
         for requirement in freeze(local_only=False):

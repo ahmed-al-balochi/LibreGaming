@@ -6,7 +6,7 @@ class Fedora:
     """
 
 # For installing Minigalaxy 
-    Fedora_Minigalaxy = [" dnf", "install", "minigalaxy", "-y"]
+    Fedora_Minigalaxy = ["dnf", "install", "minigalaxy", "-y"]
 
 # For fedora 33 and above
 # For installing Basic Packages like Steam, Wine, Gamemode 

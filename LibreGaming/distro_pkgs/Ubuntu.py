@@ -53,12 +53,10 @@ class Ubuntu:
         subprocess.run("dpkg", "-i", "heroic.deb")
 
     def __init__(self):
-        distroName = str(subprocess.getoutput("lsb_release -is"))
+        distroName = subprocess.getoutput("lsb_release -is")
         if distroName == "Ubuntu":
             self.ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
         elif distroName == "Pop":
             self.ReleaseCodename = str(subprocess.getoutput("lsb_release -cs"))
         elif distroName == "Linuxmint":
             self.ReleaseCodename = str(subprocess.getoutput("grep -oP '(?<=DISTRIB_CODENAME=)\w+' /etc/upstream-release/lsb-release"))
-        else:
-            print("\nSorry could not identify your Distro\n")

@@ -13,17 +13,17 @@ class LibreGaming:
     PackageManager = ""
     distro = ["apt","yay", "paru", "pacman", "dnf", "zypper"]
 
-    # Initialize objects
-    Arch_Object = Arch(None)
-    Fedora_Object = Fedora()
-    OpenSUSE_Object = OpenSUSE()
-    Ubuntu_Object = Ubuntu()
-    Common_Pkgs_Object = Common_Pkgs()
-
     # Initialize the Program
     def __init__(self):
         self.PackageManager = self.getPackageManager()
+
+    # Initialize distro objects
         self.Arch_Object = Arch(self.PackageManager)
+        self.Fedora_Object = Fedora()
+        self.OpenSUSE_Object = OpenSUSE()
+        self.Ubuntu_Object = Ubuntu()
+        self.Common_Pkgs_Object = Common_Pkgs()
+
 
     # Gets the package manager 
     def getPackageManager(self):

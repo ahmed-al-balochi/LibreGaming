@@ -41,7 +41,7 @@ class LibreGaming:
         contents = urllib.request.urlopen('https://pypi.org/pypi/'+pkgName+'/json').read()
         data = json.loads(contents)
         latest_version = data['info']['version']
-        if latest_version == current_version:
+        if latest_version != current_version:
             self.whoami(True)
             update = input("Your LibreGaming version is old, do you want to update?[Y/n]: ")
             if update.upper() == "Y" or update.upper() == "YES":

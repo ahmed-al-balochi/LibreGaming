@@ -25,7 +25,7 @@ class LibreGaming:
         self.Common_Pkgs_Object = Common_Pkgs()
 
 
-    # Gets the package manager 
+    # Gets the package manager by running $(command -v dnf)
     def getPackageManager(self):
         if subprocess.getoutput("$(command -v dnf)"):
             self.PackageManager =  "dnf"
@@ -167,31 +167,6 @@ class LibreGaming:
             self.whoami(True)
             print("\n\tinstalling Mangohud and Goverlay for OpenSUSE")
             subprocess.run(self.OpenSUSE_Object.OpenSUSE_Overlays)
-        else:
-            print("\n\tYour distro is not supported or was not found :(")
-            exit()
-
-    #Used to install Minigalaxy
-    def Minigalaxy(self):
-        if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
-            self.whoami(True)
-            print("\n\tinstalling Minigalaxy for Ubuntu")
-            subprocess.run(self.Ubuntu_Object.Ubuntu_Minigalaxy)
-        elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
-            self.whoami(False)
-            print("\n\tinstalling Minigalaxy for Arch")
-            subprocess.run(self.Arch_Object.Arch_AUR_Minigalaxy())
-        elif self.PackageManager == self.distro[3]:    
-            self.whoami(True)
-            print("\n\tYou need to have AUR helpers like yay,paru to install Minigalaxy")
-        elif self.PackageManager == self.distro[4]:    #packages for Fedora
-            self.whoami(True)
-            print("\n\tinstalling Minigalaxy for Fedora")
-            subprocess.run(self.Fedora_Object.Fedora_Minigalaxy) #running each element in Fedora array
-        elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
-            self.whoami(True)
-            print("\n\tinstalling Minigalaxy for OpenSUSE")
-            subprocess.run(self.OpenSUSE_Object.OpenSUSE_Minigalaxy)
         else:
             print("\n\tYour distro is not supported or was not found :(")
             exit()

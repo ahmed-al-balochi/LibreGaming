@@ -55,14 +55,14 @@ def main():
             LibreGaming_Object.Overlays()
         if args.lutris:
             LibreGaming_Object.Lutris()
-        if args.minigalaxy:
-            LibreGaming_Object.Minigalaxy()
         if args.heroic:
             LibreGaming_Object.Heroic()
-        if args.itch:
-            LibreGaming_Object.Common_Pkgs_Object.itch()
         if args.stl:
             LibreGaming_Object.STL()
+        if args.minigalaxy:
+            LibreGaming_Object.Common_Pkgs_Object.Minigalaxy()
+        if args.itch:
+            LibreGaming_Object.Common_Pkgs_Object.itch()
         if args.athenaeum:
             LibreGaming_Object.Common_Pkgs_Object.Athenaeum()
     except KeyboardInterrupt:

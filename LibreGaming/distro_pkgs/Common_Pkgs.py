@@ -18,11 +18,16 @@ class Common_Pkgs:
     # installation for Itch.io store
     def itch(self):
         self.whoami(False)
-        print('Downloading itch.io')
-        os.system("wget 'https://itch.io/app/download?platform=linux' -O itch-setup")
-        os.system("chmod +x itch-setup && ./itch-setup")
+        print("Downloading itch.io")
+        subprocess.run(["wget", "https://itch.io/app/download?platform=linux", "-O", "itch-setup"])
+        subprocess.run(["chmod", "+x", "itch-setup"])
+        os.system("./itch-setup")
 
     # installation for Athenaeum store For FOSS games
     def Athenaeum(self):
         self.whoami(False)
-        os.system("flatpak install flathub com.gitlab.librebob.Athenaeum -y")
+        subprocess.run(["flatpak", "install", "flathub", "com.gitlab.librebob.Athenaeum", "-y"])
+    
+    def Minigalaxy(self):
+        self.whoami(False)
+        subprocess.run(["flatpak", "install", "flathub", "io.github.sharkwouter.Minigalaxy"])

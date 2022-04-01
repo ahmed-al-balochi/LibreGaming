@@ -28,6 +28,7 @@ class Common_Pkgs:
         self.whoami(False)
         subprocess.run(["flatpak", "install", "flathub", "com.gitlab.librebob.Athenaeum", "-y"])
     
+    # installation for Minigalaxy store For GOG games
     def Minigalaxy(self):
         self.whoami(False)
         subprocess.run(["flatpak", "install", "flathub", "io.github.sharkwouter.Minigalaxy"])

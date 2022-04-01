@@ -159,10 +159,6 @@ sudo LibreGaming --lutris
 ```
 sudo LibreGaming --heroic
 ```
-* To install Minigalaxy Launcher enter this command (For Arch Don't use sudo. Use yay or paru):
-```
-sudo LibreGaming --minigalaxy
-```
 * To install MangoHud & Goverlay enter this command:
 ```
 sudo LibreGaming -o
@@ -178,6 +174,10 @@ LibreGaming -ath
 * To install itch.io Launcher enter this command:
 ```
 LibreGaming --itch
+```
+* To install Minigalaxy Launcher enter this command:
+```
+LibreGaming --minigalaxy
 ```
 * To install Steam Tinker Launch(For Arch Linux only) enter this command:
 ```

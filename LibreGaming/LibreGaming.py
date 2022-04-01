@@ -1,4 +1,5 @@
-import subprocess, argparse, wget, requests, sys
+import subprocess, argparse, wget, requests, json, urllib.request, pip
+from pip._internal.operations.freeze import freeze
 from LibreGaming.distro_pkgs.Arch import Arch 
 from LibreGaming.distro_pkgs.Fedora import Fedora
 from LibreGaming.distro_pkgs.OpenSUSE import OpenSUSE 
@@ -25,14 +26,21 @@ class LibreGaming:
         self.Common_Pkgs_Object = Common_Pkgs()
 
     # Checking if there is a new version of LibreGaming
-        self.check()
+        self.isLatestVersion()
 
-    def check(self):
-        print("Checking if there is a new version of LibreGaming, please wait.")
-        name = "LibreGaming"
-        reqs = subprocess.check_output([sys.executable, '-m', 'pip', 'list','--outdated'])
-        outdated_packages = [r.decode().split('==')[0] for r in reqs.split()]
-        if name in outdated_packages:
+    def isLatestVersion(self):
+        pkgName = "LibreGaming"
+        # Get the currently installed version
+        current_version = ''
+        for requirement in freeze(local_only=False):
+            pkg = requirement.split('==')
+            if pkg[0] == pkgName:
+                current_version = pkg[1]
+        # Check pypi for the latest version number
+        contents = urllib.request.urlopen('https://pypi.org/pypi/'+pkgName+'/json').read()
+        data = json.loads(contents)
+        latest_version = data['info']['version']
+        if latest_version == current_version:
             self.whoami(True)
             update = input("Your LibreGaming version is old, do you want to update?[Y/n]: ")
             if update.upper() == "Y" or update.upper() == "YES":

@@ -1,5 +1,5 @@
 from .LibreGaming import LibreGaming
-import os, argparse, subprocess
+import argparse, subprocess
 
 #Parse commandline arguments
 def parse_arguments():
@@ -14,7 +14,6 @@ def parse_arguments():
     parser.add_argument('-t', '--tag', action='store',type=str, default=None, help='Install a specific ProtonGE Release')
     parser.add_argument('-r', '--rem', action='store', type=str, default=None, metavar='TAG', help='remove a specific ProtonGE Release')
     parser.add_argument('--releases', action='store_true', help='List ProtonGE Releases')
-    parser.add_argument('--tui', action='store_true', help='use a Terminal User Interface to install Packages ')
     parser.add_argument('--heroic', action='store_true', help='Install Heroic Launcher')
     parser.add_argument('--lutris', action='store_true', help='Install Lutris Launcher')
     parser.add_argument('--minigalaxy', action='store_true', help='Install Minigalaxy Launcher')
@@ -35,11 +34,6 @@ def main():
          \n""")
         LibreGaming_Object = LibreGaming()
         args = parse_arguments()
-        if args.tui:
-            dir = os.path.dirname(__file__)
-            # Gets the path to the TUI.py file
-            tui = os.path.join(dir, 'TUI.py')
-            subprocess.run(["python3", tui])
         if args.proton:
             LibreGaming_Object.whoami(False)
             subprocess.run("protonup")

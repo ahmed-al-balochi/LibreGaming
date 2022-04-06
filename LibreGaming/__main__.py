@@ -19,6 +19,7 @@ def parse_arguments():
     parser.add_argument('--minigalaxy', action='store_true', help='Install Minigalaxy Launcher')
     parser.add_argument('--itch', action='store_true', help='Install itch.io Launcher')
     parser.add_argument('--stl', action='store_true', help='Install Steam Tinker Launch(For Arch Linux only)')
+    parser.add_argument('-v','--version', action='version', version='0.2.2.3')
     return parser.parse_args()
 
 # Main execution

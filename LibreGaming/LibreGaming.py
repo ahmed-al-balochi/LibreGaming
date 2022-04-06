@@ -23,47 +23,21 @@ class LibreGaming:
         self.Fedora_Object = Fedora()
         self.OpenSUSE_Object = OpenSUSE()
         self.Ubuntu_Object = Ubuntu()
-        self.Common_Pkgs_Object = Common_Pkgs()
-
-    # Checking if there is a new version of LibreGaming
-        self.isLatestVersion()
-
-    def isLatestVersion(self):
-        pkgName = "LibreGaming"
-        print("Checking for updates, please wait...")
-        # Get the currently installed version
-        current_version = ''
-        for requirement in freeze(local_only=False):
-            pkg = requirement.split('==')
-            if pkg[0] == pkgName:
-                current_version = pkg[1]
-        # Check pypi for the latest version number
-        contents = urllib.request.urlopen('https://pypi.org/pypi/'+pkgName+'/json').read()
-        data = json.loads(contents)
-        latest_version = data['info']['version']
-        if latest_version != current_version:
-            self.whoami(True)
-            update = input("Your LibreGaming version is old, do you want to update?[Y/n]: ")
-            if update.upper() == "Y" or update.upper() == "YES":
-                subprocess.run(["pip", "install", "LibreGaming", "-U"])
-            else:
-                print("Declined update!\n")
-        else:
-            print("You are up to date.\n")
+        self.Common_Pkgs_Object = Common_Pkgs()            
 
     # Gets the package manager by running $(command -v dnf)
     def getPackageManager(self):
-        if subprocess.getoutput("$(command -v dnf)"):
+        if subprocess.getoutput("command -v dnf"):
             self.PackageManager =  "dnf"
-        elif subprocess.getoutput("$(command -v yay)"):
+        elif subprocess.getoutput("command -v yay"):
             self.PackageManager =  "yay"
-        elif subprocess.getoutput("$(command -v paru)"):
+        elif subprocess.getoutput("command -v paru"):
             self.PackageManager =  "paru"
-        elif subprocess.getoutput("$(command -v pacman)"):
+        elif subprocess.getoutput("command -v pacman"):
             self.PackageManager =  "pacman"
-        elif subprocess.getoutput("$(command -v apt)"):
+        elif subprocess.getoutput("command -v apt"):
             self.PackageManager =  "apt"
-        elif subprocess.getoutput("$(command -v zypper)"):
+        elif subprocess.getoutput("command -v zypper"):
             self.PackageManager =  "zypper"
         else:
             print("Could not know your distro based on your Package Manager!")

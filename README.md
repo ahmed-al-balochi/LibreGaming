@@ -1,6 +1,8 @@
 # LibreGaming
 Python Program that downloads gaming required packages based on your Linux Distribution.
 
+![LibreGamingQt](LibreGaming/pics/LibreGamingQt.png)
+
 [![Downloads](https://static.pepy.tech/personalized-badge/libregaming?period=total&units=international_system&left_color=black&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/libregaming) ![PyPI](https://img.shields.io/pypi/v/libregaming?color=ge&label=Version) [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Duser%3Fu%3D42792180%26type%3Dpatrons&style=flat)](https://patreon.com/user?u=42792180)
 
 Table of contents
@@ -112,6 +114,12 @@ sudo zypper install python3-pip
 4. [Steam Tinker Launch](https://github.com/frostworx/steamtinkerlaunch)(Only for Arch Linux).
 
 # Installation:
+## GUI
+* To use the GUI interface you need to download the ```LibreGamingQt-x86_64.AppImage``` from the [releases page](https://github.com/Ahmed-Al-Balochi/LibreGaming/releases) and give it execute privileges and run it! 
+
+![execute privileges](LibreGaming/pics/execute-privileges.png)
+
+## CLI
 * You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:
 ```
 sudo pip3 install LibreGaming

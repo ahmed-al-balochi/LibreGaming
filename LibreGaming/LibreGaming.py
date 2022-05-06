@@ -1,10 +1,10 @@
 import subprocess, argparse, wget, requests, json, urllib.request, pip
 from pip._internal.operations.freeze import freeze
-from LibreGaming.distro_pkgs.Arch import Arch 
-from LibreGaming.distro_pkgs.Fedora import Fedora
-from LibreGaming.distro_pkgs.OpenSUSE import OpenSUSE 
-from LibreGaming.distro_pkgs.Ubuntu import Ubuntu 
-from LibreGaming.distro_pkgs.Common_Pkgs import Common_Pkgs 
+from distro_pkgs.Arch import Arch 
+from distro_pkgs.Fedora import Fedora
+from distro_pkgs.OpenSUSE import OpenSUSE 
+from distro_pkgs.Ubuntu import Ubuntu 
+from distro_pkgs.Common_Pkgs import Common_Pkgs 
 
 class LibreGaming:
     """
@@ -52,6 +52,7 @@ class LibreGaming:
         elif whoami != "root" and authorize == True:
            print("\nPlease run LibreGaming with sudo or doas command for this flag")
            exit(0)
+        return authorize
 
     # Used to install all packages 
     def installAllPkgs(self):

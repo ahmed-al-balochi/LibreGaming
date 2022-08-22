@@ -41,6 +41,7 @@ class LibreGaming:
             self.PackageManager =  "zypper"
         else:
             print("Could not know your distro based on your Package Manager!")
+            return "Unknown distro"
         return self.PackageManager
 
     # To check if LibreGaming is executed with root or not 
@@ -59,6 +60,7 @@ class LibreGaming:
         self.Lutris()
         self.Heroic()
         self.Overlays()
+        return 'success'
 
     #Used to install Steam, Wine-Staging, Gamemode
     def BasicPkgs(self):
@@ -94,34 +96,36 @@ class LibreGaming:
                 subprocess.run(i) #running each element in OpenSUSE array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
-            exit()
-
+            return "Installaion failed"
+        return 'success'
+        
     #Used to install Lutris 
     def Lutris(self):
         if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
-            self.whoami(True)
+            #self.whoami(True)
             print("\n\tInstalling Lutris for Ubuntu")
             for i in self.Ubuntu_Object.Ubuntu_Lutris:
                 subprocess.run(i) #running each element in Ubuntu array 
         elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:
-            self.whoami(False)
+            #self.whoami(False)
             print("\n\tInstalling Lutris for Arch using an AUR helper")
             subprocess.run(self.Arch_Object.Arch_Lutris())
         elif self.PackageManager == self.distro[3]:    
-            self.whoami(True)
+            #self.whoami(True)
             print("\n\tInstalling Lutris for Arch")
             subprocess.run(self.Arch_Object.Arch_Lutris())
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
-            self.whoami(True)
+            #self.whoami(True)
             print("\n\tInstalling Lutris for Fedora")
             subprocess.run(self.Fedora_Object.Fedora_Lutris)
         elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
-            self.whoami(True)
+            #self.whoami(True)
             print("\n\tInstalling Lutris for OpenSUSE")
             subprocess.run(self.OpenSUSE_Object.OpenSUSE_Lutris)
         else:
             print("\n\tYour distro is not supported or was not found :(")
-            exit()
+            return "Installaion failed"
+        return 'success'
 
     #Used to install Heroic 
     def Heroic(self):
@@ -143,7 +147,8 @@ class LibreGaming:
             self.OpenSUSE_Object.OpenSUSE_Heroic() #running each element in OpenSUSE array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
-            exit()
+            return "Installaion failed"
+        return 'success'
 
     #Used to install MangoHud and Goverlay 
     def Overlays(self):
@@ -169,7 +174,8 @@ class LibreGaming:
             subprocess.run(self.OpenSUSE_Object.OpenSUSE_Overlays)
         else:
             print("\n\tYour distro is not supported or was not found :(")
-            exit()
+            return "Installaion failed"
+        return 'success'
 
     #Used to install Steam Tinker Lanuch for Arch Linux(AUR) 
     def STL(self):

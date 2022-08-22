@@ -1,2 +1,8 @@
-- name: Unit Testing With Python
-  uses: PrajjawalBanati/Python-actions@0.0.1
+name: Test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        uses: onichandame/python-test-action@master

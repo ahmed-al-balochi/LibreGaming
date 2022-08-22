@@ -1,5 +1,4 @@
-import subprocess, argparse, requests, json, urllib.request, pip
-from pip._internal.operations.freeze import freeze
+import subprocess
 from LibreGaming.distro_pkgs.Arch import Arch 
 from LibreGaming.distro_pkgs.Fedora import Fedora
 from LibreGaming.distro_pkgs.OpenSUSE import OpenSUSE 

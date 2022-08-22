@@ -7,4 +7,4 @@ jobs:
       - name: Prepare repo
         uses: actions/checkout@master
       - name: Test
-        uses: onichandame/python-test-action@master
+        uses: Ahmed-Al-Balochi/LibreGaming@master

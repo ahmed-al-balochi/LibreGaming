@@ -4,5 +4,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
       - name: Test
         uses: onichandame/python-test-action@master
+        with:
+          deps_list: 'requirement'

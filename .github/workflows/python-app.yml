@@ -1,10 +1,2 @@
-name: Test
-on: [push]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Prepare repo
-        uses: actions/checkout@master
-      - name: Test
-        uses: Ahmed-Al-Balochi/LibreGaming@master
+- name: Unit Testing With Python
+  uses: PrajjawalBanati/Python-actions@0.0.1

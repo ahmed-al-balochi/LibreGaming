@@ -1,4 +1,4 @@
-import subprocess, wget, requests
+import subprocess, wget, requests, os
 
 class OpenSUSE:
     """

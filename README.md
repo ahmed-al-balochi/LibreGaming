@@ -7,7 +7,6 @@ Python Program that downloads gaming required packages based on your Linux Distr
 
 Table of contents
 =================
-
  - [Distributions](#Distributions)
  - [Prerequisites](#Prerequisites)
      - [Dependencies](#Dependencies)
@@ -20,7 +19,10 @@ Table of contents
  - [VideoDemo](#VideoDemo)
  - [Feedback](#Feedback)
  - [Credits](#Credits)
+ - [للعربية](#للعربية) 
 
+# للعربية
+بسبب مشكلة إستخدام العربية في قيت_هوب قمت بعمل مقال يشرح كل تفاصيل البرنامج على [مدونتي](https://tech-ahmed.com/LibreGaming/).
 
 # Distributions:
 * I tested this script on these distributions. but it should also work on their derivatives too.

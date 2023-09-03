@@ -81,30 +81,30 @@ sudo zypper install python3
 * python3-pip.
 1. Install python3-pip For Ubuntu:
 ```
-sudo apt install python3-pip
+sudo apt install pipx
 ```
 2. Install python3-pip For Arch Linux:
 ```
-sudo pacman -S python-pip
+sudo pacman -S python-pipx
 ```
 3. Install python3-pip For Fedora:
 ```
-sudo dnf install python3-pip
+sudo dnf install pipx
 ```
 4. Install python3-pip For OpenSUSE Tumbleweed:
 ```
-sudo zypper install python3-pip
+sudo zypper install python-pipx
 ```
 
 * [Flatpak](https://flatpak.org/setup/) is needed for installing Athenaeum.
 
 # Packages:
-* These Packages are installed using ```LibreGaming -b ```
+* These Packages are installed using ```libregaming -b ```
 1. [Steam](https://store.steampowered.com/).
 2. [Wine-Staging](https://www.winehq.org/).
 3. [Gamemode](https://github.com/FeralInteractive/gamemode).
 ## Optional_Packages
-* These Packages + the ones above can be installed using ```LibreGaming -g ```
+* These Packages + the ones above can be installed using ```libregaming -g ```
 1. [Lutris](https://github.com/lutris/lutris.git).
 2. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
 3. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
@@ -124,7 +124,7 @@ sudo zypper install python3-pip
 ## CLI
 * You can install LibreGaming using pip if you have it installed. click [Here](https://github.com/Ahmed-Al-Balochi/LibreGaming#dependencies) to install pip3:
 ```
-sudo pip3 install LibreGaming
+sudo pipx install LibreGaming
 ```
 * Or you can install LibreGaming script by entering these commands:
 ```
@@ -134,82 +134,78 @@ sudo python3 setup.py install --user
 ```
 * To update LibreGaming when there is a new release enter this command:
 ```
-sudo pip3 install LibreGaming -U
+sudo pipx install LibreGaming -U
 ```
 
 * LibreGaming: command not found. 
 
-This error can be solved by setting up the PATH in your shell you can do this by entering these lines in your shell file(.bashrc or .zshrc) and by default your shell file is hidden. to show hidden files enter ```ls -al``` in the terminal.
-* Note that the LibreGaming Script is saved in ~/.local/bin directory by default.
+This error can be solved by setting up the PATH in your shell you can do this by creating an alias like so. 
+* Note that the LibreGaming Script is saved in /root/.local/bin directory by default.
 ```
-### PATH
-
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
+alias libregaming="/root/.local/pipx/venvs/libregaming/bin/libregaming" 
 ```
 
 # Usage:
 * Note: you can also run this script using ```libregaming``` command if you don't like ```LibreGaming```. Both can be used, so choose what you prefer.
 * To install all the Gaming packages mentioned in the packages section enter this command:
 ```
-sudo LibreGaming -g
+sudo libregaming -g
 ```
 * To install Basic Packages(Wine, Steam, Gamemode):
 ```
-sudo LibreGaming -b
+sudo libregaming -b
 ```
 * To install Lutris Launcher enter this command:
 ```
-sudo LibreGaming --lutris 
+sudo libregaming --lutris 
 ```
 * To install Heroic Launcher enter this command (Don't use sudo if you are using OpenSUSE):
 ```
-sudo LibreGaming --heroic
+sudo libregaming --heroic
 ```
 * To install MangoHud & Goverlay enter this command:
 ```
-sudo LibreGaming -o
+sudo libregaming -o
 ```
 * To install ProtonGE enter this command:
 ```
-LibreGaming -p
+libregaming -p
 ```
 * To install Athenaeum Launcher enter this command:
 ```
-LibreGaming -ath
+libregaming -ath
 ```
 * To install itch.io Launcher enter this command:
 ```
-LibreGaming --itch
+libregaming --itch
 ```
 * To install Minigalaxy Launcher enter this command:
 ```
-LibreGaming --minigalaxy
+libregaming --minigalaxy
 ```
 * To install Steam Tinker Launch(For Arch Linux only) enter this command:
 ```
-LibreGaming --stl
+libregaming --stl
 ```
 
 ### Protonup_Commands
 * To list all the available releases of ProtonGE enter this command:
 ```
-LibreGaming --release
+libregaming --release
 ```
 * To list all the installed verions of ProtonGE enter this command:
 ```
-LibreGaming -l
+libregaming -l
 ```
 * To install a specfic release of ProtonGE enter this command:
 for example:
 ```
-LibreGaming -t 6.13-GE-1
+libregaming -t 6.13-GE-1
 ```
 * To delete a specfic release of ProtonGE enter this command:
 for example:
 ```
-LibreGaming -r 6.13-GE-1
+libregaming -r 6.13-GE-1
 ```
 
 # VideoDemo:

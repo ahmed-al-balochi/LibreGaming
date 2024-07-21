@@ -130,20 +130,16 @@ sudo pipx install LibreGaming
 ```
 git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/ 
 cd LibreGaming/
-sudo python3 setup.py install --user
+sudo pipx install . --global
 ```
 * To update LibreGaming when there is a new release enter this command:
 ```
-sudo pipx install LibreGaming -U
+sudo pipx install libregaming --global -U
 ```
 
 * LibreGaming: command not found. 
 
-This error can be solved by setting up the PATH in your shell you can do this by creating an alias like so. 
-* Note that the LibreGaming Script is saved in /root/.local/bin directory by default.
-```
-alias libregaming="/root/.local/pipx/venvs/libregaming/bin/libregaming" 
-```
+This error can be solved by setting up the PATH in your shell.
 
 # Usage:
 * Note: you can also run this script using ```libregaming``` command if you don't like ```LibreGaming```. Both can be used, so choose what you prefer.

@@ -1,0 +1,3 @@
+[console_scripts]
+LibreGaming = LibreGaming:main
+libregaming = LibreGaming:main

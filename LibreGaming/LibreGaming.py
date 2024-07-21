@@ -81,10 +81,13 @@ class LibreGaming:
             subprocess.run(["dnf", "install", "redhat-lsb-core", "-y"]) # used to get the release version of Fedora using "lsb_release -rs"
             ReleaseNumber = subprocess.getoutput("lsb_release -rs")
             print("\n\tNow Installing Fedora " + ReleaseNumber +" Gaming Packages")
-            if ReleaseNumber >= '33':                                           
+            if ReleaseNumber >= '40':                                           
+                for i in self.Fedora_Object.Fedora_40_Basics:
+                    subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
+            elif ReleaseNumber >= '33' and ReleaseNumber < '40':                                           
                 for i in self.Fedora_Object.Fedora_33_Basics:
                     subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
-            else:
+            if ReleaseNumber < '33':                                           
                 print("can't install wine-staging because your fedora version is less than 33. installing wine from fedora repo")
                 for i in self.Fedora_Object.Fedora_32_Basics:
                     subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora

@@ -9,7 +9,7 @@ class Fedora:
 # For fedora 40 and above
 # For installing Basic Packages like Steam, Wine, Gamemode 
 # ReleaseNumber Saves the Fedora release number. For example: Fedora 40
-    Fedora_33_Basics = [
+    Fedora_40_Basics = [
         ["wget", "https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks"], #installing winetricks here
         ["chmod", "-744", "winetricks"],
         ["mv", "winetricks", "/usr/local/bin/"],

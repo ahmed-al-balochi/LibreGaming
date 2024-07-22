@@ -1,4 +1,0 @@
-argparse
-requests
-wget
-protonup-ng

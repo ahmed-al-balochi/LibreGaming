@@ -129,29 +129,6 @@ class LibreGaming:
             return "Installaion failed"
         return 'success'
 
-    #Used to install Heroic 
-    def Heroic(self):
-        if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
-            self.whoami(True)
-            self.Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
-        elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
-            self.whoami(False)
-            print("\n\tInstalling Heroic for Arch")
-            subprocess.run(self.Arch_Object.Arch_AUR_Heroic())
-        elif self.PackageManager == self.distro[3]:
-            self.whoami(True)
-            print("\n\tYou need to have AUR helpers like yay,paru to install Heroic")
-        elif self.PackageManager == self.distro[4]:    #packages for Fedora
-            self.whoami(True)
-            for i in self.Fedora_Object.Fedora_Heroic:
-                subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
-        elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
-            self.OpenSUSE_Object.OpenSUSE_Heroic() #running each element in OpenSUSE array 
-        else:
-            print("\n\tYour distro is not supported or was not found :(")
-            return "Installaion failed"
-        return 'success'
-
     #Used to install MangoHud and Goverlay 
     def Overlays(self):
         if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros

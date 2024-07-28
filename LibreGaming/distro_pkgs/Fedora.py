@@ -44,12 +44,5 @@ class Fedora:
 # For installing Lutris
     Fedora_Lutris = ["dnf", "install", "lutris", "-y"]
 
-
-# For installing Heroic
-    Fedora_Heroic = [
-        ["dnf", "copr", "enable", "atim/heroic-games-launcher", "-y"],
-        ["dnf", "update", "-y"],
-        ["dnf", "install", "heroic-games-launcher-bin", "-y"]
-    ]
 # For installing The FPS programs and overlays
     Fedora_Overlays = ["dnf","install", "goverlay", "-y"]

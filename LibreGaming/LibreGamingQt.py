@@ -138,10 +138,10 @@ class MainWindow(QMainWindow):
             self.p.readyReadStandardError.connect(self.handle_stderr)
             self.p.stateChanged.connect(self.handle_state)
             self.p.finished.connect(self.process_finished)  # Clean up once complete.
-        if self.PackageManager == "yay" or self.PackageManager == "paru" or self.PackageManager == "pacman":
+        if self.PackageManager == "dnf" or self.PackageManager == "apt":
             self.p.start("pkexec pacman -S python3-pip")
         else:
-            self.p.start("pkexec "+ self.PackageManager +" install python3-pip")
+            self.p.start("pkexec "+ self.PackageManager +" install python-pipx")
 
     def installLibreGaming(self):
         if self.p is None:  # No process running.
@@ -150,7 +150,7 @@ class MainWindow(QMainWindow):
             self.p.readyReadStandardError.connect(self.handle_stderr)
             self.p.stateChanged.connect(self.handle_state)
             self.p.finished.connect(self.process_finished)  # Clean up once complete.
-            self.p.start("pkexec pip install LibreGaming -U")
+            self.p.start("pkexec sudo pipx upgrade libregaming --global")
 
     def installAllPkgs(self):
         if self.p is None:  # No process running.
@@ -187,7 +187,7 @@ class MainWindow(QMainWindow):
             self.p.stateChanged.connect(self.handle_state)
             self.p.finished.connect(self.process_finished)  # Clean up once complete.
             if self.PackageManager == "zypper":
-                self.p.start("LibreGaming --lutris")            
+                self.p.start("LibreGaming --heroic")            
             else:
                 self.p.start("pkexec LibreGaming --lutris")
 

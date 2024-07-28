@@ -28,6 +28,7 @@ class LibreGaming:
     def getPackageManager(self):
         if subprocess.getoutput("command -v dnf"):
             self.PackageManager =  "dnf"
+            subprocess.run(["dnf", "install", "redhat-lsb-core", "-y"]) # tool used to get the release version of Fedora using "lsb_release -rs"
         elif subprocess.getoutput("command -v yay"):
             self.PackageManager =  "yay"
         elif subprocess.getoutput("command -v paru"):
@@ -57,7 +58,6 @@ class LibreGaming:
     def installAllPkgs(self):
         self.BasicPkgs()
         self.Lutris()
-        self.Heroic()
         self.Overlays()
         return 'success'
 
@@ -78,13 +78,15 @@ class LibreGaming:
             subprocess.run(self.Arch_Object.Arch_Basics)
         elif self.PackageManager == self.distro[4]:    #packages for Fedora
             self.whoami(True)
-            subprocess.run(["dnf", "install", "redhat-lsb-core", "-y"]) # used to get the release version of Fedora using "lsb_release -rs"
             ReleaseNumber = subprocess.getoutput("lsb_release -rs")
             print("\n\tNow Installing Fedora " + ReleaseNumber +" Gaming Packages")
-            if ReleaseNumber >= '33':                                           
+            if ReleaseNumber >= '40':                                           
+                for i in self.Fedora_Object.Fedora_40_Basics:
+                    subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
+            elif ReleaseNumber >= '33' and ReleaseNumber < '40':                                           
                 for i in self.Fedora_Object.Fedora_33_Basics:
                     subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
-            else:
+            if ReleaseNumber < '33':                                           
                 print("can't install wine-staging because your fedora version is less than 33. installing wine from fedora repo")
                 for i in self.Fedora_Object.Fedora_32_Basics:
                     subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
@@ -121,29 +123,6 @@ class LibreGaming:
             #self.whoami(True)
             print("\n\tInstalling Lutris for OpenSUSE")
             subprocess.run(self.OpenSUSE_Object.OpenSUSE_Lutris)
-        else:
-            print("\n\tYour distro is not supported or was not found :(")
-            return "Installaion failed"
-        return 'success'
-
-    #Used to install Heroic 
-    def Heroic(self):
-        if self.PackageManager == self.distro[0]:  #packages for Ubuntu and Ubuntu based distros
-            self.whoami(True)
-            self.Ubuntu_Object.Ubuntu_Heroic() #running each element in Ubuntu array 
-        elif self.PackageManager == self.distro[1] or self.PackageManager == self.distro[2]:    #packages for Arch and Arch based distros
-            self.whoami(False)
-            print("\n\tInstalling Heroic for Arch")
-            subprocess.run(self.Arch_Object.Arch_AUR_Heroic())
-        elif self.PackageManager == self.distro[3]:
-            self.whoami(True)
-            print("\n\tYou need to have AUR helpers like yay,paru to install Heroic")
-        elif self.PackageManager == self.distro[4]:    #packages for Fedora
-            self.whoami(True)
-            for i in self.Fedora_Object.Fedora_Heroic:
-                subprocess.run(i) #running each element in Fedora array from distro_pkgs/Fedora
-        elif self.PackageManager == self.distro[5]:    #packages for OpenSUSE
-            self.OpenSUSE_Object.OpenSUSE_Heroic() #running each element in OpenSUSE array 
         else:
             print("\n\tYour distro is not supported or was not found :(")
             return "Installaion failed"

@@ -38,17 +38,6 @@ class Ubuntu:
         ]
         return basic_pkgs 
 
-# For installing Heroic
-    def Ubuntu_Heroic(self):
-        print('Downloading Heroic latest dpkg')
-        url = 'https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest'
-        r = requests.get(url).json()
-        for i in r['assets']:
-            if  i['name'].endswith('.deb'):
-                url= i['browser_download_url']
-        wget.download(url, "heroic.deb")
-        subprocess.run(["dpkg", "-i", "heroic.deb"])
-
     def __init__(self):
         distroName = subprocess.getoutput("lsb_release -is")
         if distroName == "Ubuntu":

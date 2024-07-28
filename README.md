@@ -15,7 +15,6 @@ Table of contents
           - [Other Packages](#Other_Packages)
  - [Installation](#Installation)
  - [Usage](#Usage)
-      - [Protonup Commands](#Protonup_Commands)
  - [VideoDemo](#VideoDemo)
  - [Feedback](#Feedback)
  - [Credits](#Credits)
@@ -79,9 +78,14 @@ sudo zypper install python3
 ```
 
 * python3-pip.
-1. Install python3-pip For Ubuntu:
+1. Install python3-pipx For Ubuntu:
 ```
 sudo apt install pipx
+```
+if you're getting an error/issues with installing libregaming using pipx. Use pip
+```
+sudo apt install pip
+
 ```
 2. Install python3-pip For Arch Linux:
 ```
@@ -91,9 +95,9 @@ sudo pacman -S python-pipx
 ```
 sudo dnf install pipx
 ```
-4. Install python3-pip For OpenSUSE Tumbleweed:
+4. Install python3-pip For OpenSUSE Tumbleweed (Replace the "xxx" with the available pipx version):
 ```
-sudo zypper install python-pipx
+sudo zypper install pythonxxx-pipx
 ```
 
 * [Flatpak](https://flatpak.org/setup/) is needed for installing Athenaeum.
@@ -106,14 +110,13 @@ sudo zypper install python-pipx
 ## Optional_Packages
 * These Packages + the ones above can be installed using ```libregaming -g ```
 1. [Lutris](https://github.com/lutris/lutris.git).
-2. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
-3. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
+2. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
 ### Other_Packages
 * These Packages have their own install option and they are not included in the above packages. They need to be installed seperatly, to know more click [here](https://github.com/Ahmed-Al-Balochi/LibreGaming#usage)
-1. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(You Must run Steam at least once before installing ProtonGE).
 2. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
 3. [itch.io](https://itch.io/app) a Launcher for indie games.
 4. [Steam Tinker Launch](https://github.com/frostworx/steamtinkerlaunch)(Only for Arch Linux).
+5. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
 
 # Installation:
 ## GUI
@@ -130,20 +133,16 @@ sudo pipx install LibreGaming
 ```
 git clone https://github.com/Ahmed-Al-Balochi/LibreGaming.git LibreGaming/ 
 cd LibreGaming/
-sudo python3 setup.py install --user
+sudo pipx install . --global
 ```
 * To update LibreGaming when there is a new release enter this command:
 ```
-sudo pipx install LibreGaming -U
+sudo pipx install libregaming --global -U
 ```
 
 * LibreGaming: command not found. 
 
-This error can be solved by setting up the PATH in your shell you can do this by creating an alias like so. 
-* Note that the LibreGaming Script is saved in /root/.local/bin directory by default.
-```
-alias libregaming="/root/.local/pipx/venvs/libregaming/bin/libregaming" 
-```
+This error can be solved by setting up the PATH in your shell.
 
 # Usage:
 * Note: you can also run this script using ```libregaming``` command if you don't like ```LibreGaming```. Both can be used, so choose what you prefer.
@@ -167,10 +166,6 @@ sudo libregaming --heroic
 ```
 sudo libregaming -o
 ```
-* To install ProtonGE enter this command:
-```
-libregaming -p
-```
 * To install Athenaeum Launcher enter this command:
 ```
 libregaming -ath
@@ -188,26 +183,6 @@ libregaming --minigalaxy
 libregaming --stl
 ```
 
-### Protonup_Commands
-* To list all the available releases of ProtonGE enter this command:
-```
-libregaming --release
-```
-* To list all the installed verions of ProtonGE enter this command:
-```
-libregaming -l
-```
-* To install a specfic release of ProtonGE enter this command:
-for example:
-```
-libregaming -t 6.13-GE-1
-```
-* To delete a specfic release of ProtonGE enter this command:
-for example:
-```
-libregaming -r 6.13-GE-1
-```
-
 # VideoDemo:
 * This a my video demonstrating LibreGaming in [English](https://www.youtube.com/watch?v=F9GP5Et12qo). And click here for [Arabic](https://www.youtube.com/watch?v=QI8Ai8BTMwo)
 * This is a video demonstrating LibreGaming made by TechHut:
@@ -221,8 +196,6 @@ https://www.youtube.com/watch?v=sOch-qZMLq0&t=309s
 * Your feedback is always welcome.
 
 # Credits:
-* Thanks to [GloriousEggroll](https://github.com/GloriousEggroll/) for ProtonGE.
-* Thanks to [AUNaseef](https://github.com/AUNaseef/) protonup for making it easier to install ProtonGE.
 * Thanks to [flightlessmango](https://github.com/flightlessmango/) for mangohud.
 * Thanks to [benjamimgois](https://github.com/benjamimgois/) for goverlay.
 * Thanks to anyone who downloads this script, and to everyone who gives me feedback.  

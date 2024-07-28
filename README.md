@@ -106,14 +106,13 @@ sudo zypper install pythonxxx-pipx
 ## Optional_Packages
 * These Packages + the ones above can be installed using ```libregaming -g ```
 1. [Lutris](https://github.com/lutris/lutris.git).
-2. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
-3. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
+2. [mangohud](https://github.com/flightlessmango/MangoHud.git) and [goverlay](https://github.com/benjamimgois/goverlay.git)(Needs AUR enabled on Arch Linux).
 ### Other_Packages
 * These Packages have their own install option and they are not included in the above packages. They need to be installed seperatly, to know more click [here](https://github.com/Ahmed-Al-Balochi/LibreGaming#usage)
-1. [ProtonGE](https://github.com/GloriousEggroll/proton-ge-custom)(You Must run Steam at least once before installing ProtonGE).
 2. [Athenaeum](https://gitlab.com/librebob/athenaeum.git) Launcher for FOSS games.
 3. [itch.io](https://itch.io/app) a Launcher for indie games.
 4. [Steam Tinker Launch](https://github.com/frostworx/steamtinkerlaunch)(Only for Arch Linux).
+5. [Heroic](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher.git) (Needs AUR enabled on Arch Linux)
 
 # Installation:
 ## GUI
@@ -163,10 +162,6 @@ sudo libregaming --heroic
 ```
 sudo libregaming -o
 ```
-* To install ProtonGE enter this command:
-```
-libregaming -p
-```
 * To install Athenaeum Launcher enter this command:
 ```
 libregaming -ath
@@ -184,26 +179,6 @@ libregaming --minigalaxy
 libregaming --stl
 ```
 
-### Protonup_Commands
-* To list all the available releases of ProtonGE enter this command:
-```
-libregaming --release
-```
-* To list all the installed verions of ProtonGE enter this command:
-```
-libregaming -l
-```
-* To install a specfic release of ProtonGE enter this command:
-for example:
-```
-libregaming -t 6.13-GE-1
-```
-* To delete a specfic release of ProtonGE enter this command:
-for example:
-```
-libregaming -r 6.13-GE-1
-```
-
 # VideoDemo:
 * This a my video demonstrating LibreGaming in [English](https://www.youtube.com/watch?v=F9GP5Et12qo). And click here for [Arabic](https://www.youtube.com/watch?v=QI8Ai8BTMwo)
 * This is a video demonstrating LibreGaming made by TechHut:
@@ -217,8 +192,6 @@ https://www.youtube.com/watch?v=sOch-qZMLq0&t=309s
 * Your feedback is always welcome.
 
 # Credits:
-* Thanks to [GloriousEggroll](https://github.com/GloriousEggroll/) for ProtonGE.
-* Thanks to [AUNaseef](https://github.com/AUNaseef/) protonup for making it easier to install ProtonGE.
 * Thanks to [flightlessmango](https://github.com/flightlessmango/) for mangohud.
 * Thanks to [benjamimgois](https://github.com/benjamimgois/) for goverlay.
 * Thanks to anyone who downloads this script, and to everyone who gives me feedback.  

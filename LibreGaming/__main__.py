@@ -9,11 +9,6 @@ def parse_arguments():
     parser.add_argument('-b', '--basic', action='store_true', help='Install Basic Gaming Packages(Steam,Wine-Staging,Gamemode)')
     parser.add_argument('-ath', '--athenaeum', action='store_true', help='Install Athenaeum Launcher')
     parser.add_argument('-o', '--overlays', action='store_true', help='Install Mangohud & Goverlay')
-    parser.add_argument('-p', '--proton', action='store_true', help='Install/Update ProtonGE(You must run Steam once before installing ProtonGE)')
-    parser.add_argument('-l', '--list', action='store_true', help='List installed ProtonGE Releases')
-    parser.add_argument('-t', '--tag', action='store',type=str, default=None, help='Install a specific ProtonGE Release')
-    parser.add_argument('-r', '--rem', action='store', type=str, default=None, metavar='TAG', help='remove a specific ProtonGE Release')
-    parser.add_argument('--releases', action='store_true', help='List ProtonGE Releases')
     parser.add_argument('--heroic', action='store_true', help='Install Heroic Launcher')
     parser.add_argument('--lutris', action='store_true', help='Install Lutris Launcher')
     parser.add_argument('--minigalaxy', action='store_true', help='Install Minigalaxy Launcher')
@@ -35,24 +30,8 @@ def main():
          \n""")
         LibreGaming_Object = LibreGaming()
         args = parse_arguments()
-        if args.proton:
-            LibreGaming_Object.whoami(False)
-            subprocess.run("protonup")
-        if args.releases:
-            LibreGaming_Object.whoami(False)
-            subprocess.run(["protonup", "--releases"])
-        if args.list:
-            LibreGaming_Object.whoami(False)
-            subprocess.run(["protonup", "-l"])
-        if args.tag:
-            LibreGaming_Object.whoami(False)
-            subprocess.run(["protonup", "-t" + args.tag])
-        if args.rem:
-            LibreGaming_Object.whoami(False)
-            subprocess.run(["protonup", "-r", + args.rem])
         if args.gaming:
             LibreGaming_Object.installAllPkgs()
-            LibreGaming_Object.Common_Pkgs_Object.Heroic()
         if args.basic:
             LibreGaming_Object.BasicPkgs()
         if args.overlays:

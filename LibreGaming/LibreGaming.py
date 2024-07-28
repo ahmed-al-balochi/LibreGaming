@@ -58,7 +58,6 @@ class LibreGaming:
     def installAllPkgs(self):
         self.BasicPkgs()
         self.Lutris()
-        self.Heroic()
         self.Overlays()
         return 'success'
 

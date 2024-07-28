@@ -91,9 +91,9 @@ sudo pacman -S python-pipx
 ```
 sudo dnf install pipx
 ```
-4. Install python3-pip For OpenSUSE Tumbleweed:
+4. Install python3-pip For OpenSUSE Tumbleweed (Replace the "xxx" with the available pipx version):
 ```
-sudo zypper install python-pipx
+sudo zypper install pythonxxx-pipx
 ```
 
 * [Flatpak](https://flatpak.org/setup/) is needed for installing Athenaeum.

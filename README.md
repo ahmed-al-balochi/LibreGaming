@@ -15,7 +15,6 @@ Table of contents
           - [Other Packages](#Other_Packages)
  - [Installation](#Installation)
  - [Usage](#Usage)
-      - [Protonup Commands](#Protonup_Commands)
  - [VideoDemo](#VideoDemo)
  - [Feedback](#Feedback)
  - [Credits](#Credits)

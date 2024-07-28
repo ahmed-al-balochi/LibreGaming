@@ -187,7 +187,7 @@ class MainWindow(QMainWindow):
             self.p.stateChanged.connect(self.handle_state)
             self.p.finished.connect(self.process_finished)  # Clean up once complete.
             if self.PackageManager == "zypper":
-                self.p.start("LibreGaming --lutris")            
+                self.p.start("LibreGaming --heroic")            
             else:
                 self.p.start("pkexec LibreGaming --lutris")
 

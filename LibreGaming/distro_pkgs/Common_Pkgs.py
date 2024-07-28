@@ -36,4 +36,4 @@ class Common_Pkgs:
     # installation for Heroic store For EPIC and GOG games
     def Heroic(self):
         self.whoami(False)
-        subprocess.run(["flatpak", "install", "flathub", "com.heroicgameslauncher.hgl"])
+        subprocess.run(["flatpak", "install", "flathub", "com.heroicgameslauncher.hgl", "-y"])

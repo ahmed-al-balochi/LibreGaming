@@ -52,6 +52,7 @@ def main():
             subprocess.run(["protonup", "-r", + args.rem])
         if args.gaming:
             LibreGaming_Object.installAllPkgs()
+            LibreGaming_Object.Common_Pkgs_Object.Heroic()
         if args.basic:
             LibreGaming_Object.BasicPkgs()
         if args.overlays:

@@ -78,9 +78,14 @@ sudo zypper install python3
 ```
 
 * python3-pip.
-1. Install python3-pip For Ubuntu:
+1. Install python3-pipx For Ubuntu:
 ```
 sudo apt install pipx
+```
+if you're getting an error/issues with installing libregaming using pipx. Use pip
+```
+sudo apt install pip
+
 ```
 2. Install python3-pip For Arch Linux:
 ```
